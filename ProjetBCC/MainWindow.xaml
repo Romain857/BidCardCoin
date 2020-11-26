@@ -7,6 +7,56 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="General">
+
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="BidCardCoin" FontSize="36" Margin="4" TextAlignment="Center"/>
+                    <TextBlock x:Name="ErrorMessage" Text="" FontSize="20" Margin="4" Foreground="Red" TextAlignment="Center"/>
+                    <TextBlock Text="Email :" Margin="0,0,0,20"
+                    TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    <TextBox x:Name="UsernameTextBox" Margin="4" Width="250"/>
+                    <TextBlock Text="Mot de passe :" Margin="0,0,0,20"
+                     TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    <TextBox x:Name="MdpTextBox" Margin="4" Width="250"/>
+
+                    <Button x:Name="PassportSignInButton" Content="Login" Background="DodgerBlue" Foreground="White"
+                    Width="80" HorizontalAlignment="Center" Margin="0,20"/>
+                    <TextBlock Text="Créer un compte"
+                TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    <TextBlock x:Name="RegisterButtonTextBlock" Text="S'inscrire"
+                 Foreground="DodgerBlue"
+                 TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Accueil" />
+            <TabItem Header="Produits"/>
+            <TabItem Header="Utilisateurs">
+                <StackPanel>
+                    <Grid Margin="10">
+                        <DataGrid Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Left" Margin="150,0"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
+                                          Height="300"
+                                          ScrollViewer.CanContentScroll="True" 
+                                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                                <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty}" />
+                                <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty}" />
+                                <DataGridTextColumn Header="mdp" Binding="{Binding mdpPersonneProperty}" />
+                                <DataGridTextColumn Header="numeroTel" Binding="{Binding numerotelPersonneProperty}" />
+                                <DataGridTextColumn Header="mail" Binding="{Binding mailPersonneProperty}" />
+                                <DataGridTextColumn Header="adresse" Binding="{Binding adressePersonneProperty}" />
+                                <DataGridTextColumn Header="codepostal" Binding="{Binding codePostalPersonneProperty}" />
+                                <DataGridTextColumn Header="age" Binding="{Binding agePersonneProperty}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

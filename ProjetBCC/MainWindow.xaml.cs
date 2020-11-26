@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
+using System.Linq;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Collections.ObjectModel;
+using ProjetBCC.Ctrl;
+using ProjetBCC.DAO;
+using ProjetBCC.DAL;
+using ProjetBCC.ORM;
 
 namespace ProjetBCC
 {
@@ -19,10 +19,21 @@ namespace ProjetBCC
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {        
+        PersonneViewModel myDataObject;
+        ObservableCollection<PersonneViewModel> lp;
         public MainWindow()
         {
             InitializeComponent();
+            DALConnection.OpenConnection();
+            loadPersonnes();
+        }
+
+        void loadPersonnes()
+        {
+            lp = PersonneORM.listePersonnes();
+            myDataObject = new PersonneViewModel();
+            listePersonnes.ItemsSource = lp;
         }
     }
 }
