@@ -15,7 +15,7 @@ namespace ProjetBCC.ORM
         public static PersonneViewModel getPersonne(int id)
         {
             PersonneDAO pDAO = PersonneDAO.getPersonne(id);
-            PersonneViewModel p = new PersonneViewModel(pDAO.idDAO, pDAO.nomPersonneDAO, pDAO.prenomPersonneDAO, pDAO.mailPersonneDAO, pDAO.numerotelPersonneDAO, pDAO.mdpPersonneDAO, pDAO.adressePersonneDAO, pDAO.codePostalPersonneDAO, pDAO.ageDAO);
+            PersonneViewModel p = new PersonneViewModel(pDAO.idDAO, pDAO.nomPersonneDAO, pDAO.prenomPersonneDAO, pDAO.mailPersonneDAO, pDAO.numerotelPersonneDAO, pDAO.mdpPersonneDAO, pDAO.adressePersonneDAO, pDAO.codePostalPersonneDAO, pDAO.ageDAO, pDAO.idEnchereDAO);
             return p;
         }
 
@@ -25,7 +25,7 @@ namespace ProjetBCC.ORM
             ObservableCollection<PersonneViewModel> l = new ObservableCollection<PersonneViewModel>();
             foreach (PersonneDAO element in lDAO)
             {
-                PersonneViewModel p = new PersonneViewModel(element.idDAO, element.nomPersonneDAO, element.prenomPersonneDAO, element.mailPersonneDAO, element.numerotelPersonneDAO, element.mdpPersonneDAO, element.adressePersonneDAO, element.codePostalPersonneDAO, element.ageDAO);
+                PersonneViewModel p = new PersonneViewModel(element.idDAO, element.nomPersonneDAO, element.prenomPersonneDAO, element.mailPersonneDAO, element.numerotelPersonneDAO, element.mdpPersonneDAO, element.adressePersonneDAO, element.codePostalPersonneDAO, element.ageDAO, element.idEnchereDAO);
                 l.Add(p);
             }
             return l;

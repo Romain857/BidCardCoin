@@ -19,7 +19,8 @@ namespace ProjetBCC.DAO
         public string adressePersonneDAO;
         public int codePostalPersonneDAO;
         public int ageDAO;
-        public PersonneDAO(int idDAO, string nomPersonneDAO, string prenomPersonneDAO, string mailPersonneDAO, int numerotelPersonneDAO, string mdpPersonneDAO, string adressePersonneDAO, int codePostalPersonneDAO, int ageDAO)
+        public int idEnchereDAO;
+        public PersonneDAO(int idDAO, string nomPersonneDAO, string prenomPersonneDAO, string mailPersonneDAO, int numerotelPersonneDAO, string mdpPersonneDAO, string adressePersonneDAO, int codePostalPersonneDAO, int ageDAO, int idEnchereDAO)
         {
             this.idDAO = idDAO;
             this.nomPersonneDAO = nomPersonneDAO;
@@ -30,6 +31,7 @@ namespace ProjetBCC.DAO
             this.adressePersonneDAO = adressePersonneDAO;
             this.codePostalPersonneDAO = codePostalPersonneDAO;
             this.ageDAO = ageDAO;
+            this.idEnchereDAO = idEnchereDAO;
         }
 
         public static ObservableCollection<PersonneDAO> listePersonnes()

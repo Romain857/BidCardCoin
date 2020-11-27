@@ -110,9 +110,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Ctrl\PersonneViewModel.cs" />
+    <Compile Include="Ctrl\ProduitViewModel.cs" />
     <Compile Include="DAL\DALConnection.cs" />
     <Compile Include="DAL\PersonneDAL.cs" />
+    <Compile Include="DAL\ProduitDAL.cs" />
     <Compile Include="DAO\PersonneDAO.cs" />
+    <Compile Include="DAO\ProduitDAO.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -120,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ORM\PersonneORM.cs" />
+    <Compile Include="ORM\ProduitORM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
