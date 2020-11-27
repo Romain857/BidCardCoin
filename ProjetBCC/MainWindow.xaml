@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel Orientation="Vertical">
+                    <TextBlock Text="BidCardCoin" FontSize="36" Margin="4" TextAlignment="Center"/>
+                    <TextBlock x:Name="ErrorMessage" Text="" FontSize="20" Margin="4" Foreground="Red" TextAlignment="Center"/>
+                    <TextBlock Text="Email :" Margin="0,0,0,20"
+                    TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    <TextBox x:Name="UsernameTextBox" Margin="4" Width="250"/>
+                    <TextBlock Text="Mot de passe :" Margin="0,0,0,20"
+                     TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    <TextBox x:Name="MdpTextBox" Margin="4" Width="250"/>
+
+                    <Button x:Name="PassportSignInButton" Content="Login" Background="DodgerBlue" Foreground="White"
+                    Width="80" HorizontalAlignment="Center" Margin="0,20" Click="Button_Click"/>
+                    <TextBlock Text="Créer un compte"
+                TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    <TextBlock x:Name="RegisterButtonTextBlock" Text="S'inscrire"
+                 Foreground="DodgerBlue"
+                 TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+        </StackPanel>
     </Grid>
 </Window>
