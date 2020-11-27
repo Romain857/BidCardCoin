@@ -1,0 +1,77 @@
+﻿<Window x:Class="ProjetBCC.AppliWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetBCC"
+        mc:Ignorable="d"
+        Title="AppliWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Accueil">
+                <StackPanel>
+                    <ToolBar>
+                        <Button Content="Button1"></Button>
+                        <Button Content="Button2"></Button>
+                        <Menu>
+                            <MenuItem Header="Menu">
+                                <MenuItem Header="MenuItem1"/>
+                            </MenuItem>
+                        </Menu>
+                    </ToolBar>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Produits">
+                <StackPanel>
+                    <Menu>
+                        <MenuItem Header="Rechercher">
+                            <MenuItem Header="Style" />
+                            <MenuItem Header="Artiste" />
+                            <MenuItem Header="Categorie" />
+                        </MenuItem>
+                    </Menu>
+                    <Grid Margin="10">
+                        <DataGrid Name="listeProduits" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
+                                          Height="300"
+                                          ScrollViewer.CanContentScroll="True" 
+                                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                                <DataGridTextColumn Header="estimation" Binding="{Binding estimationProperty}" />
+                                <DataGridTextColumn Header="prix de vente" Binding="{Binding prixVenteProperty}" />
+                                <DataGridTextColumn Header="nom" Binding="{Binding nomProduitProperty}" />
+                                <DataGridTextColumn Header="artiste" Binding="{Binding artisteProperty}" />
+                                <DataGridTextColumn Header="style" Binding="{Binding styleProperty}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                    <Button x:Name="supprimerButton" Content="Supprimer" MouseDoubleClick="supprimerButton_MouseDoubleClick" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Width="200" />
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Utilisateurs">
+                <StackPanel>
+                    <Grid Margin="10">
+                        <DataGrid Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
+                                          Height="300"
+                                          ScrollViewer.CanContentScroll="True" 
+                                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                                <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty}" />
+                                <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty}" />
+                                <DataGridTextColumn Header="mdp" Binding="{Binding mdpPersonneProperty}" />
+                                <DataGridTextColumn Header="numeroTel" Binding="{Binding numerotelPersonneProperty}" />
+                                <DataGridTextColumn Header="mail" Binding="{Binding mailPersonneProperty}" />
+                                <DataGridTextColumn Header="adresse" Binding="{Binding adressePersonneProperty}" />
+                                <DataGridTextColumn Header="codepostal" Binding="{Binding codePostalPersonneProperty}" />
+                                <DataGridTextColumn Header="age" Binding="{Binding agePersonneProperty}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

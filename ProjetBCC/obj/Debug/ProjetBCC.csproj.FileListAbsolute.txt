@@ -38,3 +38,5 @@ C:\Users\romai\source\repos\ProjetBCC\ProjetBCC\bin\Debug\System.Memory.xml
 C:\Users\romai\source\repos\ProjetBCC\ProjetBCC\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\romai\source\repos\ProjetBCC\ProjetBCC\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\romai\source\repos\ProjetBCC\ProjetBCC\obj\Debug\ProjetBCC.csproj.CopyComplete
+C:\Users\romai\source\repos\ProjetBCC\ProjetBCC\obj\Debug\AppliWindow.g.cs
+C:\Users\romai\source\repos\ProjetBCC\ProjetBCC\obj\Debug\AppliWindow.baml

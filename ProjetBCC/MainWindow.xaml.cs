@@ -18,49 +18,25 @@ namespace ProjetBCC
     public partial class MainWindow : Window
     {        
         PersonneViewModel myDataObject;
-        ProduitViewModel myDataObjectProduit;
         ObservableCollection<PersonneViewModel> lp;
-        ObservableCollection<ProduitViewModel> lpr;
-        int selectedProduitId;
         public MainWindow()
         {
             InitializeComponent();
             DALConnection.OpenConnection();
-            loadPersonnes();
-            loadProduits();
+            //loadPersonnes();
         }
-
+        /*
         void loadPersonnes()
         {
             lp = PersonneORM.listePersonnes();
             myDataObject = new PersonneViewModel();
             listePersonnes.ItemsSource = lp;
-        }
-        
-        void loadProduits()
+        }*/
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            lpr = ProduitORM.listeProduits();
-            myDataObjectProduit = new ProduitViewModel();
-            listeProduits.ItemsSource = lpr;
-        }
-        private void supprimerButton_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-
-
-            if (listeProduits.SelectedItem is ProduitViewModel)
-            {
-                ProduitViewModel toRemove = (ProduitViewModel)listeProduits.SelectedItem;
-                lpr.Remove(toRemove);
-                listeProduits.Items.Refresh();
-                ProduitORM.supprimerProduit(selectedProduitId);
-            }
-        }
-        private void listeProduits_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if ((listeProduits.SelectedIndex < lp.Count) && (listeProduits.SelectedIndex >= 0))
-            {
-                selectedProduitId = (lpr.ElementAt<ProduitViewModel>(listePersonnes.SelectedIndex)).idProperty;
-            }
+            AppliWindow win2 = new AppliWindow();
+            win2.Show();
+            this.Close();
         }
     }
 }
