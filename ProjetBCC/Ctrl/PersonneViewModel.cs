@@ -15,14 +15,13 @@ namespace ProjetBCC.Ctrl
         private string mailPersonne;
         private int numerotelPersonne;
         private string mdpPersonne;
-        private string adressePersonne;
-        private int codePostalPersonne;
         private int age;
         private int idEnchere;
+        private int idLieu;
 
         public PersonneViewModel(){ }
 
-        public PersonneViewModel(int id, string nom, string prenom, string mail, int numeroTel, string mdp, string adresse, int codepostal, int age, int idEnchere)
+        public PersonneViewModel(int id, string nom, string prenom, string mail, int numeroTel, string mdp, int age, int idEnchere, int idLieu)
         {
             this.id = id;
             this.nomPersonneProperty = nom;
@@ -30,10 +29,9 @@ namespace ProjetBCC.Ctrl
             this.mailPersonne = mail;
             this.numerotelPersonne = numeroTel;
             this.mdpPersonne = mdp;
-            this.adressePersonne = adresse;
-            this.codePostalPersonne = codepostal;
             this.age = age;
             this.idEnchere = idEnchere;
+            this.idLieu = idLieu;
 
         }
         public int idProperty
@@ -85,22 +83,6 @@ namespace ProjetBCC.Ctrl
                 this.mdpPersonne = value;
             }
         }
-        public String adressePersonneProperty
-        {
-            get { return adressePersonne; }
-            set
-            {
-                this.adressePersonne = value;
-            }
-        }
-        public int codePostalPersonneProperty
-        {
-            get { return codePostalPersonne; }
-            set
-            {
-                this.codePostalPersonne = value;
-            }
-        }
         public int agePersonneProperty
         {
             get { return age; }
@@ -115,6 +97,14 @@ namespace ProjetBCC.Ctrl
             set
             {
                 this.idEnchere = value;
+            }
+        }
+        public int idLieuProperty
+        {
+            get { return idLieu; }
+            set
+            {
+                this.idLieu = value;
             }
         }
     }

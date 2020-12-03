@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ProjetBCC.ORM;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,24 +11,26 @@ namespace ProjetBCC.Ctrl
     public class ProduitViewModel
     {
         private int id;
-        private float estimation;
+        private float estimationActuelle;
         private float prixVente;
         private string nom;
+        private string description;
         private string artiste;
         private string style;
         private bool isVendu;
         private int idCategorie;
         private int idLot;
         private int idPhoto;
+        //private string concat = "Ajouter ";
 
         public ProduitViewModel() { }
-
-        public ProduitViewModel(int id, float estimation, float prixVente, string nom, string artiste, string style, bool isVendu, int idCategorie, int idLot, int idPhoto)
+        public ProduitViewModel(int id, float estimationActuelle, float prixVente, string nom, string description, string artiste, string style, bool isVendu, int idCategorie, int idLot, int idPhoto)
         {
             this.id = id;
-            this.estimationProperty = estimation;
+            this.estimationProperty = estimationActuelle;
             this.prixVenteProperty = prixVente;
             this.nomProduitProperty = nom;
+            this.descriptionProperty = description;
             this.artisteProperty = artiste;
             this.styleProperty = style;
             this.isVendu = isVendu;
@@ -44,10 +48,10 @@ namespace ProjetBCC.Ctrl
         }
         public float estimationProperty
         {
-            get { return estimation; }
+            get { return estimationActuelle; }
             set
             {
-                estimation = value;
+                estimationActuelle = value;
             }
         }
         public float prixVenteProperty
@@ -64,6 +68,14 @@ namespace ProjetBCC.Ctrl
             set
             {
                 nom = value;
+            }
+        }
+        public string descriptionProperty
+        {
+            get { return description; }
+            set
+            {
+                description = value;
             }
         }
         public string artisteProperty
@@ -113,6 +125,6 @@ namespace ProjetBCC.Ctrl
             {
                 idPhoto = value;
             }
-        }
+        }        
     }
 }

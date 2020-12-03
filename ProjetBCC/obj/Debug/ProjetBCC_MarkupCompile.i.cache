@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\romai\source\repos\ProjetBCC\ProjetBCC\App.xaml
-2898827197
+4-1999111358
 
-16-1545548224
+22398690743
 136-327211928
-AppliWindow.xaml;MainWindow.xaml;
+Vue\AjouterCategorieWindow.xaml;Vue\AjouterProduitWindow.xaml;Vue\AppliWindow.xaml;Vue\MainWindow.xaml;
 
-False
+True
 

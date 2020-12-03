@@ -17,12 +17,12 @@ namespace ProjetBCC
 {
     public partial class MainWindow : Window
     {        
-        PersonneViewModel myDataObject;
-        ObservableCollection<PersonneViewModel> lp;
+        //PersonneViewModel myDataObject;
+        //ObservableCollection<PersonneViewModel> lp;
         public MainWindow()
         {
             InitializeComponent();
-            DALConnection.OpenConnection();
+            //DALConnection.OpenConnection();
             //loadPersonnes();
         }
         /*

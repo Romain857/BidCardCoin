@@ -11,9 +11,10 @@ namespace ProjetBCC.DAO
     public class ProduitDAO
     {
         public int idDAO;
-        public float estimationDAO;
+        public float estimationActuelleDAO;
         public float prixVenteDAO;
         public string nomProduitDAO;
+        public string descriptionDAO;
         public string artisteDAO;
         public string styleDAO;
         public bool isVenduDAO;
@@ -21,12 +22,13 @@ namespace ProjetBCC.DAO
         public int idLotDAO;
         public int idPhotoDAO;
 
-        public ProduitDAO(int idDAO, float estimationDAO, float prixVenteDAO, string nomDAO, string artisteDAO, string styleDAO, bool isVenduDAO, int idCategorieDAO, int idLotDAO, int idPhotoDAO)
+        public ProduitDAO(int idDAO, float estimationActuelleDAO, float prixVenteDAO, string nomProduitDAO, string descriptionDAO, string artisteDAO, string styleDAO, bool isVenduDAO, int idCategorieDAO, int idLotDAO, int idPhotoDAO)
         {
             this.idDAO = idDAO;
-            this.estimationDAO = estimationDAO;
+            this.estimationActuelleDAO = estimationActuelleDAO;
             this.prixVenteDAO = prixVenteDAO;
-            this.nomProduitDAO = nomDAO;
+            this.nomProduitDAO = nomProduitDAO;
+            this.descriptionDAO = descriptionDAO;
             this.artisteDAO = artisteDAO;
             this.styleDAO = styleDAO;
             this.isVenduDAO = isVenduDAO;
