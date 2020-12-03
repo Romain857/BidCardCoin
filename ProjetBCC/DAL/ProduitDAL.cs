@@ -26,7 +26,7 @@ namespace ProjetBCC.DAL
 
                 while (reader.Read())
                 {
-                    ProduitDAO p = new ProduitDAO(reader.GetInt32(0), reader.GetFloat(1), reader.GetFloat(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetBoolean(6), reader.GetInt32(7), reader.GetInt32(8), reader.GetInt32(9));
+                    ProduitDAO p = new ProduitDAO(reader.GetInt32(0), reader.GetFloat(1), reader.GetFloat(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetBoolean(7), reader.GetInt32(8), reader.GetInt32(9), reader.GetInt32(10));
                     l.Add(p);
                 }
             }
@@ -45,13 +45,13 @@ namespace ProjetBCC.DAL
             cmd.ExecuteNonQuery();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            ProduitDAO prod = new ProduitDAO(reader.GetInt32(0), reader.GetFloat(1), reader.GetFloat(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetBoolean(6), reader.GetInt32(7), reader.GetInt32(8), reader.GetInt32(9));
+            ProduitDAO prod = new ProduitDAO(reader.GetInt32(0), reader.GetFloat(1), reader.GetFloat(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetBoolean(7), reader.GetInt32(8), reader.GetInt32(9), reader.GetInt32(10));
             reader.Close();
             return prod;
         }
         public static void updateProduit(ProduitDAO p)
         {
-            string query = "UPDATE produit set estimation=\"" + p.estimationDAO + "\", prixVente=\"" + p.prixVenteDAO + "\", artiste=\"" + p.artisteDAO + "\", style=\"" + p.styleDAO + "\", isVendu=\"" + p.isVenduDAO + "\", idCategorie=\"" + p.idCategorieDAO + "\", idLot=\"" + p.idLotDAO + "\", idPhoto=\"" + p.idPhotoDAO + "\" where id=" + p.idDAO + ";";
+            string query = "UPDATE produit set estimationActuelle=\"" + p.estimationActuelleDAO + "\", prixVente=\"" + p.prixVenteDAO + "\",nom=\"" + p.nomProduitDAO + "\", description=\"" + p.descriptionDAO +  "\", artiste=\"" + p.artisteDAO + "\", style=\"" + p.styleDAO + "\", isVendu=\"" + p.isVenduDAO + "\", idCategorie=\"" + p.idCategorieDAO + "\", idLot=\"" + p.idLotDAO + "\", idPhoto=\"" + p.idPhotoDAO + "\" where id=" + p.idDAO + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
@@ -59,7 +59,7 @@ namespace ProjetBCC.DAL
         public static void insertProduit(ProduitDAO p)
         {
             int id = getMaxIdProduit() + 1;
-            string query = "INSERT INTO produit VALUES (\"" + id + "\",\"" + p.estimationDAO + "\",\"" + p.prixVenteDAO + "\",\"" + p.artisteDAO + "\",\"" + p.styleDAO + "\",\"" + p.isVenduDAO + "\",\"" + p.idCategorieDAO + "\",\"" + p.idLotDAO + "\",\"" + p.idPhotoDAO + "\");";
+            string query = "INSERT INTO produit VALUES (\"" + id + "\",\"" + p.estimationActuelleDAO + "\",\"" + p.prixVenteDAO + "\",\"" + p.nomProduitDAO + "\",\"" + p.descriptionDAO + "\",\"" + p.artisteDAO + "\",\"" + p.styleDAO + "\",\"" + p.isVenduDAO + "\",\"" + p.idCategorieDAO + "\",\"" + p.idLotDAO + "\",\"" + p.idPhotoDAO + "\");";
             MySqlCommand cmd2 = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();

@@ -10,6 +10,7 @@ using ProjetBCC.Ctrl;
 using ProjetBCC.DAO;
 using ProjetBCC.DAL;
 using ProjetBCC.ORM;
+using ProjetBCC.Vue;
 
 namespace ProjetBCC
 {
@@ -17,15 +18,19 @@ namespace ProjetBCC
     {
         PersonneViewModel myDataObject;
         ProduitViewModel myDataObjectProduit;
+        CategorieViewModel myDataObjectCategorie;
         ObservableCollection<PersonneViewModel> lp;
         ObservableCollection<ProduitViewModel> lpr;
+        ObservableCollection<CategorieViewModel> c;
         int selectedProduitId;
+        public static string onglet;
         public AppliWindow()
         {
             InitializeComponent();
             DALConnection.OpenConnection();
             loadPersonnes();
             loadProduits();
+            loadCategories();
         }
 
         void loadPersonnes()
@@ -40,10 +45,20 @@ namespace ProjetBCC
             lpr = ProduitORM.listeProduits();
             myDataObjectProduit = new ProduitViewModel();
             listeProduits.ItemsSource = lpr;
+            listeArtistes.ItemsSource = lpr;
+            listeStyles.ItemsSource = lpr;
         }
+
+        void loadCategories()
+        {
+            c = CategorieORM.listeCategorie();
+            myDataObjectCategorie = new CategorieViewModel();
+            listeCategories.ItemsSource = c;
+        }
+
+
         private void supprimerButton_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-
 
             if (listeProduits.SelectedItem is ProduitViewModel)
             {
@@ -59,6 +74,18 @@ namespace ProjetBCC
             {
                 selectedProduitId = (lpr.ElementAt<ProduitViewModel>(listeProduits.SelectedIndex)).idProperty;
             }
+        }
+        private void Button_Click_addProduct(object sender, RoutedEventArgs e)
+        {
+            AjouterProduitWindow win3 = new AjouterProduitWindow();
+            win3.Show();
+            this.Close();
+        }
+        private void Button_Click_addCategorie(object sender, RoutedEventArgs e)
+        {
+            AjouterCategorieWindow win3 = new AjouterCategorieWindow();
+            win3.Show();
+            this.Close();
         }
     }
 }

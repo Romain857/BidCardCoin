@@ -25,13 +25,41 @@
                 <StackPanel>
                     <Menu>
                         <MenuItem Header="Rechercher">
-                            <MenuItem Header="Style" />
-                            <MenuItem Header="Artiste" />
-                            <MenuItem Header="Categorie" />
+                            <MenuItem Header="Style" >
+                                <ListView Name="listeStyles">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Type" Width="120" DisplayMemberBinding="{Binding styleProperty}" />
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </MenuItem>
+                            <MenuItem Header="Artiste" >
+                                <ListView Name="listeArtistes">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Type" Width="120" DisplayMemberBinding="{Binding artisteProperty}" />
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </MenuItem>
+                            <MenuItem Header="Categorie" >
+                                <ListView Name="listeCategories">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Type" Width="120" DisplayMemberBinding="{Binding nomCategorieProperty}" />
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </MenuItem>
                         </MenuItem>
                     </Menu>
+                    <Button x:Name="addProductButton" Content="Ajouter" Background="Black" Foreground="White"
+                            Width="80" HorizontalAlignment="Right" Click="Button_Click_addProduct" />
+                    <Button x:Name="addCategorieButton" Content="Ajouter Categorie" Background="Blue" Foreground="White"
+                            Width="80" HorizontalAlignment="Right" Click="Button_Click_addCategorie" />
                     <Grid Margin="10">
-                        <DataGrid Name="listeProduits" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
+                        <DataGrid Name="listeProduits" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeProduits_SelectionChanged" 
                                           Height="300"
                                           ScrollViewer.CanContentScroll="True" 
                                           ScrollViewer.VerticalScrollBarVisibility="Auto"
@@ -41,6 +69,7 @@
                                 <DataGridTextColumn Header="estimation" Binding="{Binding estimationProperty}" />
                                 <DataGridTextColumn Header="prix de vente" Binding="{Binding prixVenteProperty}" />
                                 <DataGridTextColumn Header="nom" Binding="{Binding nomProduitProperty}" />
+                                <DataGridTextColumn Header="description" Binding="{Binding descriptionProperty}" />
                                 <DataGridTextColumn Header="artiste" Binding="{Binding artisteProperty}" />
                                 <DataGridTextColumn Header="style" Binding="{Binding styleProperty}" />
                             </DataGrid.Columns>
@@ -64,8 +93,6 @@
                                 <DataGridTextColumn Header="mdp" Binding="{Binding mdpPersonneProperty}" />
                                 <DataGridTextColumn Header="numeroTel" Binding="{Binding numerotelPersonneProperty}" />
                                 <DataGridTextColumn Header="mail" Binding="{Binding mailPersonneProperty}" />
-                                <DataGridTextColumn Header="adresse" Binding="{Binding adressePersonneProperty}" />
-                                <DataGridTextColumn Header="codepostal" Binding="{Binding codePostalPersonneProperty}" />
                                 <DataGridTextColumn Header="age" Binding="{Binding agePersonneProperty}" />
                             </DataGrid.Columns>
                         </DataGrid>
