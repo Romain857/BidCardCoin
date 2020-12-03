@@ -101,6 +101,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Vue\UC_AjoutProd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vue\AjouterCategorieWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,6 +129,9 @@
     <Compile Include="DAL\CategorieDAL.cs" />
     <Compile Include="DAO\CategorieDAO.cs" />
     <Compile Include="ORM\CategorieORM.cs" />
+    <Compile Include="Vue\UC_AjoutProd.xaml.cs">
+      <DependentUpon>UC_AjoutProd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vue\AjouterCategorieWindow.xaml.cs">
       <DependentUpon>AjouterCategorieWindow.xaml</DependentUpon>
     </Compile>
