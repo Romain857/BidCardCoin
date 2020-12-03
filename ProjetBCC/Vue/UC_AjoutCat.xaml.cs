@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjetBCC
+namespace ProjetBCC.Vue
 {
     /// <summary>
-    /// Logique d'interaction pour UC_AjoutProd.xaml
+    /// Logique d'interaction pour UC_AjoutCat.xaml
     /// </summary>
-    public partial class UC_AjoutProd : UserControl
+    public partial class UC_AjoutCat : UserControl
     {
-        public UC_AjoutProd()
+        public UC_AjoutCat()
         {
             InitializeComponent();
         }

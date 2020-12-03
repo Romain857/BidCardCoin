@@ -92,3 +92,5 @@ C:\Users\yohan\Source\Repos\BidCardCoin\ProjetBCC\obj\Debug\ProjetBCC.exe
 C:\Users\yohan\Source\Repos\BidCardCoin\ProjetBCC\obj\Debug\ProjetBCC.pdb
 C:\Users\yohan\Source\Repos\BidCardCoin\ProjetBCC\obj\Debug\Vue\UC_AjoutProd.g.cs
 C:\Users\yohan\Source\Repos\BidCardCoin\ProjetBCC\obj\Debug\Vue\UC_AjoutProd.baml
+C:\Users\yohan\Source\Repos\BidCardCoin\ProjetBCC\obj\Debug\Vue\UC_AjoutCat.g.cs
+C:\Users\yohan\Source\Repos\BidCardCoin\ProjetBCC\obj\Debug\Vue\UC_AjoutCat.baml

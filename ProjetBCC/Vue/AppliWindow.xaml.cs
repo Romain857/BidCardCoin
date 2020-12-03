@@ -80,26 +80,37 @@ namespace ProjetBCC
             /*AjouterProduitWindow win3 = new AjouterProduitWindow();
             win3.Show();
             this.Close();*/
+
             UC_AjoutProd ajoutProd = new UC_AjoutProd();
-            Main.Visibility = Visibility.Collapsed;
+            showUC();
             DisplayUC.Children.Add(ajoutProd);
-            returnButton.Visibility = Visibility.Visible;
+
             
         }
         
         private void Button_Click_addCategorie(object sender, RoutedEventArgs e)
         {
-            AjouterCategorieWindow win3 = new AjouterCategorieWindow();
-            win3.Show();
-            this.Close();
+            UC_AjoutCat ajoutCat = new UC_AjoutCat();
+            showUC();
+            DisplayUC.Children.Add(ajoutCat);
+        
         }
 
         private void Button_cancel(object sender, RoutedEventArgs e)
         {
+            hideUC();
+            
+        }
+        private void showUC()
+        {
+            Main.Visibility = Visibility.Collapsed;
+            returnButton.Visibility = Visibility.Visible;
+        }
+        private void hideUC()
+        {
             DisplayUC.Children.Clear();
             returnButton.Visibility = Visibility.Collapsed;
             Main.Visibility = Visibility.Visible;
-            
         }
         
         

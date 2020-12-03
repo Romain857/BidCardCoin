@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\yohan\Source\Repos\BidCardCoin\ProjetBCC\App.xaml
-536685640
+62056572341
 
-22633554742
+231325782513
 136-775432814
-Vue\UC_AjoutProd.xaml;Vue\AjouterCategorieWindow.xaml;Vue\AjouterProduitWindow.xaml;Vue\AppliWindow.xaml;Vue\MainWindow.xaml;
+Vue\UC_AjoutCat.xaml;Vue\UC_AjoutProd.xaml;Vue\AjouterCategorieWindow.xaml;Vue\AjouterProduitWindow.xaml;Vue\AppliWindow.xaml;Vue\MainWindow.xaml;
 
 False
 
