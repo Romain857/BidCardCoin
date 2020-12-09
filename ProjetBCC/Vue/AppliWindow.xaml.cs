@@ -77,22 +77,52 @@ namespace ProjetBCC
         }
         private void Button_Click_addProduct(object sender, RoutedEventArgs e)
         {
-            AjouterProduitWindow win3 = new AjouterProduitWindow();
+            /*AjouterProduitWindow win3 = new AjouterProduitWindow();
             win3.Show();
-            this.Close();
+            this.Close();*/
+
+            UC_AjoutProd ajoutProd = new UC_AjoutProd();
+            MainProd.Visibility = Visibility.Collapsed;
+            returnButtonProd.Visibility = Visibility.Visible;
+            DisplayUCProd.Children.Add(ajoutProd);
+
+            
         }
+        
         private void Button_Click_addCategorie(object sender, RoutedEventArgs e)
         {
-            AjouterCategorieWindow win3 = new AjouterCategorieWindow();
-            win3.Show();
-            this.Close();
+            UC_AjoutCat ajoutCat = new UC_AjoutCat();
+            MainProd.Visibility = Visibility.Collapsed;
+            returnButtonProd.Visibility = Visibility.Visible;
+            DisplayUCProd.Children.Add(ajoutCat);
+        
         }
-        /*
-        private void user_controll(object sender, RoutedEventArgs e)
+
+        private void Button_Click_addVendeur(object sender, RoutedEventArgs e)
         {
-            AppliWindow.Children.clear();
-            UserControl u = new UserControl();
-            UserControl.Children.Add(u);
-        }*/
+            UC_AjoutVendeur ajoutVendeur = new UC_AjoutVendeur();
+            MainUtil.Visibility = Visibility.Collapsed;
+            returnButtonUtil.Visibility = Visibility.Visible;
+            DisplayUCUtil.Children.Add(ajoutVendeur);
+            
+        }
+
+        private void Button_cancel_prod(object sender, RoutedEventArgs e)
+        {
+            DisplayUCProd.Children.Clear();
+            returnButtonProd.Visibility = Visibility.Collapsed;
+            MainProd.Visibility = Visibility.Visible;
+
+        }
+        private void Button_cancel_util(object sender, RoutedEventArgs e)
+        {
+            DisplayUCUtil.Children.Clear();
+            returnButtonUtil.Visibility = Visibility.Collapsed;
+            MainUtil.Visibility = Visibility.Visible;
+
+        }
+
+
+
     }
 }
