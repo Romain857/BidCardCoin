@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\romai\source\repos\ProjetBCC\ProjetBCC\obj\Debug\
+C:\Users\yohan\Source\Repos\BidCardCoin\ProjetBCC\obj\Debug\
 ProjetBCC
 none
 false
 DEBUG;TRACE
-C:\Users\romai\source\repos\ProjetBCC\ProjetBCC\App.xaml
-11151548125
+C:\Users\yohan\Source\Repos\BidCardCoin\ProjetBCC\App.xaml
+62056572341
 
-61434861427
-13-1505183044
-MainWindow.xaml;
+24483423146
+136-775432814
+Vue\UC_AjoutCat.xaml;Vue\UC_AjoutProd.xaml;Vue\AjouterCategorieWindow.xaml;Vue\AjouterProduitWindow.xaml;Vue\AppliWindow.xaml;Vue\MainWindow.xaml;
 
 True
 

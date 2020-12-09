@@ -1,0 +1,122 @@
+﻿<Window x:Class="ProjetBCC.AppliWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetBCC"
+        mc:Ignorable="d"
+        Title="AppliWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Accueil">
+                <StackPanel>
+                    <ToolBar>
+                        <Button Content="Button1"></Button>
+                        <Button Content="Button2"></Button>
+                        <Menu>
+                            <MenuItem Header="Menu">
+                                <MenuItem Header="MenuItem1"/>
+                            </MenuItem>
+                        </Menu>
+                    </ToolBar>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Produits">
+                <StackPanel>
+                    <Menu>
+                        <MenuItem Header="Rechercher">
+                            <MenuItem Header="Style" >
+                                <ListView x:Name="listeStyles">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Type" Width="120" DisplayMemberBinding="{Binding styleProperty}" />
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </MenuItem>
+                            <MenuItem Header="Artiste" >
+                                <ListView x:Name="listeArtistes">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Type" Width="120" DisplayMemberBinding="{Binding artisteProperty}" />
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </MenuItem>
+                            <MenuItem Header="Categorie" >
+                                <ListView x:Name="listeCategories">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Type" Width="120" DisplayMemberBinding="{Binding nomCategorieProperty}" />
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </MenuItem>
+                        </MenuItem>
+                    </Menu>
+                    <Button x:Name="addProductButton" Content="Ajouter Produit" Background="Black" Foreground="White"
+                            Width="96" HorizontalAlignment="Left" Click="Button_Click_addProduct" Margin="670,0,0,0" />
+                    <Button x:Name="addCategorieButton" Content="Ajouter Categorie" Background="Blue" Foreground="White"
+                            Width="96" HorizontalAlignment="Right" Click="Button_Click_addCategorie" Margin="0,33,20,-33" />
+
+
+                    <Grid Margin="10">
+                        <StackPanel x:Name="MainProd" Margin="0,-32,0,32">
+                            <DataGrid x:Name="listeProduits" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeProduits_SelectionChanged"
+                                          Height="300"
+                                          ScrollViewer.CanContentScroll="True" 
+                                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="210,0">
+
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                                    <DataGridTextColumn Header="estimation" Binding="{Binding estimationProperty}" />
+                                    <DataGridTextColumn Header="prix de vente" Binding="{Binding prixVenteProperty}" />
+                                    <DataGridTextColumn Header="nom" Binding="{Binding nomProduitProperty}" />
+                                    <DataGridTextColumn Header="description" Binding="{Binding descriptionProperty}" />
+                                    <DataGridTextColumn Header="artiste" Binding="{Binding artisteProperty}" />
+                                    <DataGridTextColumn Header="style" Binding="{Binding styleProperty}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <Button x:Name="supprimerButton" Content="Supprimer" MouseDoubleClick="supprimerButton_MouseDoubleClick" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Width="200" Margin="283,0" />
+                        </StackPanel>
+                        <StackPanel x:Name="DisplayUCProd" Height="700" VerticalAlignment="Top" Margin="0,0,0,-365">
+                            <!--ICI VIEN CE METTRE LES UC POUR L'ONGLET PRODUITS CREES LORS DU CLICK D'UN BOUTON-->
+                        </StackPanel>
+                        <Button x:Name="returnButtonProd" Content="Annuler" Background="Red" Foreground="White" Margin="688,55,-12,0" Click="Button_cancel_prod" Height="26" VerticalAlignment="Top" Visibility="Collapsed"/>
+                    </Grid>
+
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Utilisateurs">
+                <Grid>
+                <StackPanel x:Name="MainUtil">
+                    <Grid Margin="10">
+                        <Button x:Name="addVendeurButton" Content="Ajouter Produit" Background="Black" Foreground="White"
+                                Width="96" HorizontalAlignment="Left" Click="Button_Click_addVendeur" Margin="670,0,0,0"/>
+                        <DataGrid Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
+                                  Height="300"
+                                  ScrollViewer.CanContentScroll="True" 
+                                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                                <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty}" />
+                                <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty}" />
+                                <DataGridTextColumn Header="mdp" Binding="{Binding mdpPersonneProperty}" />
+                                <DataGridTextColumn Header="numeroTel" Binding="{Binding numerotelPersonneProperty}" />
+                                <DataGridTextColumn Header="mail" Binding="{Binding mailPersonneProperty}" />
+                                <DataGridTextColumn Header="age" Binding="{Binding agePersonneProperty}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </StackPanel>
+                <StackPanel x:Name="DisplayUCUtil">
+                    <!--ICI VIEN CE METTRE LES UC POUR L'ONGLET UTILISATEURS CREES LORS DU CLICK D'UN BOUTON-->
+                </StackPanel>
+                    <Button x:Name="returnButtonUtil" Content="Annuler" Background="Red" Foreground="White" Margin="688,55,-12,0" Click="Button_cancel_util" Height="26" VerticalAlignment="Top" Visibility="Collapsed"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
