@@ -94,3 +94,5 @@ C:\Users\yohan\Source\Repos\BidCardCoin\ProjetBCC\obj\Debug\Vue\UC_AjoutProd.g.c
 C:\Users\yohan\Source\Repos\BidCardCoin\ProjetBCC\obj\Debug\Vue\UC_AjoutProd.baml
 C:\Users\yohan\Source\Repos\BidCardCoin\ProjetBCC\obj\Debug\Vue\UC_AjoutCat.g.cs
 C:\Users\yohan\Source\Repos\BidCardCoin\ProjetBCC\obj\Debug\Vue\UC_AjoutCat.baml
+C:\Users\yohan\source\repos\BidCardCoin\ProjetBCC\obj\Debug\Vue\UC_AjoutVendeur.g.cs
+C:\Users\yohan\source\repos\BidCardCoin\ProjetBCC\obj\Debug\Vue\UC_AjoutVendeur.baml
