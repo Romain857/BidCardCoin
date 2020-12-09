@@ -24,11 +24,13 @@ namespace ProjetBCC.Vue
         ObservableCollection<CategorieViewModel> c;
         int compteur = 0;
         int selectedCategorieId;
+        public static string onglet;
         public AjouterCategorieWindow()
         {
             InitializeComponent();
             DALConnection.OpenConnection();
             loadCategories();
+            appliquerContexte();
         }
 
         void loadCategories()
@@ -53,14 +55,11 @@ namespace ProjetBCC.Vue
 
             listeCategories.Items.Refresh();
             myDataObjectCategorie = new CategorieViewModel();
-
-            nomCategorie.DataContext = myDataObjectCategorie;
             nomCategorieButton.DataContext = myDataObjectCategorie;
+            nomTextBox.DataContext = myDataObjectCategorie;
         }
         private void supprimerButton_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-
-
             if (listeCategories.SelectedItem is CategorieViewModel)
             {
                 CategorieViewModel toRemove = (CategorieViewModel)listeCategories.SelectedItem;
@@ -68,6 +67,22 @@ namespace ProjetBCC.Vue
                 listeCategories.Items.Refresh();
                 CategorieORM.supprimerCategorie(selectedCategorieId);
             }
+        }
+        public void nomChanged(object sender, TextChangedEventArgs e)
+        {
+            myDataObjectCategorie.nomCategorieProperty = nomTextBox.Text;
+        }
+        private void listeCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if ((listeCategories.SelectedIndex < c.Count) && (listeCategories.SelectedIndex >= 0))
+            {
+                selectedCategorieId = (c.ElementAt<CategorieViewModel>(listeCategories.SelectedIndex)).idProperty;
+            }
+        }
+        void appliquerContexte()
+        {
+            nomTextBox.DataContext = myDataObjectCategorie;
+            nomCategorieButton.DataContext = myDataObjectCategorie;
         }
     }
 }

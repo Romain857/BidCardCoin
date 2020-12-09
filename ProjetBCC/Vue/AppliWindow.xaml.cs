@@ -87,5 +87,12 @@ namespace ProjetBCC
             win3.Show();
             this.Close();
         }
+        /*
+        private void user_controll(object sender, RoutedEventArgs e)
+        {
+            AppliWindow.Children.clear();
+            UserControl u = new UserControl();
+            UserControl.Children.Add(u);
+        }*/
     }
 }
