@@ -19,13 +19,8 @@
                     TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
                     <TextBox x:Name="MdpTextBox" Margin="4" Width="250"/>
 
-                    <Button x:Name="PassportSignInButton" Content="Login" Background="DodgerBlue" Foreground="White"
+            <Button x:Name="PassportSignInButton" Content="Login" Background="DodgerBlue" Foreground="White"
                     Width="80" HorizontalAlignment="Center" Margin="0,20" Click="Button_Click"/>
-                    <TextBlock Text="Créer un compte"
-                TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    <TextBlock x:Name="RegisterButtonTextBlock" Text="S'inscrire"
-                 Foreground="DodgerBlue"
-                 TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
         </StackPanel>
     </Grid>
 </Window>

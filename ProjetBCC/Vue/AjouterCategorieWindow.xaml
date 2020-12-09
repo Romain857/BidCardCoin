@@ -8,24 +8,22 @@
         Title="AjouterCategorieWindow" Height="450" Width="800">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <TextBlock Text="Nom :" Margin="30,0,0,20"
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="nomCategorie"  Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>
+            <Label Content="Nom :" HorizontalAlignment="Center" Margin="376,0,375.6,0" />
+            <TextBox x:Name="nomTextBox" Text="{Binding nomCategorieProperty, Mode=TwoWay}" TextChanged="nomChanged" Height="20" Width="239" HorizontalAlignment="Center" Margin="282,0,272.6,0" />
             <Grid Margin="10">
-                <Button x:Name="nomCategorieButton" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,0,292,115" HorizontalAlignment="Right" Width="160" RenderTransformOrigin="0.5,2.31" Click="nomCategorieButton_Click" />
-                <DataGrid x:Name="listeCategories" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4" 
+                <Button x:Name="nomCategorieButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="Right" Margin="0,43,209.6,38" Width="64" Click="nomCategorieButton_Click" />
+                <DataGrid x:Name="listeCategories" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="left" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeCategorie_SelectionChanged"
                                           Height="150"
                                           ScrollViewer.CanContentScroll="True" 
                                           ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                          ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="374,40,342,-40">
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="332,2,0,0" Width="107">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id" Binding="{Binding idProperty, Mode=OneWay}" />
-                        <DataGridTextColumn Header="nom" Binding="{Binding nomCategorieProperty, Mode=OneWay}"/>
+                        <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                        <DataGridTextColumn Header="nom" Binding="{Binding nomCategorieProperty}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
-            <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Width="200" Margin="296,0" />
+            <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" MouseDoubleClick="supprimerButton_Click" Height="35" Width="200" Margin="297,0,296.6,0" />
         </StackPanel>
     </Grid>
 </Window>
