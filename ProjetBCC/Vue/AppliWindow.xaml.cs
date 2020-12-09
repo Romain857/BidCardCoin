@@ -12,10 +12,12 @@ using ProjetBCC.DAL;
 using ProjetBCC.ORM;
 using ProjetBCC.Vue;
 
-namespace ProjetBCC
+namespace ProjetBCC.Vue
 {
     public partial class AppliWindow : Window
     {
+        public static string onglet;
+        
         PersonneViewModel myDataObject;
         ProduitViewModel myDataObjectProduit;
         CategorieViewModel myDataObjectCategorie;
@@ -23,7 +25,11 @@ namespace ProjetBCC
         ObservableCollection<ProduitViewModel> lpr;
         ObservableCollection<CategorieViewModel> c;
         int selectedProduitId;
-        public static string onglet;
+        
+        
+        int compteur = 0;
+        int selectedCategorieId;
+        
         public AppliWindow()
         {
             InitializeComponent();
@@ -31,6 +37,7 @@ namespace ProjetBCC
             loadPersonnes();
             loadProduits();
             loadCategories();
+            
         }
 
         void loadPersonnes()
@@ -88,7 +95,7 @@ namespace ProjetBCC
 
             
         }
-        
+
         private void Button_Click_addCategorie(object sender, RoutedEventArgs e)
         {
             UC_AjoutCat ajoutCat = new UC_AjoutCat();

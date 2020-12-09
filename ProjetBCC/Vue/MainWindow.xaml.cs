@@ -12,8 +12,9 @@ using ProjetBCC.Ctrl;
 using ProjetBCC.DAO;
 using ProjetBCC.DAL;
 using ProjetBCC.ORM;
+using ProjetBCC.Vue;
 
-namespace ProjetBCC
+namespace ProjetBCC.Vue
 {
     public partial class MainWindow : Window
     {        
