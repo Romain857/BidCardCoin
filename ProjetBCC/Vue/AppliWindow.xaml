@@ -9,17 +9,23 @@
     <Grid>
         <TabControl>
             <TabItem Header="Accueil">
-                <StackPanel>
-                    <ToolBar>
-                        <Button Content="Button1"></Button>
-                        <Button Content="Button2"></Button>
-                        <Menu>
-                            <MenuItem Header="Menu">
-                                <MenuItem Header="MenuItem1"/>
-                            </MenuItem>
-                        </Menu>
-                    </ToolBar>
-                </StackPanel>
+                <Grid>
+                    <StackPanel>
+                        <ToolBar>
+                            <Button x:Name="listeEnchereButton" Content="Enchères" Click="Button_Click_ListEnchere"></Button>
+                            <Button x:Name="listeLieuxButton" Content="Lieux" Click="Button_Click_ListLieux"></Button>
+                            <Button x:Name="listeLotsButton" Content="Lots" Click="Button_Click_ListLots"></Button>
+                            <Menu>
+                                <MenuItem Header="Menu">
+                                    <MenuItem Header="MenuItem1"/>
+                                </MenuItem>
+                            </Menu>
+                        </ToolBar>
+                    </StackPanel>
+                    <StackPanel Name="DisplayUCAccueil">
+                        <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET Accueil CREES LORS DU CLICK D'UN BOUTON-->
+                    </StackPanel>
+                </Grid>
             </TabItem>
             <TabItem Header="Produits">
                 <StackPanel>
@@ -27,9 +33,8 @@
                     <Button x:Name="addProductButton" Content="Ajouter Produit" Background="Black" Foreground="White"
                             Width="96" HorizontalAlignment="Left" Click="Button_Click_addProduct" Margin="670,0,0,0" />
                     <Button x:Name="addCategorieButton" Content="Ajouter Categorie" Background="Blue" Foreground="White"
-                            Width="96" HorizontalAlignment="Right" Click="Button_Click_addCategorie" Margin="0,33,20,-33" />
-
-
+                            Width="96" HorizontalAlignment="Right" Click="Button_Click_addCategorie" Margin="670,0,0,0" />
+                    
                     <Grid Margin="10">
                         <StackPanel x:Name="MainProd" Margin="0,-32,0,32">
                             <Menu>
@@ -82,7 +87,7 @@
                             <Button x:Name="supprimerButton" Content="Supprimer" MouseDoubleClick="supprimerButton_MouseDoubleClick" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Width="200" Margin="283,0" />
                         </StackPanel>
                         <StackPanel x:Name="DisplayUCProd" Height="700" VerticalAlignment="Top" Margin="0,0,0,-365">
-                            <!--ICI VIEN CE METTRE LES UC POUR L'ONGLET PRODUITS CREES LORS DU CLICK D'UN BOUTON-->
+                            <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET PRODUITS CREES LORS DU CLICK D'UN BOUTON-->
                         </StackPanel>
                         <Button x:Name="returnButtonProd" Content="Annuler" Background="Red" Foreground="White" Margin="688,55,-12,0" Click="Button_cancel_prod" Height="26" VerticalAlignment="Top" Visibility="Collapsed"/>
                     </Grid>
@@ -93,7 +98,7 @@
                 <Grid>
                 <StackPanel x:Name="MainUtil">
                     <Grid Margin="10">
-                        <Button x:Name="addVendeurButton" Content="Ajouter Produit" Background="Black" Foreground="White"
+                        <Button x:Name="addVendeurButton" Content="Ajouter Vendeur" Background="Black" Foreground="White"
                                 Width="96" HorizontalAlignment="Left" Click="Button_Click_addVendeur" Margin="670,0,0,0"/>
                         <DataGrid Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
                                   Height="300"
@@ -113,7 +118,7 @@
                     </Grid>
                 </StackPanel>
                 <StackPanel x:Name="DisplayUCUtil">
-                    <!--ICI VIEN CE METTRE LES UC POUR L'ONGLET UTILISATEURS CREES LORS DU CLICK D'UN BOUTON-->
+                    <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET UTILISATEURS CREES LORS DU CLICK D'UN BOUTON-->
                 </StackPanel>
                     <Button x:Name="returnButtonUtil" Content="Annuler" Background="Red" Foreground="White" Margin="688,55,-12,0" Click="Button_cancel_util" Height="26" VerticalAlignment="Top" Visibility="Collapsed"/>
                 </Grid>
