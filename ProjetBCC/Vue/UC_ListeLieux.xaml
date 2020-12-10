@@ -6,7 +6,22 @@
              xmlns:local="clr-namespace:ProjetBCC.Vue"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid Margin="60">
-        <Label Content="Page Lieux"></Label>
+    <Grid>
+        <DataGrid x:Name="listeLieux" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4"
+                  Height="300" Width="270"
+                  ScrollViewer.CanContentScroll="True" 
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="10,30">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id"  />
+                <DataGridTextColumn Header="ville"  />
+                <DataGridTextColumn Header="adresse"  />
+                <DataGridTextColumn Header="code postal"  />
+                <DataGridTextColumn Header="département"  />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="addLieuButton" Content="Ajouter Lieu" Background="Black" Foreground="White"
+                Height="20" HorizontalAlignment="Center" Click="Button_Click_addLieu" Margin="350,-200,0,0"/>
     </Grid>
 </UserControl>

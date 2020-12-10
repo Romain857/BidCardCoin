@@ -1,3 +1,4 @@
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ProjetBCC.Vue
@@ -7,6 +8,11 @@ namespace ProjetBCC.Vue
         public UC_ListeLots()
         {
             InitializeComponent();
+        }
+        private void Button_Click_addLot(object sender, RoutedEventArgs e)
+        {
+            
+            
         }
     }
 }

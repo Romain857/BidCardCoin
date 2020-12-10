@@ -1,3 +1,4 @@
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ProjetBCC.Vue
@@ -7,6 +8,11 @@ namespace ProjetBCC.Vue
         public UC_ListeLieux()
         {
             InitializeComponent();
+        }
+        private void Button_Click_addLieu(object sender, RoutedEventArgs e)
+        {
+            
+            
         }
     }
 }
