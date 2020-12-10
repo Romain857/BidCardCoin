@@ -104,6 +104,15 @@
     <Compile Include="Vue\UC_AjoutVendeur.xaml.cs">
       <DependentUpon>UC_AjoutVendeur.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vue\UC_ListeEncheres.xaml.cs">
+      <DependentUpon>UC_ListeEncheres.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\UC_ListeLieux.xaml.cs">
+      <DependentUpon>UC_ListeLieux.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\UC_ListeLots.xaml.cs">
+      <DependentUpon>UC_ListeLots.xaml</DependentUpon>
+    </Compile>
     <Page Include="Vue\UC_AjoutCat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,6 +172,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Vue\UC_AjoutVendeur.xaml" />
+    <Page Include="Vue\UC_ListeEncheres.xaml" />
+    <Page Include="Vue\UC_ListeLieux.xaml" />
+    <Page Include="Vue\UC_ListeLots.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ORM\PersonneORM.cs" />

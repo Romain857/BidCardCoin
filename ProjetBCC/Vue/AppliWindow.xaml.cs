@@ -129,6 +129,26 @@ namespace ProjetBCC.Vue
 
         }
 
+        private void Button_Click_ListEnchere(object sender, RoutedEventArgs e)
+        {
+            UC_ListeEncheres listeEncheres = new UC_ListeEncheres();
+            DisplayUCAccueil.Children.Clear();
+            DisplayUCAccueil.Children.Add(listeEncheres);
+        }
+        private void Button_Click_ListLieux(object sender, RoutedEventArgs e)
+        {
+            UC_ListeLieux listeLieux = new UC_ListeLieux();
+            DisplayUCAccueil.Children.Clear();
+            DisplayUCAccueil.Children.Add(listeLieux);
+        }
+        
+        private void Button_Click_ListLots(object sender, RoutedEventArgs e)
+        {
+            UC_ListeLots listeLots = new UC_ListeLots();
+            DisplayUCAccueil.Children.Clear();
+            DisplayUCAccueil.Children.Add(listeLots);
+        }
+
 
 
     }
