@@ -82,6 +82,7 @@
                                     <DataGridTextColumn Header="description" Binding="{Binding descriptionProperty}" />
                                     <DataGridTextColumn Header="artiste" Binding="{Binding artisteProperty}" />
                                     <DataGridTextColumn Header="style" Binding="{Binding styleProperty}" />
+                                    <DataGridTextColumn Header="categorie" />
                                 </DataGrid.Columns>
                             </DataGrid>
                             <Button x:Name="supprimerButton" Content="Supprimer" MouseDoubleClick="supprimerButton_MouseDoubleClick" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Width="200" Margin="283,0" />
