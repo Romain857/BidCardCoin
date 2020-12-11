@@ -42,7 +42,7 @@
                 </Menu>
                 
                 <DataGrid Name="listeEncheres" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="200,50"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4"
-                          Height="300"
+                          Height="150"
                           ScrollViewer.CanContentScroll="True" 
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto" >
@@ -54,6 +54,7 @@
                         <DataGridTextColumn Header="lieu" Binding="{Binding }" />
                     </DataGrid.Columns>
                 </DataGrid>
+                <Button x:Name="submitAjoutEnchere" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="Center" Width="64" Click="Button_Click_submitEnchere"/>
                 
         </StackPanel>
     </Grid>
