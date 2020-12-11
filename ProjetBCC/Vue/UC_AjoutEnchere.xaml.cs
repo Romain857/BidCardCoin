@@ -1,3 +1,4 @@
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ProjetBCC.Vue
@@ -8,6 +9,9 @@ namespace ProjetBCC.Vue
         {
             InitializeComponent();
         }
-        
+        private void Button_Click_submitEnchere(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
