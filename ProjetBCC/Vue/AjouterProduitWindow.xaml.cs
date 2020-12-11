@@ -17,7 +17,7 @@ namespace ProjetBCC.Vue
     /// <summary>
     /// Logique d'interaction pour AjouterProduitWindow.xaml
     /// </summary>
-    public partial class AjouterProduitWindow : Window
+    /*public partial class AjouterProduitWindow : Window
     {
         ProduitViewModel myDataObjectProduit;
         CategorieViewModel myDataObjectCategorie;
@@ -30,6 +30,7 @@ namespace ProjetBCC.Vue
             DALConnection.OpenConnection();
             loadProduits();
             loadCategories();
+            appliquerContexte();
         }
         private void Button_Click_Submit(object sender, RoutedEventArgs e)
         {
@@ -41,8 +42,6 @@ namespace ProjetBCC.Vue
         {
             lpr = ProduitORM.listeProduits();
             myDataObjectProduit = new ProduitViewModel();
-            listeArtistes.ItemsSource = lpr;
-            listeStyles.ItemsSource = lpr;
         }
 
         void loadCategories()
@@ -71,14 +70,20 @@ namespace ProjetBCC.Vue
             nomProduit.DataContext = myDataObjectProduit;
             estimation.DataContext = myDataObjectProduit;
             description.DataContext = myDataObjectProduit;
-            //style.DataContext = myDataObjectProduit;
-            //artiste.DataContext = myDataObjectProduit;
+            style.DataContext = myDataObjectProduit;
+            artiste.DataContext = myDataObjectProduit;
             //categorie.DataContext = myDataObjectProduit;
-            nomPrenomButton2.DataContext = myDataObjectProduit;
+            nomProduitButton.DataContext = myDataObjectProduit;
         }
-        private void nomPrenomButton_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        void appliquerContexte()
         {
-            // On ne fait rien
+            nomProduit.DataContext = myDataObjectProduit;
+            estimation.DataContext = myDataObjectProduit;
+            description.DataContext = myDataObjectProduit;
+            style.DataContext = myDataObjectProduit;
+            artiste.DataContext = myDataObjectProduit;
+            //categorie.DataContext = myDataObjectProduit;
+            nomProduitButton.DataContext = myDataObjectProduit;
         }
-    }
+    }*/
 }

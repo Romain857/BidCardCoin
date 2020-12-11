@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProjetBCC.Ctrl
 {
-    public class ProduitViewModel
+    public class ProduitViewModel : INotifyPropertyChanged
     {
         private int id;
         private float estimationActuelle;
@@ -18,13 +18,12 @@ namespace ProjetBCC.Ctrl
         private string artiste;
         private string style;
         private bool isVendu;
-        private int idCategorie;
         private int idLot;
         private int idPhoto;
-        //private string concat = "Ajouter ";
+        private string concat = "Ajouter ";
 
         public ProduitViewModel() { }
-        public ProduitViewModel(int id, float estimationActuelle, float prixVente, string nom, string description, string artiste, string style, bool isVendu, int idCategorie, int idLot, int idPhoto)
+        public ProduitViewModel(int id, float estimationActuelle, float prixVente, string nom, string description, string artiste, string style, bool isVendu, int idLot, int idPhoto)
         {
             this.id = id;
             this.estimationProperty = estimationActuelle;
@@ -34,9 +33,9 @@ namespace ProjetBCC.Ctrl
             this.artisteProperty = artiste;
             this.styleProperty = style;
             this.isVendu = isVendu;
-            this.idCategorie = idCategorie;
             this.idLot = idLot;
             this.idPhoto = idPhoto;
+
         }
         public int idProperty
         {
@@ -52,6 +51,7 @@ namespace ProjetBCC.Ctrl
             set
             {
                 estimationActuelle = value;
+                OnPropertyChanged("ConcatProperty");
             }
         }
         public float prixVenteProperty
@@ -60,6 +60,7 @@ namespace ProjetBCC.Ctrl
             set
             {
                 prixVente = value;
+                OnPropertyChanged("ConcatProperty");
             }
         }
         public string nomProduitProperty
@@ -68,6 +69,7 @@ namespace ProjetBCC.Ctrl
             set
             {
                 nom = value;
+                OnPropertyChanged("ConcatProperty");
             }
         }
         public string descriptionProperty
@@ -76,6 +78,7 @@ namespace ProjetBCC.Ctrl
             set
             {
                 description = value;
+                OnPropertyChanged("ConcatProperty");
             }
         }
         public string artisteProperty
@@ -84,6 +87,7 @@ namespace ProjetBCC.Ctrl
             set
             {
                 artiste = value;
+                OnPropertyChanged("ConcatProperty");
             }
         }
         public string styleProperty
@@ -92,6 +96,7 @@ namespace ProjetBCC.Ctrl
             set
             {
                 style = value;
+                OnPropertyChanged("ConcatProperty");
             }
         }
         public bool isVenduProperty
@@ -100,14 +105,7 @@ namespace ProjetBCC.Ctrl
             set
             {
                 isVendu = value;
-            }
-        }
-        public int idCategorieProperty
-        {
-            get { return idCategorie; }
-            set
-            {
-                idCategorie = value;
+                OnPropertyChanged("ConcatProperty");
             }
         }
         public int idLotProperty
@@ -116,6 +114,7 @@ namespace ProjetBCC.Ctrl
             set
             {
                 idLot = value;
+                OnPropertyChanged("ConcatProperty");
             }
         }
         public int idPhotoProperty
@@ -124,7 +123,29 @@ namespace ProjetBCC.Ctrl
             set
             {
                 idPhoto = value;
+                OnPropertyChanged("ConcatProperty");
             }
-        }        
+        }
+        public string ConcatProperty
+        {
+            get { return concat; }
+            set
+            {
+                this.concat = value;
+                OnPropertyChanged("ConcatProperty");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string info)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(info));
+                this.PropertyChanged(this, new PropertyChangedEventArgs(info));
+                ProduitORM.updateProduit(this);
+            }
+        }
     }
 }
