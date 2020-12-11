@@ -7,21 +7,23 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <DataGrid x:Name="listeEncheres" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4"
-                  Height="300" Width="200"
-                  ScrollViewer.CanContentScroll="True" 
-                  ScrollViewer.VerticalScrollBarVisibility="Auto"
-                  ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="10,30">
+        <StackPanel x:Name="DisplayUC">
+            <DataGrid x:Name="listeEncheres" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4"
+                    Height="300" Width="200"
+                    ScrollViewer.CanContentScroll="True" 
+                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                    ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="10,30">
 
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="id"  />
-                <DataGridTextColumn Header="nom"  />
-                <DataGridTextColumn Header="heure"  />
-                <DataGridTextColumn Header="date"  />
-                <DataGridTextColumn Header="lieu"  />
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button x:Name="addEnchereButton" Content="Ajouter Enchère" Background="Black" Foreground="White"
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="id"  />
+                    <DataGridTextColumn Header="nom"  />
+                    <DataGridTextColumn Header="heure"  />
+                    <DataGridTextColumn Header="date"  />
+                    <DataGridTextColumn Header="lieu"  />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="addEnchereButton" Content="Ajouter Enchère" Background="Black" Foreground="White"
                 Height="20" HorizontalAlignment="Center" Click="Button_Click_addEnchere" Margin="300,-200,0,0"/>
+        </StackPanel>
     </Grid>
 </UserControl>
