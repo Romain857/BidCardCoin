@@ -11,7 +11,9 @@ namespace ProjetBCC.Vue
         }
         private void Button_Click_addEnchere(object sender, RoutedEventArgs e)
         {
-            
+            UC_AjoutEnchere ajoutEnchere = new UC_AjoutEnchere();
+            DisplayUC.Children.Clear();
+            DisplayUC.Children.Add(ajoutEnchere);
             
         }
     }

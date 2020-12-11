@@ -101,6 +101,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Vue\UC_AjoutEnchere.xaml.cs">
+      <DependentUpon>UC_AjoutEnchere.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vue\UC_AjoutVendeur.xaml.cs">
       <DependentUpon>UC_AjoutVendeur.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Vue\UC_AjoutEnchere.xaml" />
     <Page Include="Vue\UC_AjoutProd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
