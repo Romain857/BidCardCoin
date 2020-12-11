@@ -9,32 +9,32 @@
     <Grid>
         <StackPanel Orientation="Vertical">
             <TextBlock Text="Ajouter un produit" FontSize="36" TextAlignment="Center"/>
-            <TextBlock Text="Nom :"  Margin="30,0,0,20"
+            <TextBlock Text="Nom :"
                     TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="nomProduit" Text="{Binding nomProduitProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>
-            <TextBlock Text="Estimation :"  Margin="30,0,0,20" 
+            <TextBox Name="nomProduit" Text="{Binding nomProduitProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBlock Text="Estimation :"
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="estimation" Text="{Binding estimationProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>
-            <TextBlock Text="Description :" Margin="30,0,0,20"
+            <TextBox Name="estimation" Text="{Binding estimationProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBlock Text="Description :"
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="description" Text="{Binding descriptionProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>
-            <TextBlock Text="Artiste :" Margin="30,0,0,20"
+            <TextBox Name="description" Text="{Binding descriptionProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBlock Text="Artiste :"
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="artiste" Text="{Binding artisteProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>
-            <TextBlock Text="Style :" Margin="30,0,0,20"
+            <TextBox Name="artiste" Text="{Binding artisteProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBlock Text="Style :"
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="style" Text="{Binding styleProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>
+            <TextBox Name="style" Text="{Binding styleProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
-            <TextBlock Text="Categorie :" Margin="30,0,0,20"
+            <TextBlock Text="Categorie :"
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <Menu>
-                <MenuItem Header="Categorie" >
+            <Menu HorizontalAlignment="Center" Margin="0,0,0,20">
+                <MenuItem Header="Categorie disponibles :" >
                     <ListView Name="listeCategories">
                         <ListView.View>
                             <GridView>
@@ -44,8 +44,8 @@
                     </ListView>
                 </MenuItem>
             </Menu>
-            <Grid Margin="10">
-                <Button x:Name="nomProduitButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="Right" Margin="0,43,209.6,38" Width="64" Click="nomProduitButton_Click" />
+            
+                <Button x:Name="nomProduitButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Height="20" Click="nomProduitButton_Click" />
                 <DataGrid x:Name="listeProduits" Visibility="Hidden" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="left" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeProduit_SelectionChanged"
                                           Height="150"
                                           ScrollViewer.CanContentScroll="True" 
@@ -62,7 +62,7 @@
                         <DataGridTextColumn Header="categorie" />
                     </DataGrid.Columns>
                 </DataGrid>
-            </Grid>
+            
         </StackPanel>
     </Grid>
 </UserControl>

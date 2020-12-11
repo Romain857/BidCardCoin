@@ -117,6 +117,12 @@
     <Compile Include="ORM\EnchereORM.cs" />
     <Compile Include="ORM\LieuORM.cs" />
     <Compile Include="ORM\LotORM.cs" />
+    <Compile Include="Vue\UC_AjoutLieu.xaml.cs">
+      <DependentUpon>UC_AjoutLieu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\UC_AjoutLot.xaml.cs">
+      <DependentUpon>UC_AjoutLot.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vue\UC_AjoutVendeur.xaml.cs">
       <DependentUpon>UC_AjoutVendeur.xaml</DependentUpon>
     </Compile>
@@ -134,6 +140,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vue\UC_AjoutEnchere.xaml" />
+    <Page Include="Vue\UC_AjoutLieu.xaml" />
+    <Page Include="Vue\UC_AjoutLot.xaml" />
     <Page Include="Vue\UC_AjoutProd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
