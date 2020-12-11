@@ -101,6 +101,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Ctrl\EnchereViewModel.cs" />
+    <Compile Include="Ctrl\LieuViewModel.cs" />
+    <Compile Include="Ctrl\LotViewModel.cs" />
+    <Compile Include="DAL\EnchereDAL.cs" />
+    <Compile Include="DAL\LieuDAL.cs" />
+    <Compile Include="DAL\LotDAL.cs" />
+    <Compile Include="DAO\EnchereDAO.cs" />
+    <Compile Include="DAO\LieuDAO.cs" />
+    <Compile Include="DAO\LotDAO.cs" />
+    <Compile Include="ORM\EnchereORM.cs" />
+    <Compile Include="ORM\LieuORM.cs" />
+    <Compile Include="ORM\LotORM.cs" />
     <Compile Include="Vue\UC_AjoutVendeur.xaml.cs">
       <DependentUpon>UC_AjoutVendeur.xaml</DependentUpon>
     </Compile>
