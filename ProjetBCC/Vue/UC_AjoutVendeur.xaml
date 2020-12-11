@@ -6,7 +6,52 @@
              xmlns:local="clr-namespace:ProjetBCC.Vue"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Label Content="Page ajout vendeurs"></Label>
+    <Grid Margin="0, 20, 0, 0">
+        <StackPanel Orientation="Vertical">
+                <TextBlock Text="Ajouter un vendeur" FontSize="36" TextAlignment="Center"/>
+                
+                <TextBlock Text="Nom :"
+                    TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="nomVendeur" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="Prénom :" 
+                     TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="prenomVendeur"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="Email :"
+                     TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="mailVendeur"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <TextBlock Text="Numéro de téléphone :"
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="numVendeur"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="Mot de passe :"
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="mdpVendeur"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="Adresse :"
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="adresseVendeur"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="Code postal :"
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="code_postalVendeur"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="Âge :"
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="ageVendeur"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                <Button x:Name="submitAjoutVendeur" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="Center" Width="64" Click="Button_Click_submitVendeur"/>
+                
+        </StackPanel>
     </Grid>
 </UserControl>

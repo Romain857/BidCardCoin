@@ -11,7 +11,9 @@ namespace ProjetBCC.Vue
         }
         private void Button_Click_addLieu(object sender, RoutedEventArgs e)
         {
-            
+            UC_AjoutLieu ajoutLieu = new UC_AjoutLieu();
+            DisplayUC.Children.Clear();
+            DisplayUC.Children.Add(ajoutLieu);
             
         }
     }
