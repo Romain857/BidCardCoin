@@ -3,13 +3,13 @@ using System.Windows.Controls;
 
 namespace ProjetBCC.Vue
 {
-    public partial class UC_AjoutVendeur : UserControl
+    public partial class UC_AjoutLot : UserControl
     {
-        public UC_AjoutVendeur()
+        public UC_AjoutLot()
         {
             InitializeComponent();
         }
-        private void Button_Click_submitVendeur(object sender, RoutedEventArgs e)
+        private void Button_Click_submitLot(object sender, RoutedEventArgs e)
         {
             
         }

@@ -42,7 +42,9 @@ namespace ProjetBCC.Vue
         }
         private void Button_Click_addLot(object sender, RoutedEventArgs e)
         {
-            
+            UC_AjoutLot ajoutLot = new UC_AjoutLot();
+            DisplayUC.Children.Clear();
+            DisplayUC.Children.Add(ajoutLot);
             
         }
     }

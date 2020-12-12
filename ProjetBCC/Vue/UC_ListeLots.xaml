@@ -7,6 +7,7 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
+        <StackPanel x:Name="DisplayUC">
         <DataGrid x:Name="listeLots" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4"
                   Height="300" Width="230"
                   ScrollViewer.CanContentScroll="True" 
@@ -22,5 +23,6 @@
         </DataGrid>
         <Button x:Name="addLotButton" Content="Ajouter Lot" Background="Black" Foreground="White"
                 Height="20" HorizontalAlignment="Center" Click="Button_Click_addLot" Margin="300,-200,0,0"/>
+        </StackPanel>
     </Grid>
 </UserControl>
