@@ -22,25 +22,26 @@ namespace ProjetBCC.Vue
 {
     public partial class UC_ListeEncheres : UserControl
     {
-        /*EnchereViewModel myDataObjectEnchere;
+        EnchereViewModel myDataObjectEnchere;
         ObservableCollection<EnchereViewModel> e;
         int compteur = 0;
         int selectedEnchereId;
-        public static string onglet;*/
+        public static string onglet;
         public UC_ListeEncheres()
         {
             InitializeComponent();
-            //DALConnection.OpenConnection();
-            //loadEncheres();
+            DALConnection.OpenConnection();
+            loadEncheres();
             //appliquerContexte();
         }
 
-        /*void loadEncheres()
+        void loadEncheres()
         {
             e = EnchereORM.listeEncheres();
             myDataObjectEnchere = new EnchereViewModel();
             listeEncheres.ItemsSource = e;
         }
+        /*
         private void nomEnchereButton_Click(object sender, RoutedEventArgs e)
         {
             myDataObjectEnchere.idProperty = EnchereDAL.getMaxIdEnchere() + 1;

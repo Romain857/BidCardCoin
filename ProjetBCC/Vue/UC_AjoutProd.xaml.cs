@@ -35,7 +35,7 @@ namespace ProjetBCC
             InitializeComponent();
             DALConnection.OpenConnection();
             loadProduits();
-            loadCategories();
+            //loadCategories();
             appliquerContexte();
         }
         
@@ -45,12 +45,12 @@ namespace ProjetBCC
             myDataObjectProduit = new ProduitViewModel();
         }
 
-        void loadCategories()
+        /*void loadCategories()
         {
             c = CategorieORM.listeCategorie();
             myDataObjectCategorie = new CategorieViewModel();
             listeCategories.ItemsSource = c;
-        }
+        }*/
         
         private void nomProduitButton_Click(object sender, RoutedEventArgs e)
         {
@@ -65,9 +65,14 @@ namespace ProjetBCC
 
             nomProduit.DataContext = myDataObjectProduit;
             estimation.DataContext = myDataObjectProduit;
+            prixVente.DataContext = myDataObjectProduit;
             description.DataContext = myDataObjectProduit;
             style.DataContext = myDataObjectProduit;
             artiste.DataContext = myDataObjectProduit;
+            dateVente.DataContext = myDataObjectProduit;
+            isVendu.DataContext = myDataObjectProduit;
+            idLot.DataContext = myDataObjectProduit;
+            idPhoto.DataContext = myDataObjectProduit;
             //categorie.DataContext = myDataObjectProduit;
             nomProduitButton.DataContext = myDataObjectProduit;
         }
@@ -75,9 +80,14 @@ namespace ProjetBCC
         {
             nomProduit.DataContext = myDataObjectProduit;
             estimation.DataContext = myDataObjectProduit;
+            prixVente.DataContext = myDataObjectProduit;
             description.DataContext = myDataObjectProduit;
             style.DataContext = myDataObjectProduit;
             artiste.DataContext = myDataObjectProduit;
+            dateVente.DataContext = myDataObjectProduit;
+            isVendu.DataContext = myDataObjectProduit;
+            idLot.DataContext = myDataObjectProduit;
+            idPhoto.DataContext = myDataObjectProduit;
             //categorie.DataContext = myDataObjectProduit;
             nomProduitButton.DataContext = myDataObjectProduit;
         }

@@ -18,12 +18,13 @@ namespace ProjetBCC.Ctrl
         private string artiste;
         private string style;
         private bool isVendu;
+        private DateTime dateVente;
         private int idLot;
         private int idPhoto;
         private string concat = "Ajouter ";
 
         public ProduitViewModel() { }
-        public ProduitViewModel(int id, float estimationActuelle, float prixVente, string nom, string description, string artiste, string style, bool isVendu, int idLot, int idPhoto)
+        public ProduitViewModel(int id, float estimationActuelle, float prixVente, string nom, string description, string artiste, string style, bool isVendu, DateTime dateVente, int idLot, int idPhoto)
         {
             this.id = id;
             this.estimationProperty = estimationActuelle;
@@ -33,6 +34,7 @@ namespace ProjetBCC.Ctrl
             this.artisteProperty = artiste;
             this.styleProperty = style;
             this.isVendu = isVendu;
+            this.dateVenteProperty = dateVente;
             this.idLot = idLot;
             this.idPhoto = idPhoto;
 
@@ -105,6 +107,15 @@ namespace ProjetBCC.Ctrl
             set
             {
                 isVendu = value;
+                OnPropertyChanged("ConcatProperty");
+            }
+        }
+        public DateTime dateVenteProperty
+        {
+            get { return dateVente; }
+            set
+            {
+                dateVente = value;
                 OnPropertyChanged("ConcatProperty");
             }
         }

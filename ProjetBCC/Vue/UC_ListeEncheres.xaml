@@ -15,11 +15,11 @@
                     ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="10,30">
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="id"  />
-                    <DataGridTextColumn Header="nom"  />
-                    <DataGridTextColumn Header="heure"  />
-                    <DataGridTextColumn Header="date"  />
-                    <DataGridTextColumn Header="lieu"  />
+                    <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                    <DataGridTextColumn Header="nom" Binding="{Binding nomEnchereProperty}" />
+                    <DataGridTextColumn Header="heure" Binding="{Binding heureEnchereProperty}" />
+                    <DataGridTextColumn Header="date" Binding="{Binding dateEnchereProperty}" />
+                    <DataGridTextColumn Header="lieu" Binding="{Binding idLieuProperty}" />
                 </DataGrid.Columns>
             </DataGrid>
             <Button x:Name="addEnchereButton" Content="Ajouter Enchère" Background="Black" Foreground="White"

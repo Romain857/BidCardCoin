@@ -17,6 +17,10 @@
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
             <TextBox Name="estimation" Text="{Binding estimationProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>
+            <TextBlock Text="PrixVente :"  Margin="30,0,0,20" 
+                     TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+            <TextBox Name="prixVente" Text="{Binding prixVenteProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>
             <TextBlock Text="Description :" Margin="30,0,0,20"
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
@@ -29,23 +33,32 @@
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
             <TextBox Name="style" Text="{Binding styleProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>
-
-            <TextBlock Text="Categorie :" Margin="30,0,0,20"
+            <TextBlock Text="isVendu :" Margin="30,0,0,20"
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <Menu>
-                <MenuItem Header="Categorie" >
-                    <ListView Name="listeCategories">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="Type" Width="120" DisplayMemberBinding="{Binding nomCategorieProperty}" />
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </MenuItem>
-            </Menu>
+            <TextBox Name="isVendu" Text="{Binding isVenduProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>
+            <TextBlock Text="Date de vente :" Margin="30,0,0,20"
+                     TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+            <TextBox Name="dateVente" Text="{Binding dateVenteProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>
+            <TextBlock Text="idLot :" Margin="30,0,0,20"
+                     TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+            <TextBox Name="idLot" Text="{Binding idLotProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>
+            <TextBlock Text="idPhoto :" Margin="30,0,0,20"
+                     TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+            <TextBox Name="idPhoto" Text="{Binding idPhotoProperty, Mode=OneWay}" Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>
+
+            <!-- <TextBlock Text="Categorie :" Margin="30,0,0,20"
+                     TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+
+
+             <ComboBox Name="listeCategories" ItemsSource="{Binding}" DisplayMemberPath="nomCategorieProperty" SelectedValuePath="idProperty" SelectedValue="{Binding id}"/> -->
+
             <Grid Margin="10">
-                <Button x:Name="nomProduitButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="Right" Margin="0,43,209.6,38" Width="64" Click="nomProduitButton_Click" />
+                <Button x:Name="nomProduitButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="Right" Margin="0,-425,18.4,506" Width="64" Click="nomProduitButton_Click" />
                 <DataGrid x:Name="listeProduits" Visibility="Hidden" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="left" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeProduit_SelectionChanged"
                                           Height="150"
                                           ScrollViewer.CanContentScroll="True" 
@@ -59,6 +72,7 @@
                         <DataGridTextColumn Header="description" Binding="{Binding descriptionProperty}" />
                         <DataGridTextColumn Header="artiste" Binding="{Binding artisteProperty}" />
                         <DataGridTextColumn Header="style" Binding="{Binding styleProperty}" />
+                        <DataGridTextColumn Header="dateVente" Binding="{Binding dateVenteProperty}" />
                         <DataGridTextColumn Header="categorie" />
                     </DataGrid.Columns>
                 </DataGrid>
