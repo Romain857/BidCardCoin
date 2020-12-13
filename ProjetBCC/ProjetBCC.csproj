@@ -101,9 +101,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Ctrl\PersonneViewModel.cs" />
     <Compile Include="Ctrl\PhotoViewModel.cs" />
+    <Compile Include="DAL\PersonneDAL.cs" />
     <Compile Include="DAL\PhotoDAL.cs" />
+    <Compile Include="DAO\PersonneDAO.cs" />
     <Compile Include="DAO\PhotoDAO.cs" />
+    <Compile Include="ORM\PersonneORM.cs" />
     <Compile Include="ORM\PhotoORM.cs" />
     <Compile Include="Vue\UC_AjoutEnchere.xaml.cs">
       <DependentUpon>UC_AjoutEnchere.xaml</DependentUpon>
@@ -188,12 +192,12 @@
     <Compile Include="Vue\AppliWindow.xaml.cs">
       <DependentUpon>AppliWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Ctrl\PersonneViewModel.cs" />
+    <Compile Include="Ctrl\AdminViewModel.cs" />
     <Compile Include="Ctrl\ProduitViewModel.cs" />
     <Compile Include="DAL\DALConnection.cs" />
-    <Compile Include="DAL\PersonneDAL.cs" />
+    <Compile Include="DAL\AdminDAL.cs" />
     <Compile Include="DAL\ProduitDAL.cs" />
-    <Compile Include="DAO\PersonneDAO.cs" />
+    <Compile Include="DAO\AdminDAO.cs" />
     <Compile Include="DAO\ProduitDAO.cs" />
     <Compile Include="Vue\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -205,7 +209,7 @@
     <Page Include="Vue\UC_ListeLots.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ORM\PersonneORM.cs" />
+    <Compile Include="ORM\AdminORM.cs" />
     <Compile Include="ORM\ProduitORM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

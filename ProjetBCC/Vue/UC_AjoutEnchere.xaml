@@ -37,7 +37,7 @@
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
             <ComboBox Name ="ComboBoxAdmin" ItemsSource="{Binding  }"
-                          DisplayMemberPath="nomPersonneProperty"
+                          DisplayMemberPath="nomAdminProperty"
                           SelectedValuePath="idProperty"
                           SelectedValue="{Binding idAdminProperty}" />
 

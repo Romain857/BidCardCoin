@@ -8,50 +8,70 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Margin="0, 20, 0, 0">
         <StackPanel Orientation="Vertical">
-                <TextBlock Text="Ajouter un vendeur" FontSize="36" TextAlignment="Center"/>
+                <TextBlock Text="Ajouter un Utilisateur" FontSize="36" TextAlignment="Center"/>
                 
                 <TextBlock Text="Nom :"
                     TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="nomVendeur" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBox Name="nomVendeur" Text="{Binding nomPersonneProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
                 
                 <TextBlock Text="Prénom :" 
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="prenomVendeur"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBox Name="prenomVendeur" Text="{Binding prenomPersonneProperty, Mode=TwoWay}"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
                 
                 <TextBlock Text="Email :"
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="mailVendeur"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBox Name="mailVendeur" Text="{Binding mailPersonneProperty, Mode=TwoWay}"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
                 <TextBlock Text="Numéro de téléphone :"
                            TextWrapping="Wrap" Width="300"
                            TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="numVendeur"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBox Name="numVendeur" Text="{Binding numerotelPersonneProperty, Mode=TwoWay}"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
                 
                 <TextBlock Text="Mot de passe :"
                            TextWrapping="Wrap" Width="300"
                            TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="mdpVendeur"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBox Name="mdpVendeur" Text="{Binding mdpPersonneProperty, Mode=TwoWay}"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
                 
                 <TextBlock Text="Adresse :"
                            TextWrapping="Wrap" Width="300"
                            TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="adresseVendeur"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBox Name="adresseVendeur" Text="{Binding adressePersonneProperty, Mode=TwoWay}"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
                 
                 <TextBlock Text="Code postal :"
                            TextWrapping="Wrap" Width="300"
                            TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="code_postalVendeur"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBox Name="code_postalVendeur" Text="{Binding codePostalProperty, Mode=TwoWay}"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
                 
                 <TextBlock Text="Âge :"
                            TextWrapping="Wrap" Width="300"
                            TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="ageVendeur"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-                
-                <Button x:Name="submitAjoutVendeur" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="Center" Width="64" Click="Button_Click_submitVendeur"/>
-                
+                <TextBox Name="ageVendeur" Text="{Binding agePersonneProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <StackPanel HorizontalAlignment="center">
+                <Label FontWeight="Bold">Quel type de personne ?</Label>
+            <CheckBox IsChecked="True">Acheteur</CheckBox>
+            <CheckBox>Vendeur</CheckBox>
+            </StackPanel>
+        <Button x:Name="nomPersonnesButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomPersonneButton_Click" />
+            <DataGrid Name="listePersonnes" Visibility="Hidden" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="200,50"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listePersonne_SelectionChanged"
+                          Height="150"
+                          ScrollViewer.CanContentScroll="True" 
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                    <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty}" />
+                    <DataGridTextColumn Header="prenom" Binding="{Binding prenomPersonneProperty}" />
+                    <DataGridTextColumn Header="mail" Binding="{Binding mailPersonneProperty}" />
+                    <DataGridTextColumn Header="numeroTel" Binding="{Binding numerotelProperty}" />
+                    <DataGridTextColumn Header="motDePasse" Binding="{Binding mdpPersonneProperty}" />
+                    <DataGridTextColumn Header="adresse" Binding="{Binding adressePersonneProperty}" />
+                    <DataGridTextColumn Header="codePostal" Binding="{Binding codePostalProperty}" />
+                    <DataGridTextColumn Header="age" Binding="{Binding agePersonneProperty}" />
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
     </Grid>
 </UserControl>

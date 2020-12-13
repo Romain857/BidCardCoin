@@ -16,9 +16,10 @@ namespace ProjetBCC.DAO
         public string mailPersonneDAO;
         public int numerotelPersonneDAO;
         public string mdpPersonneDAO;
+        public string adressePersonneDAO;
+        public int codePostalPersonneDAO;
         public int ageDAO;
-        public int idLieuDAO;
-        public PersonneDAO(int idDAO, string nomPersonneDAO, string prenomPersonneDAO, string mailPersonneDAO, int numerotelPersonneDAO, string mdpPersonneDAO, int ageDAO, int idLieuDAO)
+        public PersonneDAO(int idDAO, string nomPersonneDAO, string prenomPersonneDAO, string mailPersonneDAO, int numerotelPersonneDAO, string mdpPersonneDAO, string adressePersonneDAO, int codePostalPersonneDAO, int ageDAO)
         {
             this.idDAO = idDAO;
             this.nomPersonneDAO = nomPersonneDAO;
@@ -26,8 +27,9 @@ namespace ProjetBCC.DAO
             this.mailPersonneDAO = mailPersonneDAO;
             this.numerotelPersonneDAO = numerotelPersonneDAO;
             this.mdpPersonneDAO = mdpPersonneDAO;
+            this.adressePersonneDAO = adressePersonneDAO;
+            this.codePostalPersonneDAO = codePostalPersonneDAO;
             this.ageDAO = ageDAO;
-            this.idLieuDAO = idLieuDAO;
         }
 
         public static ObservableCollection<PersonneDAO> listePersonnes()
@@ -40,6 +42,20 @@ namespace ProjetBCC.DAO
         {
             PersonneDAO p = PersonneDAL.getPersonne(id);
             return p;
+        }
+        public static void updatePersonne(PersonneDAO p)
+        {
+            PersonneDAL.updatePersonne(p);
+        }
+
+        public static void supprimerPersonne(int id)
+        {
+            PersonneDAL.supprimerPersonne(id);
+        }
+
+        public static void insertPersonne(PersonneDAO p)
+        {
+            PersonneDAL.insertPersonne(p);
         }
     }
 }

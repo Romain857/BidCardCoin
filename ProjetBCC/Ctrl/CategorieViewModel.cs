@@ -36,7 +36,6 @@ namespace ProjetBCC.Ctrl
             set
             {
                 nomCategorie = value;
-                ConcatProperty = "Ajouter " + nomCategorie;
                 OnPropertyChanged("nomCategorieProperty");
             }
         }

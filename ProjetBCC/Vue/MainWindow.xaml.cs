@@ -18,20 +18,20 @@ namespace ProjetBCC.Vue
 {
     public partial class MainWindow : Window
     {        
-        //PersonneViewModel myDataObject;
-        //ObservableCollection<PersonneViewModel> lp;
+        //AdminViewModel myDataObject;
+        //ObservableCollection<AdminViewModel> lp;
         public MainWindow()
         {
             InitializeComponent();
             //DALConnection.OpenConnection();
-            //loadPersonnes();
+            //loadAdmins();
         }
         /*
-        void loadPersonnes()
+        void loadAdmins()
         {
-            lp = PersonneORM.listePersonnes();
-            myDataObject = new PersonneViewModel();
-            listePersonnes.ItemsSource = lp;
+            lp = AdminORM.listeAdmins();
+            myDataObject = new AdminViewModel();
+            listeAdmins.ItemsSource = lp;
         }*/
         private void Button_Click(object sender, RoutedEventArgs e)
         {

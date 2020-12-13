@@ -19,7 +19,7 @@
                     <DataGridTextColumn Header="date" Binding="{Binding heureEnchereProperty}" />
                     <DataGridTextColumn Header="heure" Binding="{Binding dateEnchereProperty}" />
                     <DataGridTextColumn Header="idlieu" Binding="{Binding idLieuProperty}" />
-                    <DataGridTextColumn Header="idlieu" Binding="{Binding idAdminProperty}" />
+                    <DataGridTextColumn Header="idAdmin" Binding="{Binding idAdminProperty}" />
                 </DataGrid.Columns>
             </DataGrid>
             <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />

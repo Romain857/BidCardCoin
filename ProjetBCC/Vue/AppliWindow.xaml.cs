@@ -24,15 +24,17 @@ namespace ProjetBCC.Vue
     {
         public static string onglet;
         
-        PersonneViewModel myDataObject;
+        AdminViewModel myDataObject;
         ProduitViewModel myDataObjectProduit;
         CategorieViewModel myDataObjectCategorie;
-        ObservableCollection<PersonneViewModel> lp;
+        PersonneViewModel myDataObjectPersonne;
+        ObservableCollection<AdminViewModel> la;
         ObservableCollection<ProduitViewModel> lpr;
         ObservableCollection<CategorieViewModel> c;
+        ObservableCollection<PersonneViewModel> lp;
         int selectedProduitId;
-        
-        
+        int selectedPersonneId;
+
         int compteur = 0;
         int selectedCategorieId;
         
@@ -40,16 +42,23 @@ namespace ProjetBCC.Vue
         {
             InitializeComponent();
             DALConnection.OpenConnection();
-            loadPersonnes();
+            loadAdmins();
             loadProduits();
             loadCategories();
-            
+            loadPersonnes();
+        }
+
+        void loadAdmins()
+        {
+            la = AdminORM.listeAdmins();
+            myDataObject = new AdminViewModel();
+            listeAdmins.ItemsSource = la;
         }
 
         void loadPersonnes()
         {
             lp = PersonneORM.listePersonnes();
-            myDataObject = new PersonneViewModel();
+            myDataObjectPersonne = new PersonneViewModel();
             listePersonnes.ItemsSource = lp;
         }
 
@@ -65,7 +74,6 @@ namespace ProjetBCC.Vue
             myDataObjectCategorie = new CategorieViewModel();
             listeCategories.ItemsSource = c;
         }
-
 
         private void supprimerButton_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -149,7 +157,23 @@ namespace ProjetBCC.Vue
             DisplayUCAccueil.Children.Clear();
             DisplayUCAccueil.Children.Add(listeLots);
         }
-
+        private void supprimerButton_Click2(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (listePersonnes.SelectedItem is PersonneViewModel)
+            {
+                PersonneViewModel toRemove = (PersonneViewModel)listePersonnes.SelectedItem;
+                lp.Remove(toRemove);
+                listePersonnes.Items.Refresh();
+                PersonneORM.supprimerPersonne(selectedPersonneId);
+            }
+        }
+        private void listePersonnes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if ((listePersonnes.SelectedIndex < lp.Count) && (listePersonnes.SelectedIndex >= 0))
+            {
+                selectedPersonneId = (lp.ElementAt<PersonneViewModel>(listePersonnes.SelectedIndex)).idProperty;
+            }
+        }
 
 
     }

@@ -24,10 +24,10 @@ namespace ProjetBCC.Vue
     {
         EnchereViewModel myDataObjectEnchere;
         LieuViewModel myDataObjectLieu;
-        PersonneViewModel myDataObjectPersonne;
+        AdminViewModel myDataObjectAdmin;
         ObservableCollection<EnchereViewModel> el;
         ObservableCollection<LieuViewModel> li;
-        ObservableCollection<PersonneViewModel> pers;
+        ObservableCollection<AdminViewModel> pers;
         int compteur = 0;
         int selectedEnchereId;
         public static string onglet;
@@ -37,7 +37,7 @@ namespace ProjetBCC.Vue
             DALConnection.OpenConnection();
             loadEncheres();
             loadLieux();
-            loadPersonnes();
+            loadAdmins();
             appliquerContexte();
         }
         void loadEncheres()
@@ -52,10 +52,10 @@ namespace ProjetBCC.Vue
             myDataObjectLieu = new LieuViewModel();
             ComboBoxLieu.ItemsSource = li;
         }
-        void loadPersonnes()
+        void loadAdmins()
         {
-            pers = PersonneORM.listePersonnes();
-            myDataObjectPersonne = new PersonneViewModel();
+            pers = AdminORM.listeAdmins();
+            myDataObjectAdmin = new AdminViewModel();
             ComboBoxAdmin.ItemsSource = pers;
         }
         private void nomEnchereButton_Click(object sender, RoutedEventArgs e)
