@@ -17,12 +17,13 @@ namespace ProjetBCC.DAO
         public string descriptionDAO;
         public string artisteDAO;
         public string styleDAO;
-        public bool isVenduDAO;
-        public DateTime dateVenteDAO;
+        public string dateVenteDAO;
         public int idLotDAO;
         public int idPhotoDAO;
+        public int idAcheteurDAO;
+        public int idVendeurDAO;
 
-        public ProduitDAO(int idDAO, float estimationActuelleDAO, float prixVenteDAO, string nomProduitDAO, string descriptionDAO, string artisteDAO, string styleDAO, bool isVenduDAO, DateTime dateVenteDAO, int idLotDAO, int idPhotoDAO)
+        public ProduitDAO(int idDAO, float estimationActuelleDAO, float prixVenteDAO, string nomProduitDAO, string descriptionDAO, string artisteDAO, string styleDAO, string dateVenteDAO, int idLotDAO, int idPhotoDAO, int idAcheteurDAO, int idVendeurDAO)
         {
             this.idDAO = idDAO;
             this.estimationActuelleDAO = estimationActuelleDAO;
@@ -31,10 +32,11 @@ namespace ProjetBCC.DAO
             this.descriptionDAO = descriptionDAO;
             this.artisteDAO = artisteDAO;
             this.styleDAO = styleDAO;
-            this.isVenduDAO = isVenduDAO;
             this.dateVenteDAO = dateVenteDAO;
             this.idLotDAO = idLotDAO;
             this.idPhotoDAO = idPhotoDAO;
+            this.idAcheteurDAO = idAcheteurDAO;
+            this.idVendeurDAO = idVendeurDAO;
         }
         public static ObservableCollection<ProduitDAO> listeProduits()
         {

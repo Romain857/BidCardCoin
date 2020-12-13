@@ -17,9 +17,8 @@ namespace ProjetBCC.DAO
         public int numerotelPersonneDAO;
         public string mdpPersonneDAO;
         public int ageDAO;
-        public int idEnchereDAO;
         public int idLieuDAO;
-        public PersonneDAO(int idDAO, string nomPersonneDAO, string prenomPersonneDAO, string mailPersonneDAO, int numerotelPersonneDAO, string mdpPersonneDAO, int ageDAO, int idEnchereDAO, int idLieuDAO)
+        public PersonneDAO(int idDAO, string nomPersonneDAO, string prenomPersonneDAO, string mailPersonneDAO, int numerotelPersonneDAO, string mdpPersonneDAO, int ageDAO, int idLieuDAO)
         {
             this.idDAO = idDAO;
             this.nomPersonneDAO = nomPersonneDAO;
@@ -28,7 +27,6 @@ namespace ProjetBCC.DAO
             this.numerotelPersonneDAO = numerotelPersonneDAO;
             this.mdpPersonneDAO = mdpPersonneDAO;
             this.ageDAO = ageDAO;
-            this.idEnchereDAO = idEnchereDAO;
             this.idLieuDAO = idLieuDAO;
         }
 

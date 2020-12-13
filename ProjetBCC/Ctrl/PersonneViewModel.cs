@@ -16,12 +16,11 @@ namespace ProjetBCC.Ctrl
         private int numerotelPersonne;
         private string mdpPersonne;
         private int age;
-        private int idEnchere;
         private int idLieu;
 
         public PersonneViewModel(){ }
 
-        public PersonneViewModel(int id, string nom, string prenom, string mail, int numeroTel, string mdp, int age, int idEnchere, int idLieu)
+        public PersonneViewModel(int id, string nom, string prenom, string mail, int numeroTel, string mdp, int age, int idLieu)
         {
             this.id = id;
             this.nomPersonneProperty = nom;
@@ -30,7 +29,6 @@ namespace ProjetBCC.Ctrl
             this.numerotelPersonne = numeroTel;
             this.mdpPersonne = mdp;
             this.age = age;
-            this.idEnchere = idEnchere;
             this.idLieu = idLieu;
 
         }
@@ -89,14 +87,6 @@ namespace ProjetBCC.Ctrl
             set
             {
                 this.age = value;
-            }
-        }
-        public int idEnchereProperty
-        {
-            get { return idEnchere; }
-            set
-            {
-                this.idEnchere = value;
             }
         }
         public int idLieuProperty

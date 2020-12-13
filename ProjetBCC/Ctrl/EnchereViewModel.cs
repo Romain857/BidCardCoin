@@ -13,18 +13,20 @@ namespace ProjetBCC.Ctrl
         private int id;
         private string nomEnchere;
         private string heureEnchere;
-        private DateTime dateEnchere;
+        private string dateEnchere;
         private int idLieu;
+        private int idAdmin;
         private string concat = "Ajouter ";
 
         public EnchereViewModel() { }
-        public EnchereViewModel(int id, string nomEnchere, string heureEnchere, DateTime dateEnchere, int idLieu)
+        public EnchereViewModel(int id, string nomEnchere, string heureEnchere, string dateEnchere, int idLieu, int idAdmin)
         {
             this.id = id;
             this.nomEnchere = nomEnchere;
             this.heureEnchere = heureEnchere;
             this.dateEnchere = dateEnchere;
             this.idLieu = idLieu;
+            this.idAdmin = idAdmin;
 
         }
         public int idProperty
@@ -53,7 +55,7 @@ namespace ProjetBCC.Ctrl
                 OnPropertyChanged("ConcatProperty");
             }
         }
-        public DateTime dateEnchereProperty
+        public string dateEnchereProperty
         {
             get { return dateEnchere; }
             set
@@ -71,7 +73,15 @@ namespace ProjetBCC.Ctrl
                 OnPropertyChanged("ConcatProperty");
             }
         }
-        
+        public int idAdminProperty
+        {
+            get { return idAdmin; }
+            set
+            {
+                idAdmin = value;
+                OnPropertyChanged("ConcatProperty");
+            }
+        }
         public string ConcatProperty
         {
             get { return concat; }

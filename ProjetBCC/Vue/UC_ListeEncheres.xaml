@@ -8,20 +8,21 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <StackPanel x:Name="DisplayUC">
-            <DataGrid x:Name="listeEncheres" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4"
-                    Height="300" Width="200"
-                    ScrollViewer.CanContentScroll="True" 
-                    ScrollViewer.VerticalScrollBarVisibility="Auto"
-                    ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="10,30">
-
+            <DataGrid Name="listeEncheres" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="200,50"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeEnchere_SelectionChanged"
+                          Height="150"
+                          ScrollViewer.CanContentScroll="True" 
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
                     <DataGridTextColumn Header="nom" Binding="{Binding nomEnchereProperty}" />
-                    <DataGridTextColumn Header="heure" Binding="{Binding heureEnchereProperty}" />
-                    <DataGridTextColumn Header="date" Binding="{Binding dateEnchereProperty}" />
-                    <DataGridTextColumn Header="lieu" Binding="{Binding idLieuProperty}" />
+                    <DataGridTextColumn Header="date" Binding="{Binding heureEnchereProperty}" />
+                    <DataGridTextColumn Header="heure" Binding="{Binding dateEnchereProperty}" />
+                    <DataGridTextColumn Header="idlieu" Binding="{Binding idLieuProperty}" />
+                    <DataGridTextColumn Header="idlieu" Binding="{Binding idAdminProperty}" />
                 </DataGrid.Columns>
             </DataGrid>
+            <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
             <Button x:Name="addEnchereButton" Content="Ajouter Enchère" Background="Black" Foreground="White"
                 Height="20" HorizontalAlignment="Center" Click="Button_Click_addEnchere" Margin="300,-200,0,0"/>
         </StackPanel>

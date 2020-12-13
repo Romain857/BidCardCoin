@@ -13,16 +13,18 @@ namespace ProjetBCC.DAO
         public int idDAO;
         public string nomEnchereDAO;
         public string heureEnchereDAO;
-        public DateTime dateEnchereDAO;
+        public string dateEnchereDAO;
         public int idLieuDAO;
+        public int idAdminDAO;
 
-        public EnchereDAO(int idDAO, string nomEnchereDAO, string heureEnchereDAO, DateTime dateEnchereDAO, int idLieuDAO)
+        public EnchereDAO(int idDAO, string nomEnchereDAO, string heureEnchereDAO, string dateEnchereDAO, int idLieuDAO, int idAdminDAO)
         {
             this.idDAO = idDAO;
             this.nomEnchereDAO = nomEnchereDAO;
             this.heureEnchereDAO = heureEnchereDAO;
             this.dateEnchereDAO = dateEnchereDAO;
             this.idLieuDAO = idLieuDAO;
+            this.idAdminDAO = idAdminDAO;
         }
         public static ObservableCollection<EnchereDAO> listeEncheres()
         {

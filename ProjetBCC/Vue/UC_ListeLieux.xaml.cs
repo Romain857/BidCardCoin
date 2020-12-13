@@ -25,7 +25,7 @@ namespace ProjetBCC.Vue
         LieuViewModel myDataObjectLieu;
         ObservableCollection<LieuViewModel> li;
         int compteur = 0;
-        int selectedEnchereId;
+        int selectedLieuId;
         public static string onglet;
         public UC_ListeLieux()
         {
@@ -38,7 +38,24 @@ namespace ProjetBCC.Vue
         {
             li = LieuORM.listeLieu();
             myDataObjectLieu = new LieuViewModel();
-            listeLieux.ItemsSource = li;
+            listeLieu.ItemsSource = li;
+        }
+        private void supprimerButton_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (listeLieu.SelectedItem is LieuViewModel)
+            {
+                LieuViewModel toRemove = (LieuViewModel)listeLieu.SelectedItem;
+                li.Remove(toRemove);
+                listeLieu.Items.Refresh();
+                LieuORM.supprimerLieu(selectedLieuId);
+            }
+        }
+        private void listeLieu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if ((listeLieu.SelectedIndex < li.Count) && (listeLieu.SelectedIndex >= 0))
+            {
+                selectedLieuId = (li.ElementAt<LieuViewModel>(listeLieu.SelectedIndex)).idProperty;
+            }
         }
         private void Button_Click_addLieu(object sender, RoutedEventArgs e)
         {

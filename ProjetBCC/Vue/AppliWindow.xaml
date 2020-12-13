@@ -82,6 +82,10 @@
                                     <DataGridTextColumn Header="description" Binding="{Binding descriptionProperty}" />
                                     <DataGridTextColumn Header="artiste" Binding="{Binding artisteProperty}" />
                                     <DataGridTextColumn Header="style" Binding="{Binding styleProperty}" />
+                                    <DataGridTextColumn Header="style" Binding="{Binding isVenduProperty}" />
+                                    <DataGridTextColumn Header="style" Binding="{Binding dateVenteProperty}" />
+                                    <DataGridTextColumn Header="style" Binding="{Binding idLotProperty}" />
+                                    <DataGridTextColumn Header="style" Binding="{Binding idPhotoProperty}" />
                                     <DataGridTextColumn Header="categorie" />
                                 </DataGrid.Columns>
                             </DataGrid>

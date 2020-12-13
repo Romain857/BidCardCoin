@@ -17,14 +17,15 @@ namespace ProjetBCC.Ctrl
         private string description;
         private string artiste;
         private string style;
-        private bool isVendu;
-        private DateTime dateVente;
+        private string dateVente;
         private int idLot;
         private int idPhoto;
+        private int idAcheteur;
+        private int idVendeur;
         private string concat = "Ajouter ";
 
         public ProduitViewModel() { }
-        public ProduitViewModel(int id, float estimationActuelle, float prixVente, string nom, string description, string artiste, string style, bool isVendu, DateTime dateVente, int idLot, int idPhoto)
+        public ProduitViewModel(int id, float estimationActuelle, float prixVente, string nom, string description, string artiste, string style, string dateVente, int idLot, int idPhoto, int idAcheteur, int idVendeur)
         {
             this.id = id;
             this.estimationProperty = estimationActuelle;
@@ -33,11 +34,11 @@ namespace ProjetBCC.Ctrl
             this.descriptionProperty = description;
             this.artisteProperty = artiste;
             this.styleProperty = style;
-            this.isVendu = isVendu;
             this.dateVenteProperty = dateVente;
             this.idLot = idLot;
             this.idPhoto = idPhoto;
-
+            this.idAcheteur = idAcheteur;
+            this.idVendeur = idVendeur;
         }
         public int idProperty
         {
@@ -101,16 +102,7 @@ namespace ProjetBCC.Ctrl
                 OnPropertyChanged("ConcatProperty");
             }
         }
-        public bool isVenduProperty
-        {
-            get { return isVendu; }
-            set
-            {
-                isVendu = value;
-                OnPropertyChanged("ConcatProperty");
-            }
-        }
-        public DateTime dateVenteProperty
+        public string dateVenteProperty
         {
             get { return dateVente; }
             set
@@ -134,6 +126,24 @@ namespace ProjetBCC.Ctrl
             set
             {
                 idPhoto = value;
+                OnPropertyChanged("ConcatProperty");
+            }
+        }
+        public int idAcheteurProperty
+        {
+            get { return idAcheteur; }
+            set
+            {
+                idAcheteur = value;
+                OnPropertyChanged("ConcatProperty");
+            }
+        }
+        public int idVendeurProperty
+        {
+            get { return idVendeur; }
+            set
+            {
+                idVendeur = value;
                 OnPropertyChanged("ConcatProperty");
             }
         }

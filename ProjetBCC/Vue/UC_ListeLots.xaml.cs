@@ -25,7 +25,7 @@ namespace ProjetBCC.Vue
         LotViewModel myDataObjectLot;
         ObservableCollection<LotViewModel> lo;
         int compteur = 0;
-        int selectedEnchereId;
+        int selectedLotId;
         public static string onglet;
         public UC_ListeLots()
         {
@@ -39,6 +39,23 @@ namespace ProjetBCC.Vue
             lo = LotORM.listeLot();
             myDataObjectLot = new LotViewModel();
             listeLots.ItemsSource = lo;
+        }
+        private void supprimerButton_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (listeLots.SelectedItem is LotViewModel)
+            {
+                LotViewModel toRemove = (LotViewModel)listeLots.SelectedItem;
+                lo.Remove(toRemove);
+                listeLots.Items.Refresh();
+                LotORM.supprimerLot(selectedLotId);
+            }
+        }
+        private void listeLot_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if ((listeLots.SelectedIndex < lo.Count) && (listeLots.SelectedIndex >= 0))
+            {
+                selectedLotId = (lo.ElementAt<LotViewModel>(listeLots.SelectedIndex)).idProperty;
+            }
         }
         private void Button_Click_addLot(object sender, RoutedEventArgs e)
         {

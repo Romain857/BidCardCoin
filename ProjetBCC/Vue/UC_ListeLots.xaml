@@ -21,6 +21,7 @@
                 <DataGridTextColumn Header="enchère" Binding="{Binding idEnchereProperty}" />
             </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
         <Button x:Name="addLotButton" Content="Ajouter Lot" Background="Black" Foreground="White"
                 Height="20" HorizontalAlignment="Center" Click="Button_Click_addLot" Margin="300,-200,0,0"/>
         </StackPanel>

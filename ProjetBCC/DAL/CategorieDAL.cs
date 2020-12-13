@@ -51,7 +51,7 @@ namespace ProjetBCC.DAL
         }
         public static void updateCategorie(CategorieDAO p)
         {
-            string query = "UPDATE Categorie set nom=\"" + p.nomCategorieDAO + "\" where id=" + p.idDAO + ";";
+            string query = "UPDATE categorie set nom=\"" + p.nomCategorieDAO + "\" where id=" + p.idDAO + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
@@ -66,7 +66,7 @@ namespace ProjetBCC.DAL
         }
         public static void supprimerCategorie(int id)
         {
-            string query = "DELETE FROM Categorie WHERE id = \"" + id + "\";";
+            string query = "DELETE FROM categorie WHERE id = \"" + id + "\";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
@@ -74,7 +74,7 @@ namespace ProjetBCC.DAL
         public static int getMaxIdCategorie()
         {
             int maxIdCategorie = 0;
-            string query = "SELECT MAX(id) FROM Categorie;";
+            string query = "SELECT MAX(id) FROM categorie;";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
 
             int cnt = cmd.ExecuteNonQuery();

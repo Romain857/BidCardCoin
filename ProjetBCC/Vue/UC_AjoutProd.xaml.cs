@@ -28,6 +28,8 @@ namespace ProjetBCC
         CategorieViewModel myDataObjectCategorie;
         ObservableCollection<ProduitViewModel> lpr;
         ObservableCollection<CategorieViewModel> c;
+        LotViewModel myDataObjectLot;
+        ObservableCollection<LotViewModel> lo;
         int compteur = 0;
         int selectedProduitId;
         public UC_AjoutProd()
@@ -36,6 +38,7 @@ namespace ProjetBCC
             DALConnection.OpenConnection();
             loadProduits();
             //loadCategories();
+            loadLots();
             appliquerContexte();
         }
         
@@ -43,6 +46,12 @@ namespace ProjetBCC
         {
             lpr = ProduitORM.listeProduits();
             myDataObjectProduit = new ProduitViewModel();
+            listeProduits.ItemsSource = lpr;
+        }
+        void loadLots()
+        {
+            lo = LotORM.listeLot();
+            myDataObjectLot = new LotViewModel();
         }
 
         /*void loadCategories()
@@ -51,7 +60,7 @@ namespace ProjetBCC
             myDataObjectCategorie = new CategorieViewModel();
             listeCategories.ItemsSource = c;
         }*/
-        
+
         private void nomProduitButton_Click(object sender, RoutedEventArgs e)
         {
             myDataObjectProduit.idProperty = ProduitDAL.getMaxIdProduit() + 1;
@@ -70,9 +79,10 @@ namespace ProjetBCC
             style.DataContext = myDataObjectProduit;
             artiste.DataContext = myDataObjectProduit;
             dateVente.DataContext = myDataObjectProduit;
-            isVendu.DataContext = myDataObjectProduit;
             idLot.DataContext = myDataObjectProduit;
             idPhoto.DataContext = myDataObjectProduit;
+            idAcheteur.DataContext = myDataObjectProduit;
+            idVendeur.DataContext = myDataObjectProduit;
             //categorie.DataContext = myDataObjectProduit;
             nomProduitButton.DataContext = myDataObjectProduit;
         }
@@ -85,9 +95,10 @@ namespace ProjetBCC
             style.DataContext = myDataObjectProduit;
             artiste.DataContext = myDataObjectProduit;
             dateVente.DataContext = myDataObjectProduit;
-            isVendu.DataContext = myDataObjectProduit;
             idLot.DataContext = myDataObjectProduit;
             idPhoto.DataContext = myDataObjectProduit;
+            idAcheteur.DataContext = myDataObjectProduit;
+            idVendeur.DataContext = myDataObjectProduit;
             //categorie.DataContext = myDataObjectProduit;
             nomProduitButton.DataContext = myDataObjectProduit;
         }

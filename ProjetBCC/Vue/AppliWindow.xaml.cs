@@ -1,13 +1,19 @@
-﻿using System.ComponentModel;
-using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Linq;
+using System.Windows.Documents;
+using System.Windows.Input;
 using System.Windows.Media;
-using System.Collections.ObjectModel;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 using ProjetBCC.Ctrl;
-using ProjetBCC.DAO;
 using ProjetBCC.DAL;
 using ProjetBCC.ORM;
 using ProjetBCC.Vue;
@@ -52,10 +58,7 @@ namespace ProjetBCC.Vue
             lpr = ProduitORM.listeProduits();
             myDataObjectProduit = new ProduitViewModel();
             listeProduits.ItemsSource = lpr;
-            listeArtistes.ItemsSource = lpr;
-            listeStyles.ItemsSource = lpr;
         }
-
         void loadCategories()
         {
             c = CategorieORM.listeCategorie();
@@ -91,9 +94,7 @@ namespace ProjetBCC.Vue
             UC_AjoutProd ajoutProd = new UC_AjoutProd();
             MainProd.Visibility = Visibility.Collapsed;
             returnButtonProd.Visibility = Visibility.Visible;
-            DisplayUCProd.Children.Add(ajoutProd);
-
-            
+            DisplayUCProd.Children.Add(ajoutProd);     
         }
 
         private void Button_Click_addCategorie(object sender, RoutedEventArgs e)
