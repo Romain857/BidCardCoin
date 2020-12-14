@@ -104,10 +104,11 @@ namespace ProjetBCC.Vue
         }
         private void Button_Click_addProduct(object sender, RoutedEventArgs e)
         {
-
+            
             UC_AjoutProd ajoutProd = new UC_AjoutProd();
             MainProd.Visibility = Visibility.Collapsed;
             returnButtonProd.Visibility = Visibility.Visible;
+            DisplayUCProd.Children.Clear();
             DisplayUCProd.Children.Add(ajoutProd);     
         }
 
@@ -116,7 +117,17 @@ namespace ProjetBCC.Vue
             UC_AjoutCat ajoutCat = new UC_AjoutCat();
             MainProd.Visibility = Visibility.Collapsed;
             returnButtonProd.Visibility = Visibility.Visible;
+            DisplayUCProd.Children.Clear();
             DisplayUCProd.Children.Add(ajoutCat);
+        
+        }
+        private void Button_Click_assignProd_Cat(object sender, RoutedEventArgs e)
+        {
+            UC_assocProd_Cat assocProdCat = new UC_assocProd_Cat();
+            MainProd.Visibility = Visibility.Collapsed;
+            returnButtonProd.Visibility = Visibility.Visible;
+            DisplayUCProd.Children.Clear();
+            DisplayUCProd.Children.Add(assocProdCat);
         
         }
 
@@ -180,14 +191,7 @@ namespace ProjetBCC.Vue
                 selectedPersonneId = (lp.ElementAt<PersonneViewModel>(listePersonnes.SelectedIndex)).idProperty;
             }
         }
-        private void Button_Click_assignProd_Cat(object sender, RoutedEventArgs e)
-        {
-            UC_assocProd_Cat assocProdCat = new UC_assocProd_Cat();
-            MainProd.Visibility = Visibility.Collapsed;
-            returnButtonProd.Visibility = Visibility.Visible;
-            DisplayUCProd.Children.Add(assocProdCat);
         
-        }
 
 
 
