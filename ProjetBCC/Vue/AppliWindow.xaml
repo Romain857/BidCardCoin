@@ -98,12 +98,13 @@
                         <StackPanel x:Name="DisplayUCProd" Height="700" VerticalAlignment="Top" Margin="0,-150,0,-365">
                             <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET PRODUITS CREES LORS DU CLICK D'UN BOUTON-->
                         </StackPanel>
-                        <Button x:Name="returnButtonProd" Content="Annuler" Background="Red" Foreground="White" Margin="688,55,-12,0" Click="Button_cancel_prod" Height="26" VerticalAlignment="Top" Visibility="Collapsed"/>
+                        <Button x:Name="returnButtonProd" Content="Annuler" Background="Red" HorizontalAlignment="Right" Foreground="White" Click="Button_cancel_prod" Height="26" Width="100" Visibility="Collapsed"/>
                     </Grid>
 
                 </StackPanel>
             </TabItem>
             <TabItem Header="Utilisateurs">
+                <StackPanel>
                 <Grid>
                 <StackPanel x:Name="MainUtil">
                         <Label Content="Table Admin :"/>
@@ -153,8 +154,9 @@
                 <StackPanel x:Name="DisplayUCUtil">
                     <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET UTILISATEURS CREES LORS DU CLICK D'UN BOUTON-->
                 </StackPanel>
-                    <Button x:Name="returnButtonUtil" Content="Annuler" Background="Red" Foreground="White" Margin="688,55,-12,0" Click="Button_cancel_util" Height="26" VerticalAlignment="Top" Visibility="Collapsed"/>
+                    <Button x:Name="returnButtonUtil" Content="Annuler" Background="Red" HorizontalAlignment="Right" Foreground="White" Click="Button_cancel_util" Height="26" Width="100" Visibility="Collapsed"/>
                 </Grid>
+                </StackPanel>
             </TabItem>
         </TabControl>
     </Grid>
