@@ -180,6 +180,15 @@ namespace ProjetBCC.Vue
                 selectedPersonneId = (lp.ElementAt<PersonneViewModel>(listePersonnes.SelectedIndex)).idProperty;
             }
         }
+        private void Button_Click_assignProd_Cat(object sender, RoutedEventArgs e)
+        {
+            UC_assocProd_Cat assocProdCat = new UC_assocProd_Cat();
+            MainProd.Visibility = Visibility.Collapsed;
+            returnButtonProd.Visibility = Visibility.Visible;
+            DisplayUCProd.Children.Add(assocProdCat);
+        
+        }
+
 
 
     }

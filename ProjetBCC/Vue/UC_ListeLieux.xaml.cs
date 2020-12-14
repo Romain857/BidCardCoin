@@ -63,5 +63,6 @@ namespace ProjetBCC.Vue
             DisplayUC.Children.Add(ajoutLieu);
             
         }
+        
     }
 }
