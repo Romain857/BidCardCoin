@@ -8,13 +8,14 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <StackPanel x:Name="DisplayUC">
-            <DataGrid x:Name="listeLieu" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4"
+            <DataGrid x:Name="listeLieu" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4" Margin="0,30"
                   Height="300" Width="270"
                   ScrollViewer.CanContentScroll="True" 
                   ScrollViewer.VerticalScrollBarVisibility="Auto"
-                  ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="10,30">
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+                  SelectionChanged="listeLieu_SelectionChanged">
 
-                <DataGrid.Columns>
+            <DataGrid.Columns>
                     <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
                     <DataGridTextColumn Header="ville" Binding="{Binding villeProperty}" />
                     <DataGridTextColumn Header="adresse" Binding="{Binding adresseProperty}" />
