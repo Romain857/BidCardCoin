@@ -25,7 +25,22 @@
                     <StackPanel Name="DisplayUCAccueil">
                         <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET Accueil CREES LORS DU CLICK D'UN BOUTON-->
                     </StackPanel>
+                    <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding Title}" />
+                                    <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </Grid>
+                
             </TabItem>
             <TabItem Header="Produits">
                 <StackPanel>

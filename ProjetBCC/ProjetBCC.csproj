@@ -102,20 +102,32 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Ctrl\AcheteurViewModel.cs" />
+    <Compile Include="Ctrl\EstimationViewModel.cs" />
+    <Compile Include="Ctrl\OrdreAchatViewModel.cs" />
     <Compile Include="Ctrl\PersonneViewModel.cs" />
     <Compile Include="Ctrl\PhotoViewModel.cs" />
+    <Compile Include="Ctrl\Produit_CategorieViewModel.cs" />
     <Compile Include="Ctrl\VendeurViewModel.cs" />
     <Compile Include="DAL\AcheteurDAL.cs" />
+    <Compile Include="DAL\EstimationDAL.cs" />
+    <Compile Include="DAL\OrdreAchatDAL.cs" />
     <Compile Include="DAL\PersonneDAL.cs" />
     <Compile Include="DAL\PhotoDAL.cs" />
+    <Compile Include="DAL\Produit_CategorieDAL.cs" />
     <Compile Include="DAL\VendeurDAL.cs" />
     <Compile Include="DAO\AcheteurDAO.cs" />
+    <Compile Include="DAO\EstimationDAO.cs" />
+    <Compile Include="DAO\OrdreAchatDAO.cs" />
     <Compile Include="DAO\PersonneDAO.cs" />
     <Compile Include="DAO\PhotoDAO.cs" />
+    <Compile Include="DAO\Produit_CategorieDAO.cs" />
     <Compile Include="DAO\VendeurDAO.cs" />
     <Compile Include="ORM\AcheteurORM.cs" />
+    <Compile Include="ORM\EstimationORM.cs" />
+    <Compile Include="ORM\OrdreAchatORM.cs" />
     <Compile Include="ORM\PersonneORM.cs" />
     <Compile Include="ORM\PhotoORM.cs" />
+    <Compile Include="ORM\Produit_CategorieORM.cs" />
     <Compile Include="ORM\VendeurORM.cs" />
     <Compile Include="Vue\UC_AjoutEnchere.xaml.cs">
       <DependentUpon>UC_AjoutEnchere.xaml</DependentUpon>

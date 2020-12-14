@@ -49,8 +49,19 @@ namespace ProjetBCC.Vue
             loadCategories();
             loadPersonnes();
             loadAcheteurs();
-        }
 
+            List<TodoItem> items = new List<TodoItem>();
+            items.Add(new TodoItem() { Title = "Comprendre WPF", Completion = 2 });
+            items.Add(new TodoItem() { Title = "Enchere 1", Completion = 10 });
+            items.Add(new TodoItem() { Title = "Enchere 2", Completion = 45 });
+            items.Add(new TodoItem() { Title = "Enchere 3", Completion = 80 });
+            lbTodoList.ItemsSource = items;
+        }
+        public class TodoItem
+        {
+            public string Title { get; set; }
+            public int Completion { get; set; }
+        }
         void loadAdmins()
         {
             la = AdminORM.listeAdmins();
@@ -188,8 +199,5 @@ namespace ProjetBCC.Vue
             DisplayUCProd.Children.Add(assocProdCat);
         
         }
-
-
-
     }
 }

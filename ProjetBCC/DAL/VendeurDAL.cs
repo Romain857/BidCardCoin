@@ -16,7 +16,7 @@ namespace ProjetBCC.DAL
         public static ObservableCollection<VendeurDAO> selectVendeur()
         {
             ObservableCollection<VendeurDAO> l = new ObservableCollection<VendeurDAO>();
-            string query = "SELECT * FROM vendeur;";
+            string query = "SELECT * FROM vendeur JOIN personne ON vendeur.idPersonne = personne.id;";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataReader reader = null;
             try

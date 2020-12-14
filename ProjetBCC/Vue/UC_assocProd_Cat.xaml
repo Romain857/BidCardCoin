@@ -7,6 +7,35 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="idProduit :"
+                       TextWrapping="Wrap" Width="300"
+                       TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+            <ComboBox Name ="ComboBoxProduit" ItemsSource="{Binding  }"
+                          DisplayMemberPath="nomProduitProperty"
+                          SelectedValuePath="idProperty"
+                          SelectedValue="{Binding idProduitProperty}" />
+            <TextBlock Text="idCategorie :"
+                       TextWrapping="Wrap" Width="300"
+                       TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+            <ComboBox Name ="ComboBoxCategorie" ItemsSource="{Binding  }"
+                          DisplayMemberPath="nomCategorieProperty"
+                          SelectedValuePath="idProperty"
+                          SelectedValue="{Binding idCategorieProperty}" />
+            
+            <Button x:Name="nomProduit_CategorieButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomProduit_CategorieButton_Click" />
+            <DataGrid x:Name="listeProduit_Categories" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="0,0,0,20" BorderBrush="Black" Background="#FFA4A4A4"
+                          Height="150"
+                          SelectionChanged="listeProduit_Categorie_SelectionChanged"
+                          ScrollViewer.CanContentScroll="True" 
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="107">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="idProduit" Binding="{Binding idProduitProperty}" />
+                    <DataGridTextColumn Header="idCategorie" Binding="{Binding idCategorieProperty}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
+        </StackPanel>
     </Grid>
 </UserControl>
