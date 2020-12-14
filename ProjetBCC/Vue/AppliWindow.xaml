@@ -134,7 +134,8 @@
                                   Height="300"
                                   ScrollViewer.CanContentScroll="True" 
                                   ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                  ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                  SelectionChanged="listePersonnes_SelectionChanged">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
                                     <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty}" />

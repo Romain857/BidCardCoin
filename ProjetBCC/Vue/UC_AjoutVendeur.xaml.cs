@@ -24,6 +24,8 @@ namespace ProjetBCC.Vue
     {
         PersonneViewModel myDataObjectPersonne;
         ObservableCollection<PersonneViewModel> pe;
+        VendeurViewModel myDataObjectVendeur;
+        ObservableCollection<VendeurViewModel> v;
 
         int compteur = 0;
         int selectedPersonneId;
@@ -33,6 +35,7 @@ namespace ProjetBCC.Vue
             InitializeComponent();
             DALConnection.OpenConnection();
             loadPersonnes();
+            loadVendeurs();
             appliquerContexte();
         }
         void loadPersonnes()
@@ -40,6 +43,12 @@ namespace ProjetBCC.Vue
             pe = PersonneORM.listePersonnes();
             myDataObjectPersonne = new PersonneViewModel();
             listePersonnes.ItemsSource = pe;
+        }
+        void loadVendeurs()
+        {
+            v = VendeurORM.listeVendeur();
+            myDataObjectVendeur = new VendeurViewModel();
+            //listePersonnes.ItemsSource = pe;
         }
         private void nomPersonneButton_Click(object sender, RoutedEventArgs e)
         {
