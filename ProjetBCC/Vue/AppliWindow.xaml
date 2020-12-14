@@ -121,7 +121,7 @@
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
-                        <Label Content="Table Personnes :"/>
+                        <Label Content="Table Vendeur :"/>
                         <Grid Margin="10">
                             <Button x:Name="addUserrButton" Content="Ajouter Utilisateur" Background="Black" Foreground="White"
                                 Height="20" HorizontalAlignment="Left" Click="Button_Click_addVendeur" Margin="670,0,0,0"/>

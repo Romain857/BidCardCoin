@@ -32,7 +32,6 @@ namespace ProjetBCC.Vue
             InitializeComponent();
             DALConnection.OpenConnection();
             loadLieux();
-            //appliquerContexte();
         }
         void loadLieux()
         {

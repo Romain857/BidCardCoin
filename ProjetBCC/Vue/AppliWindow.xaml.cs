@@ -95,9 +95,6 @@ namespace ProjetBCC.Vue
         }
         private void Button_Click_addProduct(object sender, RoutedEventArgs e)
         {
-            /*AjouterProduitWindow win3 = new AjouterProduitWindow();
-            win3.Show();
-            this.Close();*/
 
             UC_AjoutProd ajoutProd = new UC_AjoutProd();
             MainProd.Visibility = Visibility.Collapsed;
