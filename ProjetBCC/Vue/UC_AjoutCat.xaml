@@ -14,8 +14,9 @@
             <TextBox x:Name="nomTextBox" Text="{Binding nomCategorieProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
             <!-- <TextBox x:Name="nomTextBox" Text="{Binding nomCategorieProperty, Mode=TwoWay}" TextChanged="nomChanged" Height="20" Width="239" HorizontalAlignment="Center" Margin="282,0,272.6,0" /> -->
             <Button x:Name="nomCategorieButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomCategorieButton_Click" />
-                <DataGrid x:Name="listeCategories" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="0,0,0,20" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeCategorie_SelectionChanged"
+                <DataGrid x:Name="listeCategories" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="0,0,0,20" BorderBrush="Black" Background="#FFA4A4A4"
                           Height="150"
+                          SelectionChanged="listeCategorie_SelectionChanged"
                           ScrollViewer.CanContentScroll="True" 
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="107">

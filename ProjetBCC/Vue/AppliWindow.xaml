@@ -29,15 +29,7 @@
             </TabItem>
             <TabItem Header="Produits">
                 <StackPanel>
-                    
-                    <Button x:Name="addProductButton" Content="Ajouter Produit" Background="Black" Foreground="White"
-                            Width="96" HorizontalAlignment="Center" Click="Button_Click_addProduct" Margin="670,0,0,0" />
-                    <Button x:Name="addCategorieButton" Content="Ajouter Categorie" Background="Blue" Foreground="White"
-                            Width="96" HorizontalAlignment="Center" Click="Button_Click_addCategorie" Margin="670,0,0,0" />
-                    
-                    <Grid Margin="10">
-                        <StackPanel x:Name="MainProd" Margin="0,-32,0,32">
-                            <Menu Margin="0,-20,100,32">
+                    <Menu Margin="0,0,0,32">
                                 <MenuItem Header="Rechercher">
                                     <MenuItem Header="Style" >
                                         <ListView x:Name="listeStyles">
@@ -67,7 +59,18 @@
                                         </ListView>
                                     </MenuItem>
                                 </MenuItem>
-                            </Menu>
+                    </Menu>
+                    
+                    <Button x:Name="addProductButton" Content="Ajouter Produit" Background="Black" Foreground="White"
+                            Width="96" HorizontalAlignment="Center" Click="Button_Click_addProduct" Margin="670,0,0,0" />
+                    <Button x:Name="addCategorieButton" Content="Ajouter Categorie" Background="Blue" Foreground="White"
+                            Width="96" HorizontalAlignment="Center" Click="Button_Click_addCategorie" Margin="670,20,0,0" />
+                    <Button x:Name="assignProduit_Categorie" Content="Ajouter un produit &#x0a;dans une catégorie" Background="CornflowerBlue" Foreground="White"
+                            Width="120" Height="40" HorizontalAlignment="Center" Click="Button_Click_assignProd_Cat" Margin="670,20,0,0" />
+                    
+                    <Grid Margin="10">
+                        <StackPanel x:Name="MainProd" Margin="0,-150,0,32">
+                            
                             <DataGrid x:Name="listeProduits" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeProduits_SelectionChanged"
                                       Height="300"
                                       ScrollViewer.CanContentScroll="True" 
@@ -92,7 +95,7 @@
                             </DataGrid>
                             <Button x:Name="supprimerButton" Content="Supprimer" MouseDoubleClick="supprimerButton_MouseDoubleClick" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Width="200" Margin="283,0" />
                         </StackPanel>
-                        <StackPanel x:Name="DisplayUCProd" Height="700" VerticalAlignment="Top" Margin="0,0,0,-365">
+                        <StackPanel x:Name="DisplayUCProd" Height="700" VerticalAlignment="Top" Margin="0,-150,0,-365">
                             <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET PRODUITS CREES LORS DU CLICK D'UN BOUTON-->
                         </StackPanel>
                         <Button x:Name="returnButtonProd" Content="Annuler" Background="Red" Foreground="White" Margin="688,55,-12,0" Click="Button_cancel_prod" Height="26" VerticalAlignment="Top" Visibility="Collapsed"/>
@@ -110,7 +113,8 @@
                                   ScrollViewer.CanContentScroll="True" 
                                   ScrollViewer.VerticalScrollBarVisibility="Auto"
                                   ScrollViewer.HorizontalScrollBarVisibility="Auto">
-                            <DataGrid.Columns>
+                                
+                                <DataGrid.Columns>
                                 <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
                                 <DataGridTextColumn Header="nom" Binding="{Binding nomAdminProperty}" />
                                 <DataGridTextColumn Header="prénom" Binding="{Binding prenomAdminProperty}" />

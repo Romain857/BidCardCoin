@@ -10,6 +10,7 @@
         <StackPanel x:Name="DisplayUC">
         <DataGrid x:Name="listeLots" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4"
                   Height="300" Width="230"
+                  SelectionChanged="listeLot_SelectionChanged"
                   ScrollViewer.CanContentScroll="True" 
                   ScrollViewer.VerticalScrollBarVisibility="Auto"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="10,30">
