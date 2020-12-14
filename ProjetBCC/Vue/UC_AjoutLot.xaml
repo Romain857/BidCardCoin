@@ -13,44 +13,29 @@
                 <TextBlock Text="Nom :"
                     TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="nomLot" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBox Name="nomLot" Text="{Binding nomProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
                 
                 <TextBlock Text="Description :"
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="descriptionLot" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-                
-                <TextBlock Text="Date de vente :" 
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="dateVenteLot"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                <TextBox Name="descriptionLot" Text="{Binding descriptionProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
-                <TextBlock Text="Enchère :"
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <Menu HorizontalAlignment="Center">
-                    <MenuItem Header="Enchères disponibles :" >
-                        <ListView Name="listeEnchères">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn Header="Enchères" Width="120" DisplayMemberBinding="{Binding }" />
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
-                    </MenuItem>
-                </Menu>
-                
-                <DataGrid Name="listeLot" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="20,50"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4"
+            <ComboBox Name ="ComboBoxEnchere" ItemsSource="{Binding  }"
+                          DisplayMemberPath="nomEnchereProperty"
+                          SelectedValuePath="idProperty"
+                          SelectedValue="{Binding idEnchereProperty}" />
+
+            <Button x:Name="nomLotButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomLotButton_Click" />
+            <DataGrid Name="listeLot" Visibility="Hidden" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="20,50"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeLot_SelectionChanged"
                           Height="150"
                           ScrollViewer.CanContentScroll="True" 
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
-                        <DataGridTextColumn Header="nom" Binding="{Binding }" />
-                        <DataGridTextColumn Header="description" Binding="{Binding }" />
-                        <DataGridTextColumn Header="date de vente" Binding="{Binding }" />
-                        <DataGridTextColumn Header="enchère" Binding="{Binding }" />
+                        <DataGridTextColumn Header="nom" Binding="{Binding nomProperty}" />
+                    <DataGridTextColumn Header="description" Binding="{Binding descriptionProperty}" />
+                    <DataGridTextColumn Header="enchère" Binding="{Binding idEnchereProperty}" />
                     </DataGrid.Columns>
                 </DataGrid>
                 <Button x:Name="submitAjoutLieu" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="Center" Width="64" Click="Button_Click_submitLot"/>

@@ -13,34 +13,35 @@
                 <TextBlock Text="Ville :"
                     TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="ville" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBox Name="ville" Text="{Binding villeProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
                 
                 <TextBlock Text="Adresse :"
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="adresse" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBox Name="adresse" Text="{Binding adresseProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
                 
                 <TextBlock Text="Code postal :"
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="code_postal"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBox Name="codePostal" Text="{Binding codePostalProperty, Mode=TwoWay}"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
                 <TextBlock Text="Département :"
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="departement"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-                
-                <DataGrid Name="listeLieu" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="20,50"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4"
+            <TextBox Name="departement" Text="{Binding departementProperty, Mode=TwoWay}"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <Button x:Name="nomLieuButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomLieuButton_Click" />
+            <DataGrid Name="listeLieu" Visibility="Hidden" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="200,50"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeLieu_SelectionChanged"
                           Height="150"
                           ScrollViewer.CanContentScroll="True" 
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
-                        <DataGridTextColumn Header="ville" Binding="{Binding }" />
-                        <DataGridTextColumn Header="adresse" Binding="{Binding }" />
-                        <DataGridTextColumn Header="code postal" Binding="{Binding }" />
-                        <DataGridTextColumn Header="département" Binding="{Binding }" />
+                        <DataGridTextColumn Header="ville" Binding="{Binding villeProperty }" />
+                        <DataGridTextColumn Header="adresse" Binding="{Binding adresseproperty}" />
+                        <DataGridTextColumn Header="code postal" Binding="{Binding codePostalProperty}" />
+                        <DataGridTextColumn Header="département" Binding="{Binding departementProperty}" />
                     </DataGrid.Columns>
                 </DataGrid>
                 <Button x:Name="submitAjoutLieu" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="Center" Width="64" Click="Button_Click_submitLieu"/>

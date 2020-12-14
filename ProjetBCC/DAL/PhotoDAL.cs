@@ -8,15 +8,15 @@ using ProjetBCC.DAO;
 
 namespace ProjetBCC.DAL
 {
-    public class PersonneDAL
+    public class PhotoDAL
     {
-        public PersonneDAL()
+        public PhotoDAL()
         { }
 
-        public static ObservableCollection<PersonneDAO> selectPersonnes()
+        public static ObservableCollection<PhotoDAO> selectPhoto()
         {
-            ObservableCollection<PersonneDAO> l = new ObservableCollection<PersonneDAO>();
-            string query = "SELECT * FROM personne;";
+            ObservableCollection<PhotoDAO> l = new ObservableCollection<PhotoDAO>();
+            string query = "SELECT * FROM photo;";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataReader reader = null;
             try
@@ -26,7 +26,7 @@ namespace ProjetBCC.DAL
 
                 while (reader.Read())
                 {
-                    PersonneDAO p = new PersonneDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4), reader.GetString(5), reader.GetString(6), reader.GetInt32(7), reader.GetInt32(8));
+                    PhotoDAO p = new PhotoDAO(reader.GetInt32(0),reader.GetString(1), reader.GetString(2));
                     l.Add(p);
                 }
             }
@@ -38,43 +38,43 @@ namespace ProjetBCC.DAL
             return l;
         }
 
-        public static PersonneDAO getPersonne(int id)
+        public static PhotoDAO getPhoto(int id)
         {
-            string query = "SELECT * FROM personne WHERE id=" + id + ";";
+            string query = "SELECT * FROM photo WHERE id=" + id + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             cmd.ExecuteNonQuery();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            PersonneDAO pers = new PersonneDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4), reader.GetString(5), reader.GetString(6), reader.GetInt32(7), reader.GetInt32(8));
+            PhotoDAO cat = new PhotoDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
             reader.Close();
-            return pers;
+            return cat;
         }
-        public static void updatePersonne(PersonneDAO p)
+        public static void updatePhoto(PhotoDAO p)
         {
-            string query = "UPDATE personne set nom=\"" + p.nomPersonneDAO + "\", prenom=\"" + p.prenomPersonneDAO + "\", mail=\"" + p.mailPersonneDAO + "\", numeroTel=\"" + p.numerotelPersonneDAO + "\", motDePasse=\"" + p.mdpPersonneDAO + "\", adresse=\"" + p.adressePersonneDAO + "\",codePostal=\"" + p.codePostalPersonneDAO + "\", age=\"" + p.ageDAO + "\" where id=" + p.idDAO + ";";
+            string query = "UPDATE Photo set photo=\"" + p.photoDAO + "\", nom =\"" + p.nomPhotoDAO + "\" where id=" + p.idDAO + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
         }
-        public static void insertPersonne(PersonneDAO p)
+        public static void insertPhoto(PhotoDAO p)
         {
-            int id = getMaxIdPersonne() + 1;
-            string query = "INSERT INTO personne VALUES (\"" + id + "\",\"" + p.nomPersonneDAO + "\",\"" + p.prenomPersonneDAO + "\",\"" + p.mailPersonneDAO + "\",\"" + p.numerotelPersonneDAO + "\",\"" + p.mdpPersonneDAO + "\",\"" + p.adressePersonneDAO + "\",\"" + p.codePostalPersonneDAO + "\",\"" + p.ageDAO + "\");";
+            int id = getMaxIdPhoto() + 1;
+            string query = "INSERT INTO photo VALUES (\"" + id + "\",\"" + p.photoDAO + "\",\"" + p.nomPhotoDAO + "\");";
             MySqlCommand cmd2 = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();
         }
-        public static void supprimerPersonne(int id)
+        public static void supprimerPhoto(int id)
         {
-            string query = "DELETE FROM personne WHERE id = \"" + id + "\";";
+            string query = "DELETE FROM Photo WHERE id = \"" + id + "\";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
         }
-        public static int getMaxIdPersonne()
+        public static int getMaxIdPhoto()
         {
-            int maxIdPersonne = 0;
-            string query = "SELECT MAX(id) FROM personne;";
+            int maxIdPhoto = 0;
+            string query = "SELECT MAX(id) FROM photo;";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
 
             int cnt = cmd.ExecuteNonQuery();
@@ -86,15 +86,15 @@ namespace ProjetBCC.DAL
                 reader.Read();
                 if (!reader.IsDBNull(0))
                 {
-                    maxIdPersonne = reader.GetInt32(0);
+                    maxIdPhoto = reader.GetInt32(0);
                 }
                 else
                 {
-                    maxIdPersonne = 0;
+                    maxIdPhoto = 0;
                 }
             }
             reader.Close();
-            return maxIdPersonne;
+            return maxIdPhoto;
         }
     }
 }

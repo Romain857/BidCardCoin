@@ -8,54 +8,54 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Margin="0, 20, 0, 0">
         <StackPanel Orientation="Vertical">
-                <TextBlock Text="Ajouter une enchère" FontSize="36" TextAlignment="Center"/>
-                
-                <TextBlock Text="Nom :"
+            <TextBlock Text="Ajouter une enchère" FontSize="36" TextAlignment="Center"/>
+
+            <TextBlock Text="Nom :"
                     TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="nomEnchere" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-                
-                <TextBlock Text="Date de l'enchère :" 
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <Calendar x:Name="dateVente" Margin="0,0,0,20"/>
-                <!--<TextBox Name="dateVente"  Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>-->
-                
-                <TextBlock Text="Heure :"
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBox Name="heure"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBox Name="nomEnchere" Text="{Binding nomEnchereProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
-                <TextBlock Text="Lieu :"
+            <TextBlock Text="Heure :"
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <Menu HorizontalAlignment="Center">
-                    <MenuItem Header="Lieux disponibles :" >
-                        <ListView Name="listeLieux">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn Header="Lieu" Width="120" DisplayMemberBinding="{Binding }" />
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
-                    </MenuItem>
-                </Menu>
-                
-                <DataGrid Name="listeEncheres" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="200,50"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4"
+            <TextBox Name="heure" Text="{Binding heureEnchereProperty, Mode=TwoWay}"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Date de l'enchère :" 
+                     TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+            <!-- <Calendar x:Name="dateVente" Margin="0,0,0,20"/> -->
+            <TextBox Name="dateVente" Text="{Binding dateEnchereProperty, Mode=TwoWay}"  Width="250" HorizontalAlignment="Center" Margin="40,0,0,0"/>
+
+            <TextBlock Text="Lieu :" 
+                     TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+            <ComboBox Name ="ComboBoxLieu" ItemsSource="{Binding  }"
+                          DisplayMemberPath="villeProperty"
+                          SelectedValuePath="idProperty"
+                          SelectedValue="{Binding idLieuProperty}" />
+            <TextBlock Text="Admin :" 
+                     TextWrapping="Wrap" Width="300"
+                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+            <ComboBox Name ="ComboBoxAdmin" ItemsSource="{Binding  }"
+                          DisplayMemberPath="nomAdminProperty"
+                          SelectedValuePath="idProperty"
+                          SelectedValue="{Binding idAdminProperty}" />
+
+            <Button x:Name="nomEnchereButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomEnchereButton_Click" />
+            <DataGrid Name="listeEncheres" Visibility="Hidden" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="200,50"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeEnchere_SelectionChanged"
                           Height="150"
                           ScrollViewer.CanContentScroll="True" 
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto" >
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
-                        <DataGridTextColumn Header="nom" Binding="{Binding }" />
-                        <DataGridTextColumn Header="date" Binding="{Binding }" />
-                        <DataGridTextColumn Header="heure" Binding="{Binding }" />
-                        <DataGridTextColumn Header="lieu" Binding="{Binding }" />
-                    </DataGrid.Columns>
-                </DataGrid>
-                <Button x:Name="submitAjoutEnchere" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="Center" Width="64" Click="Button_Click_submitEnchere"/>
-                
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                    <DataGridTextColumn Header="nom" Binding="{Binding nomEnchereProperty}" />
+                    <DataGridTextColumn Header="date" Binding="{Binding heureEnchereProperty}" />
+                    <DataGridTextColumn Header="heure" Binding="{Binding dateEnchereProperty}" />
+                    <DataGridTextColumn Header="idlieu" Binding="{Binding idLieuProperty}" />
+                    <DataGridTextColumn Header="idlieu" Binding="{Binding idAdminProperty}" />
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
     </Grid>
 </UserControl>

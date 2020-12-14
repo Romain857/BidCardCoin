@@ -26,7 +26,7 @@ namespace ProjetBCC.DAL
 
                 while (reader.Read())
                 {
-                    LotDAO p = new LotDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetInt32(4));
+                    LotDAO p = new LotDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3));
                     l.Add(p);
                 }
             }
@@ -45,13 +45,13 @@ namespace ProjetBCC.DAL
             cmd.ExecuteNonQuery();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            LotDAO cat = new LotDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetInt32(4));
+            LotDAO cat = new LotDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3));
             reader.Close();
             return cat;
         }
         public static void updateLot(LotDAO p)
         {
-            string query = "UPDATE lot set nom=\"" + p.nomDAO + "\", description=\"" + p.descriptionDAO + "\",dateVente=\"" + p.dateVenteDAO + "\",idEnchere=\"" + p.idEnchereDAO + "\" where id=" + p.idDAO + ";";
+            string query = "UPDATE lot set nom=\"" + p.nomDAO + "\", description=\"" + p.descriptionDAO + "\",idEnchere=\"" + p.idEnchereDAO + "\" where id=" + p.idDAO + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
@@ -59,7 +59,7 @@ namespace ProjetBCC.DAL
         public static void insertLot(LotDAO p)
         {
             int id = getMaxIdLot() + 1;
-            string query = "INSERT INTO lot VALUES (\"" + id + "\",\"" + p.nomDAO + "\",\"" + p.descriptionDAO + "\",\"" + p.dateVenteDAO + "\",\"" + p.idEnchereDAO + "\");";
+            string query = "INSERT INTO lot VALUES (\"" + id + "\",\"" + p.nomDAO + "\",\"" + p.descriptionDAO + "\",\"" + p.idEnchereDAO + "\");";
             MySqlCommand cmd2 = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();

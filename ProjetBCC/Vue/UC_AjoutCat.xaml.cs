@@ -67,10 +67,6 @@ namespace ProjetBCC
                 CategorieORM.supprimerCategorie(selectedCategorieId);
             }
         }
-        public void nomChanged(object sender, TextChangedEventArgs e)
-        {
-            myDataObjectCategorie.nomCategorieProperty = nomTextBox.Text;
-        }
         private void listeCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if ((listeCategories.SelectedIndex < c.Count) && (listeCategories.SelectedIndex >= 0))

@@ -82,6 +82,11 @@
                                     <DataGridTextColumn Header="description" Binding="{Binding descriptionProperty}" />
                                     <DataGridTextColumn Header="artiste" Binding="{Binding artisteProperty}" />
                                     <DataGridTextColumn Header="style" Binding="{Binding styleProperty}" />
+                                    <DataGridTextColumn Header="dateVente" Binding="{Binding dateVenteProperty}" />
+                                    <DataGridTextColumn Header="idLot" Binding="{Binding idLotProperty}" />
+                                    <DataGridTextColumn Header="idPhoto" Binding="{Binding idPhotoProperty}" />
+                                    <DataGridTextColumn Header="idVendeur" Binding="{Binding idVendeurProperty}" />
+                                    <DataGridTextColumn Header="idAcheteur" Binding="{Binding idAcheteurProperty}" />
                                     <DataGridTextColumn Header="categorie" />
                                 </DataGrid.Columns>
                             </DataGrid>
@@ -98,26 +103,49 @@
             <TabItem Header="Utilisateurs">
                 <Grid>
                 <StackPanel x:Name="MainUtil">
-                    <Grid Margin="10">
-                        <Button x:Name="addVendeurButton" Content="Ajouter Vendeur" Background="Black" Foreground="White"
-                                Height="20" HorizontalAlignment="Left" Click="Button_Click_addVendeur" Margin="670,0,0,0"/>
-                        <DataGrid Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
+                        <Label Content="Table Admin :"/>
+                        <Grid Margin="10">
+                            <DataGrid Name="listeAdmins" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
                                   Height="300"
                                   ScrollViewer.CanContentScroll="True" 
                                   ScrollViewer.VerticalScrollBarVisibility="Auto"
                                   ScrollViewer.HorizontalScrollBarVisibility="Auto">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
-                                <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty}" />
-                                <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty}" />
-                                <DataGridTextColumn Header="mdp" Binding="{Binding mdpPersonneProperty}" />
-                                <DataGridTextColumn Header="numeroTel" Binding="{Binding numerotelPersonneProperty}" />
-                                <DataGridTextColumn Header="mail" Binding="{Binding mailPersonneProperty}" />
-                                <DataGridTextColumn Header="age" Binding="{Binding agePersonneProperty}" />
+                                <DataGridTextColumn Header="nom" Binding="{Binding nomAdminProperty}" />
+                                <DataGridTextColumn Header="prénom" Binding="{Binding prenomAdminProperty}" />
+                                <DataGridTextColumn Header="mdp" Binding="{Binding mdpAdminProperty}" />
+                                <DataGridTextColumn Header="numeroTel" Binding="{Binding numerotelAdminProperty}" />
+                                <DataGridTextColumn Header="mail" Binding="{Binding mailAdminProperty}" />
+                                <DataGridTextColumn Header="age" Binding="{Binding ageAdminProperty}" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
-                </StackPanel>
+                        <Label Content="Table Vendeur :"/>
+                        <Grid Margin="10">
+                            <Button x:Name="addUserrButton" Content="Ajouter Utilisateur" Background="Black" Foreground="White"
+                                Height="20" HorizontalAlignment="Left" Click="Button_Click_addVendeur" Margin="670,0,0,0"/>
+                            <DataGrid Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
+                                  Height="300"
+                                  ScrollViewer.CanContentScroll="True" 
+                                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                                    <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty}" />
+                                    <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty}" />
+                                    <DataGridTextColumn Header="mdp" Binding="{Binding mdpPersonneProperty}" />
+                                    <DataGridTextColumn Header="numeroTel" Binding="{Binding numerotelPersonneProperty}" />
+                                    <DataGridTextColumn Header="mail" Binding="{Binding mailPersonneProperty}" />
+                                    <DataGridTextColumn Header="adresse" Binding="{Binding adressePersonneProperty}" />
+                                    <DataGridTextColumn Header="codePostal" Binding="{Binding codePostalProperty}" />
+                                    <DataGridTextColumn Header="age" Binding="{Binding agePersonneProperty}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                        <Button x:Name="supprimerButton2" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click2" Height="20" />
+
+                    </StackPanel>
                 <StackPanel x:Name="DisplayUCUtil">
                     <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET UTILISATEURS CREES LORS DU CLICK D'UN BOUTON-->
                 </StackPanel>

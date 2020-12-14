@@ -15,13 +15,13 @@
                   ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="10,30">
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="id"  />
-                <DataGridTextColumn Header="nom"  />
-                <DataGridTextColumn Header="description"  />
-                <DataGridTextColumn Header="date"  />
-                <DataGridTextColumn Header="enchère"  />
+                <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                <DataGridTextColumn Header="nom" Binding="{Binding nomProperty}" />
+                <DataGridTextColumn Header="description" Binding="{Binding descriptionProperty}" />
+                <DataGridTextColumn Header="enchère" Binding="{Binding idEnchereProperty}" />
             </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
         <Button x:Name="addLotButton" Content="Ajouter Lot" Background="Black" Foreground="White"
                 Height="20" HorizontalAlignment="Center" Click="Button_Click_addLot" Margin="300,-200,0,0"/>
         </StackPanel>

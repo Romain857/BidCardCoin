@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using ProjetBCC.ORM;
 
 namespace ProjetBCC.Ctrl
 {
-    public class PersonneViewModel
+    public class PersonneViewModel : INotifyPropertyChanged
     {
         private int id;
         private string nomPersonne;
@@ -15,13 +16,13 @@ namespace ProjetBCC.Ctrl
         private string mailPersonne;
         private int numerotelPersonne;
         private string mdpPersonne;
+        private string adressePersonne;
+        private int codePostalPersonne;
         private int age;
-        private int idEnchere;
-        private int idLieu;
+        private string concat = "Ajouter ";
+        public PersonneViewModel() { }
 
-        public PersonneViewModel(){ }
-
-        public PersonneViewModel(int id, string nom, string prenom, string mail, int numeroTel, string mdp, int age, int idEnchere, int idLieu)
+        public PersonneViewModel(int id, string nom, string prenom, string mail, int numeroTel, string mdp, string adresse, int codePostal, int age)
         {
             this.id = id;
             this.nomPersonneProperty = nom;
@@ -29,10 +30,9 @@ namespace ProjetBCC.Ctrl
             this.mailPersonne = mail;
             this.numerotelPersonne = numeroTel;
             this.mdpPersonne = mdp;
+            this.adressePersonne = adresse;
+            this.codePostalPersonne = codePostal;
             this.age = age;
-            this.idEnchere = idEnchere;
-            this.idLieu = idLieu;
-
         }
         public int idProperty
         {
@@ -42,29 +42,32 @@ namespace ProjetBCC.Ctrl
                 id = value;
             }
         }
-        public String nomPersonneProperty
+        public string nomPersonneProperty
         {
             get { return nomPersonne; }
             set
             {
                 nomPersonne = value;
+                OnPropertyChanged("nomCategorieProperty");
             }
 
         }
-        public String prenomPersonneProperty
+        public string prenomPersonneProperty
         {
             get { return prenomPersonne; }
             set
             {
                 this.prenomPersonne = value;
+                OnPropertyChanged("nomCategorieProperty");
             }
         }
-        public String mailPersonneProperty
+        public string mailPersonneProperty
         {
             get { return mailPersonne; }
             set
             {
                 this.mailPersonne = value;
+                OnPropertyChanged("nomCategorieProperty");
             }
         }
         public int numerotelPersonneProperty
@@ -73,14 +76,34 @@ namespace ProjetBCC.Ctrl
             set
             {
                 this.numerotelPersonne = value;
+                OnPropertyChanged("nomCategorieProperty");
             }
         }
-        public String mdpPersonneProperty
+        public string mdpPersonneProperty
         {
             get { return mdpPersonne; }
             set
             {
                 this.mdpPersonne = value;
+                OnPropertyChanged("nomCategorieProperty");
+            }
+        }
+        public string adressePersonneProperty
+        {
+            get { return adressePersonne; }
+            set
+            {
+                this.adressePersonne = value;
+                OnPropertyChanged("nomCategorieProperty");
+            }
+        }
+        public int codePostalProperty
+        {
+            get { return codePostalPersonne; }
+            set
+            {
+                this.codePostalPersonne = value;
+                OnPropertyChanged("nomCategorieProperty");
             }
         }
         public int agePersonneProperty
@@ -89,22 +112,28 @@ namespace ProjetBCC.Ctrl
             set
             {
                 this.age = value;
+                OnPropertyChanged("nomCategorieProperty");
             }
         }
-        public int idEnchereProperty
+        public string ConcatProperty
         {
-            get { return idEnchere; }
+            get { return concat; }
             set
             {
-                this.idEnchere = value;
+                this.concat = value;
+                OnPropertyChanged("ConcatProperty");
             }
         }
-        public int idLieuProperty
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string info)
         {
-            get { return idLieu; }
-            set
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
             {
-                this.idLieu = value;
+                handler(this, new PropertyChangedEventArgs(info));
+                this.PropertyChanged(this, new PropertyChangedEventArgs(info));
+                PersonneORM.updatePersonne(this);
             }
         }
     }

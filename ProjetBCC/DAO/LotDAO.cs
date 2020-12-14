@@ -13,15 +13,13 @@ namespace ProjetBCC.DAO
         public int idDAO;
         public string nomDAO;
         public string descriptionDAO;
-        public DateTime dateVenteDAO;
         public int idEnchereDAO;
 
-        public LotDAO(int idDAO, string nomDAO, string descriptionDAO, DateTime dateVenteDAO, int idEnchereDAO)
+        public LotDAO(int idDAO, string nomDAO, string descriptionDAO, int idEnchereDAO)
         {
             this.idDAO = idDAO;
             this.nomDAO = nomDAO;
             this.descriptionDAO = descriptionDAO;
-            this.dateVenteDAO = dateVenteDAO;
             this.idEnchereDAO = idEnchereDAO;
         }
         public static ObservableCollection<LotDAO> listeLot()

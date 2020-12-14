@@ -15,7 +15,7 @@ namespace ProjetBCC.ORM
         public static LotViewModel getLot(int id)
         {
             LotDAO pDAO = LotDAO.getLot(id);
-            LotViewModel p = new LotViewModel(pDAO.idDAO, pDAO.nomDAO, pDAO.descriptionDAO, pDAO.dateVenteDAO, pDAO.idEnchereDAO);
+            LotViewModel p = new LotViewModel(pDAO.idDAO, pDAO.nomDAO, pDAO.descriptionDAO, pDAO.idEnchereDAO);
             return p;
         }
 
@@ -25,14 +25,14 @@ namespace ProjetBCC.ORM
             ObservableCollection<LotViewModel> l = new ObservableCollection<LotViewModel>();
             foreach (LotDAO element in lDAO)
             {
-                LotViewModel p = new LotViewModel(element.idDAO, element.nomDAO, element.descriptionDAO, element.dateVenteDAO, element.idEnchereDAO);
+                LotViewModel p = new LotViewModel(element.idDAO, element.nomDAO, element.descriptionDAO, element.idEnchereDAO);
                 l.Add(p);
             }
             return l;
         }
         public static void updateLot(LotViewModel p)
         {
-            LotDAO.updateLot(new LotDAO(p.idProperty, p.nomProperty, p.descriptionProperty, p.dateVenteProperty, p.idEnchereProperty));
+            LotDAO.updateLot(new LotDAO(p.idProperty, p.nomProperty, p.descriptionProperty, p.idEnchereProperty));
         }
 
         public static void supprimerLot(int id)
@@ -42,7 +42,7 @@ namespace ProjetBCC.ORM
 
         public static void insertLot(LotViewModel p)
         {
-            LotDAO.insertLot(new LotDAO(p.idProperty, p.nomProperty, p.descriptionProperty, p.dateVenteProperty, p.idEnchereProperty));
+            LotDAO.insertLot(new LotDAO(p.idProperty, p.nomProperty, p.descriptionProperty, p.idEnchereProperty));
         }
     }
 }

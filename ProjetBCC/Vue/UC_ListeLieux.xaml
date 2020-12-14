@@ -8,21 +8,22 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <StackPanel x:Name="DisplayUC">
-        <DataGrid x:Name="listeLieux" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4"
+            <DataGrid x:Name="listeLieu" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4"
                   Height="300" Width="270"
                   ScrollViewer.CanContentScroll="True" 
                   ScrollViewer.VerticalScrollBarVisibility="Auto"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="10,30">
 
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="id"  />
-                <DataGridTextColumn Header="ville"  />
-                <DataGridTextColumn Header="adresse"  />
-                <DataGridTextColumn Header="code postal"  />
-                <DataGridTextColumn Header="département"  />
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button x:Name="addLieuButton" Content="Ajouter Lieu" Background="Black" Foreground="White"
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                    <DataGridTextColumn Header="ville" Binding="{Binding villeProperty}" />
+                    <DataGridTextColumn Header="adresse" Binding="{Binding adresseProperty}" />
+                    <DataGridTextColumn Header="code postal" Binding="{Binding codePostalProperty}" />
+                    <DataGridTextColumn Header="département" Binding="{Binding departementProperty}" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
+            <Button x:Name="addLieuButton" Content="Ajouter Lieu" Background="Black" Foreground="White"
                 Height="20" HorizontalAlignment="Center" Click="Button_Click_addLieu" Margin="350,-200,0,0"/>
         </StackPanel>
     </Grid>

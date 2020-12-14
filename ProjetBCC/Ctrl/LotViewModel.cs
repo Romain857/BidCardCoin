@@ -13,17 +13,15 @@ namespace ProjetBCC.Ctrl
         private int id;
         private string nom;
         private string description;
-        private DateTime dateVente;
         private int idEnchere;
         private string concat = "Ajouter ";
 
         public LotViewModel() { }
-        public LotViewModel(int id, string nom, string description, DateTime dateVente, int idEnchere)
+        public LotViewModel(int id, string nom, string description, int idEnchere)
         {
             this.id = id;
             this.nom = nom;
             this.description = description;
-            this.dateVente = dateVente;
             this.idEnchere = idEnchere;
 
         }
@@ -50,15 +48,6 @@ namespace ProjetBCC.Ctrl
             set
             {
                 description = value;
-                OnPropertyChanged("ConcatProperty");
-            }
-        }
-        public DateTime dateVenteProperty
-        {
-            get { return dateVente; }
-            set
-            {
-                dateVente = value;
                 OnPropertyChanged("ConcatProperty");
             }
         }

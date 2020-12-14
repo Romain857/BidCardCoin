@@ -22,60 +22,41 @@ namespace ProjetBCC.Vue
 {
     public partial class UC_ListeEncheres : UserControl
     {
-        /*EnchereViewModel myDataObjectEnchere;
-        ObservableCollection<EnchereViewModel> e;
+        EnchereViewModel myDataObjectEnchere;
+        ObservableCollection<EnchereViewModel> el;
         int compteur = 0;
         int selectedEnchereId;
-        public static string onglet;*/
+        public static string onglet;
         public UC_ListeEncheres()
         {
             InitializeComponent();
-            //DALConnection.OpenConnection();
-            //loadEncheres();
-            //appliquerContexte();
+            DALConnection.OpenConnection();
+            loadEncheres();
         }
 
-        /*void loadEncheres()
+        void loadEncheres()
         {
-            e = EnchereORM.listeEncheres();
+            el = EnchereORM.listeEncheres();
             myDataObjectEnchere = new EnchereViewModel();
-            listeEncheres.ItemsSource = e;
-        }
-        private void nomEnchereButton_Click(object sender, RoutedEventArgs e)
-        {
-            myDataObjectEnchere.idProperty = EnchereDAL.getMaxIdEnchere() + 1;
-
-            e.Add(myDataObjectEnchere);
-            EnchereORM.insertEnchere(myDataObjectEnchere);
-            compteur = e.Count();
-
-            listeEncheres.Items.Refresh();
-            myDataObjectEnchere = new EnchereViewModel();
-            nomEnchereButton.DataContext = myDataObjectEnchere;
-            nomTextBox.DataContext = myDataObjectEnchere;
+            listeEncheres.ItemsSource = el;
         }
         private void supprimerButton_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (listeEncheres.SelectedItem is EnchereViewModel)
             {
                 EnchereViewModel toRemove = (EnchereViewModel)listeEncheres.SelectedItem;
-                e.Remove(toRemove);
+                el.Remove(toRemove);
                 listeEncheres.Items.Refresh();
                 EnchereORM.supprimerEnchere(selectedEnchereId);
             }
         }
         private void listeEnchere_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if ((listeEncheres.SelectedIndex < e.Count) && (listeEncheres.SelectedIndex >= 0))
+            if ((listeEncheres.SelectedIndex < el.Count) && (listeEncheres.SelectedIndex >= 0))
             {
-                selectedEnchereId = (e.ElementAt<EnchereViewModel>(listeEncheres.SelectedIndex)).idProperty;
+                selectedEnchereId = (el.ElementAt<EnchereViewModel>(listeEncheres.SelectedIndex)).idProperty;
             }
         }
-        void appliquerContexte()
-        {
-            nomTextBox.DataContext = myDataObjectEnchere;
-            nomEnchereButton.DataContext = myDataObjectEnchere;
-        }*/
         private void Button_Click_addEnchere(object sender, RoutedEventArgs e)
         {
             UC_AjoutEnchere ajoutEnchere = new UC_AjoutEnchere();
