@@ -101,14 +101,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Ctrl\AcheteurViewModel.cs" />
     <Compile Include="Ctrl\PersonneViewModel.cs" />
     <Compile Include="Ctrl\PhotoViewModel.cs" />
+    <Compile Include="Ctrl\VendeurViewModel.cs" />
+    <Compile Include="DAL\AcheteurDAL.cs" />
     <Compile Include="DAL\PersonneDAL.cs" />
     <Compile Include="DAL\PhotoDAL.cs" />
+    <Compile Include="DAL\VendeurDAL.cs" />
+    <Compile Include="DAO\AcheteurDAO.cs" />
     <Compile Include="DAO\PersonneDAO.cs" />
     <Compile Include="DAO\PhotoDAO.cs" />
+    <Compile Include="DAO\VendeurDAO.cs" />
+    <Compile Include="ORM\AcheteurORM.cs" />
     <Compile Include="ORM\PersonneORM.cs" />
     <Compile Include="ORM\PhotoORM.cs" />
+    <Compile Include="ORM\VendeurORM.cs" />
     <Compile Include="Vue\UC_AjoutEnchere.xaml.cs">
       <DependentUpon>UC_AjoutEnchere.xaml</DependentUpon>
     </Compile>

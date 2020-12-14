@@ -8,20 +8,18 @@ using ProjetBCC.ORM;
 
 namespace ProjetBCC.Ctrl
 {
-    public class PhotoViewModel : INotifyPropertyChanged
+    public class VendeurViewModel : INotifyPropertyChanged
     {
         private int id;
-        private string photo;
-        private string nomPhoto;
+        private int idPersonne;
         private string concat = "Ajouter ";
 
-        public PhotoViewModel() { }
+        public VendeurViewModel() { }
 
-        public PhotoViewModel(int id, string photo, string nomPhoto)
+        public VendeurViewModel(int id, int idPersonne)
         {
             this.id = id;
-            this.photo = photo;
-            this.nomPhoto = nomPhoto;
+            this.idPersonne = idPersonne;
         }
 
         public int idProperty
@@ -32,21 +30,13 @@ namespace ProjetBCC.Ctrl
                 id = value;
             }
         }
-        public string photoProperty
+        public int idPersonneProperty
         {
-            get { return photo; }
+            get { return idPersonne; }
             set
             {
-                photo = value;
-            }
-        }
-        public String nomPhotoProperty
-        {
-            get { return nomPhoto; }
-            set
-            {
-                nomPhoto = value;
-                OnPropertyChanged("nomPhotoProperty");
+                idPersonne = value;
+                OnPropertyChanged("nomVendeurProperty");
             }
         }
 
@@ -68,7 +58,7 @@ namespace ProjetBCC.Ctrl
             {
                 handler(this, new PropertyChangedEventArgs(info));
                 this.PropertyChanged(this, new PropertyChangedEventArgs(info));
-                PhotoORM.updatePhoto(this);
+                VendeurORM.updateVendeur(this);
             }
         }
     }

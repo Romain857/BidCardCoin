@@ -27,9 +27,15 @@ namespace ProjetBCC
         ProduitViewModel myDataObjectProduit;
         CategorieViewModel myDataObjectCategorie;
         ObservableCollection<ProduitViewModel> lpr;
+        PhotoViewModel myDataObjectPhoto;
+        ObservableCollection<PhotoViewModel> lph;
         ObservableCollection<CategorieViewModel> c;
         LotViewModel myDataObjectLot;
         ObservableCollection<LotViewModel> lo;
+        VendeurViewModel myDataObjectVendeur;
+        ObservableCollection<VendeurViewModel> v;
+        AcheteurViewModel myDataObjectAcheteur;
+        ObservableCollection<AcheteurViewModel> a;
         int compteur = 0;
         int selectedProduitId;
         public UC_AjoutProd()
@@ -39,19 +45,40 @@ namespace ProjetBCC
             loadProduits();
             //loadCategories();
             loadLots();
+            loadProduits();
+            loadPhotos();
+            loadVendeurs();
+            loadAcheteurs();
             appliquerContexte();
         }
-        
+        void loadVendeurs()
+        {
+            v = VendeurORM.listeVendeur();
+            myDataObjectVendeur = new VendeurViewModel();
+            //listePersonnes.ItemsSource = pe;
+        }
         void loadProduits()
         {
             lpr = ProduitORM.listeProduits();
             myDataObjectProduit = new ProduitViewModel();
             listeProduits.ItemsSource = lpr;
         }
+        void loadPhotos()
+        {
+            lph = PhotoORM.listePhoto();
+            myDataObjectPhoto = new PhotoViewModel();
+            //listePhoto.ItemsSource = lph;
+        }
         void loadLots()
         {
             lo = LotORM.listeLot();
             myDataObjectLot = new LotViewModel();
+        }
+        void loadAcheteurs()
+        {
+            a = AcheteurORM.listeAcheteur();
+            myDataObjectAcheteur = new AcheteurViewModel();
+            //listeAcheteurs.ItemsSource = a;
         }
 
         /*void loadCategories()

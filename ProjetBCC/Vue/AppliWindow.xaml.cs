@@ -29,6 +29,8 @@ namespace ProjetBCC.Vue
         CategorieViewModel myDataObjectCategorie;
         PersonneViewModel myDataObjectPersonne;
         ObservableCollection<AdminViewModel> la;
+        AcheteurViewModel myDataObjectAcheteur;
+        ObservableCollection<AcheteurViewModel> a;
         ObservableCollection<ProduitViewModel> lpr;
         ObservableCollection<CategorieViewModel> c;
         ObservableCollection<PersonneViewModel> lp;
@@ -46,6 +48,7 @@ namespace ProjetBCC.Vue
             loadProduits();
             loadCategories();
             loadPersonnes();
+            loadAcheteurs();
         }
 
         void loadAdmins()
@@ -60,6 +63,12 @@ namespace ProjetBCC.Vue
             lp = PersonneORM.listePersonnes();
             myDataObjectPersonne = new PersonneViewModel();
             listePersonnes.ItemsSource = lp;
+        }
+        void loadAcheteurs()
+        {
+            a = AcheteurORM.listeAcheteur();
+            myDataObjectAcheteur = new AcheteurViewModel();
+            //listeAcheteurs.ItemsSource = a;
         }
 
         void loadProduits()
