@@ -8,12 +8,12 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <StackPanel x:Name="DisplayUC">
-        <DataGrid x:Name="listeLots" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4"
+        <DataGrid x:Name="listeLots" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4" Margin="0,30"
                   Height="300" Width="230"
                   SelectionChanged="listeLot_SelectionChanged"
                   ScrollViewer.CanContentScroll="True" 
                   ScrollViewer.VerticalScrollBarVisibility="Auto"
-                  ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="10,30">
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto" >
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
