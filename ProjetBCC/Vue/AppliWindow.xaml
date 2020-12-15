@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetBCC"
         mc:Ignorable="d"
-        Title="AppliWindow" Height="450" Width="800">
+        Title="AppliWindow" Height="500" Width="800">
     <Grid>
         <TabControl>
             <TabItem Header="Accueil">
@@ -69,7 +69,7 @@
                             Width="120" Height="40" HorizontalAlignment="Right" Click="Button_Click_assignProd_Cat" Margin="0,20,0,0" />
                     
                     <Grid>
-                        <StackPanel x:Name="MainProd" Margin="0,-150,0,32">
+                        <StackPanel x:Name="MainProd" Margin="0,-150,0,0">
                             
                             <DataGrid x:Name="listeProduits" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeProduits_SelectionChanged"
                                       Height="300" Width="300"
@@ -95,18 +95,20 @@
                             </DataGrid>
                             <Button x:Name="supprimerButton" Content="Supprimer" MouseDoubleClick="supprimerButton_MouseDoubleClick" BorderBrush="#FF545454" Height="20" HorizontalAlignment="Center"  />
                         </StackPanel>
-                        <StackPanel x:Name="DisplayUCProd" Height="700" VerticalAlignment="Top" Margin="0,-150,0,-365">
+                        <StackPanel x:Name="DisplayUCProd" HorizontalAlignment="Center" Margin="0,-150,0,0">
                             <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET PRODUITS CREES LORS DU CLICK D'UN BOUTON-->
                         </StackPanel>
-                        <Button x:Name="returnButtonProd" Content="Annuler" Background="Red" HorizontalAlignment="Right" Foreground="White" Click="Button_cancel_prod" Height="26" Width="100" Visibility="Collapsed"/>
+                        
+                        <Button x:Name="returnButtonProd" Content="Retour" Background="Red" HorizontalAlignment="Right" Foreground="White" Click="Button_cancel_prod" Height="26" Width="100" Visibility="Collapsed"/>
                     </Grid>
 
                 </StackPanel>
             </TabItem>
             <TabItem Header="Utilisateurs">
                 <StackPanel>
-                <Grid>
-                <StackPanel x:Name="MainUtil">
+                <Grid  Height="430">
+                    <ScrollViewer>
+                    <StackPanel x:Name="MainUtil" ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <Label Content="Table Admin :"/>
                         <Grid Margin="10">
                             <DataGrid Name="listeAdmins" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
@@ -123,13 +125,12 @@
                                 <DataGridTextColumn Header="numeroTel" Binding="{Binding numerotelAdminProperty}" />
                                 <DataGridTextColumn Header="mail" Binding="{Binding mailAdminProperty}" />
                                 <DataGridTextColumn Header="age" Binding="{Binding ageAdminProperty}" />
-                            </DataGrid.Columns>
-                        </DataGrid>
-                    </Grid>
-                        <Label Content="Table Vendeur :"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                            <Label Content="Table Vendeur :"/>
                         <Grid Margin="10">
-                            <Button x:Name="addUserButton" Content="Ajouter Utilisateur" Background="Black" Foreground="White"
-                                Height="20" HorizontalAlignment="Right" Click="Button_Click_addVendeur" Margin="0,0,0,250"/>
+                            
                             <DataGrid Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
                                   Height="300"
                                   ScrollViewer.CanContentScroll="True" 
@@ -150,12 +151,14 @@
                             </DataGrid>
                         </Grid>
                         <Button x:Name="supprimerButton2" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click2" Height="20" />
-
                     </StackPanel>
+                    </ScrollViewer>
+                    <Button x:Name="addUserButton" Content="Ajouter Utilisateur" Background="Black" Foreground="White"
+                            Height="20" HorizontalAlignment="Right" Click="Button_Click_addVendeur" Margin="0,0,20,250"/>
                 <StackPanel x:Name="DisplayUCUtil">
                     <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET UTILISATEURS CREES LORS DU CLICK D'UN BOUTON-->
                 </StackPanel>
-                    <Button x:Name="returnButtonUtil" Content="Annuler" Background="Red" HorizontalAlignment="Right" Foreground="White" Click="Button_cancel_util" Height="26" Width="100" Visibility="Collapsed"/>
+                    <Button x:Name="returnButtonUtil" Content="Retour" Background="Red" HorizontalAlignment="Right" Foreground="White" Click="Button_cancel_util" Height="26" Width="100" Margin="0,0,20,0" Visibility="Collapsed"/>
                 </Grid>
                 </StackPanel>
             </TabItem>
