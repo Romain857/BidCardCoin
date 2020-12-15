@@ -106,7 +106,7 @@
             </TabItem>
             <TabItem Header="Utilisateurs">
                 <StackPanel>
-                <Grid  Height="390">
+                <Grid  Height="430">
                     <ScrollViewer>
                     <StackPanel x:Name="MainUtil" ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <Label Content="Table Admin :"/>
