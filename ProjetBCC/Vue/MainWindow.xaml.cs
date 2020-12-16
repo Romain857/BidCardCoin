@@ -23,7 +23,6 @@ namespace ProjetBCC.Vue
     public partial class MainWindow : Window
     {
         AdminViewModel myDataObject;
-        ObservableCollection<AdminViewModel> la;
         MySqlDataReader reader = null;
         
         public MainWindow()
@@ -39,11 +38,18 @@ namespace ProjetBCC.Vue
                 errorMessage.Text = "Entrez un Email";  
                 emailTextBox.Focus();  
             }  
+            
             else if (!Regex.IsMatch(emailTextBox.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))  
             {  
                 errorMessage.Text = "Entrez un Email valide";  
                 emailTextBox.Select(0, emailTextBox.Text.Length);  
                 emailTextBox.Focus();  
+            }
+            
+            else if (mdpTextBox.Password.Length == 0)
+            {
+                             errorMessage.Text = "Entrez un mot de passe";  
+                             mdpTextBox.Focus();
             }
             else
             {
@@ -53,17 +59,16 @@ namespace ProjetBCC.Vue
                 //MySqlCommand cmd = new MySqlCommand("Select * from admin where mail=\"" + @email + "\" and motDePasse=\"" + mdp + "\"", DALConnection.OpenConnection());
                 MySqlCommand cmd = new MySqlCommand("Select * from admin where mail=@email",
                     DALConnection.OpenConnection());
+
                 cmd.Parameters.AddWithValue("@email", emailTextBox.Text.ToString());
                 reader = cmd.ExecuteReader();
-                errorMessage.Text = "1";
-                
-                
+
+
                 if (reader.Read())
                 {
                     errorMessage.Text = "2";
                     if (reader["motDePasse"].ToString().Equals(mdpTextBox.Password.ToString(),StringComparison.InvariantCulture))
                     {
-                        errorMessage.Text = "oui";
                         reader.Close();
                         AppliWindow win2 = new AppliWindow(); 
                         win2.Show();
@@ -72,16 +77,17 @@ namespace ProjetBCC.Vue
                     else
                     {
                         errorMessage.Text = "Mot de passe invalide";
+                        mdpTextBox.Focus();
+                        reader.Close();
                     }
                 }
-                
-            } 
-            
-        }
-
-        private void appliwindow()
-        {
-            
+                else
+                {
+                    errorMessage.Text = "Email inconnu";
+                    emailTextBox.Focus();
+                    reader.Close();
+                }
+            }
         }
     }
 }
