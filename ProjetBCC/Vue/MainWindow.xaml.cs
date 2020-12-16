@@ -66,7 +66,6 @@ namespace ProjetBCC.Vue
 
                 if (reader.Read())
                 {
-                    errorMessage.Text = "2";
                     if (reader["motDePasse"].ToString().Equals(mdpTextBox.Password.ToString(),StringComparison.InvariantCulture))
                     {
                         reader.Close();
