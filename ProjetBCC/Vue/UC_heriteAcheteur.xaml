@@ -52,7 +52,7 @@
                         <DataGridTextColumn Header="solde" Binding="{Binding soldeProperty}" />
                         <DataGridTextColumn Header="Solvabilite" Binding="{Binding isSolvableProperty}" />
                         <DataGridTextColumn Header="identite" Binding="{Binding identiteProperty}" />
-                        <DataGridTextColumn Header="moyenPaiement" Binding="{Binding myenPaiementProperty}" />
+                        <DataGridTextColumn Header="moyenPaiement" Binding="{Binding moyenPaiementProperty}" />
                         <DataGridTextColumn Header="idPersonne" Binding="{Binding idPersonneProperty}" />
                     </DataGrid.Columns>
                 </DataGrid>

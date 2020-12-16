@@ -14,7 +14,7 @@
                         <ToolBar>
                             <Button x:Name="listeEnchereButton" Content="Enchères" Click="Button_Click_ListEnchere" ToolTip="Affiche la liste des enchères"></Button>
                             <Button x:Name="listeLieuxButton" Content="Lieux" Click="Button_Click_ListLieux" ToolTip="Affiche la lisyte des Lieux"></Button>
-                            <Button x:Name="listeLotsButton" Content="Lots" Click="Button_Click_ListLots" ToolTip="Affiche la liste des lieux"></Button>
+                            <Button x:Name="listeLotsButton" Content="Lots" Click="Button_Click_ListLots" ToolTip="Affiche la liste des Lots"></Button>
                             <Menu>
                                 <MenuItem Header="Menu">
                                     <MenuItem Header="On sait faire des Menus"/>
