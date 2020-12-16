@@ -9,15 +9,15 @@
     <Grid>
         <StackPanel Orientation="Vertical">
                     <TextBlock Text="BidCardCoin" FontSize="36" Margin="4" TextAlignment="Center"/>
-                    <TextBlock x:Name="ErrorMessage" Text="" FontSize="20" Margin="4" Foreground="Red" TextAlignment="Center"/>
-                    <TextBlock Text="Email :" Margin="0,0,0,20"
+                    <TextBlock x:Name="errorMessage" Text="" FontSize="16" Margin="4" Foreground="Red" TextAlignment="Center"/>
+                    <TextBlock Text="Email :"
                     TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    <TextBox x:Name="UsernameTextBox" Margin="4" Width="250"/>
-                    <TextBlock Text="Mot de passe :" Margin="0,0,0,20"
+                    <TextBox x:Name="emailTextBox" Margin="0,20" Width="250"/>
+                    <TextBlock Text="Mot de passe :"
                      TextWrapping="Wrap" Width="300"
                     TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    <TextBox x:Name="MdpTextBox" Margin="4" Width="250"/>
+                    <PasswordBox x:Name="mdpTextBox" Margin="0,20" Width="250"/>
 
             <Button x:Name="PassportSignInButton" Content="Login" Background="DodgerBlue" Foreground="White"
                     Width="80" HorizontalAlignment="Center" Margin="0,20" Click="Button_Click"/>
