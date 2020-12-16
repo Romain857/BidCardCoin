@@ -16,7 +16,7 @@
             <ComboBox Name ="ComboBoxPersonne" ItemsSource="{Binding  }"
                           DisplayMemberPath="nomPersonneProperty"
                           SelectedValuePath="idProperty"
-                          SelectedValue="{Binding idProduitProperty}" />
+                          SelectedValue="{Binding idPersonneProperty}" />
 
             <Button x:Name="nomheriteVendeurButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomheriteVendeurButton_Click" />
             <DataGrid x:Name="listeheriteVendeurs" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="0,0,0,20" BorderBrush="Black" Background="#FFA4A4A4"
