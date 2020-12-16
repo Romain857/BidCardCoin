@@ -44,8 +44,6 @@
                         <DataGridTextColumn Header="département" Binding="{Binding departementProperty}" />
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button x:Name="submitAjoutLieu" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="Center" Width="64" Click="Button_Click_submitLieu"/>
-                
         </StackPanel>
     </Grid>
 </UserControl>

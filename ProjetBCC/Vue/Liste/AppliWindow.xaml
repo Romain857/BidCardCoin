@@ -12,8 +12,8 @@
                 <Grid>
                     <StackPanel>
                         <ToolBar>
-                            <Button x:Name="listeEnchereButton" Content="Enchères" Click="Button_Click_ListEnchere" ToolTip="Affiche la liste des enchères"></Button>
-                            <Button x:Name="listeLieuxButton" Content="Lieux" Click="Button_Click_ListLieux" ToolTip="Affiche la lisyte des Lieux"></Button>
+                            <Button x:Name="listeEnchereButton" Content="Enchères" Click="Button_Click_ListEnchere" ToolTip="Affiche la liste des Enchères"></Button>
+                            <Button x:Name="listeLieuxButton" Content="Lieux" Click="Button_Click_ListLieux" ToolTip="Affiche la liste des Lieux"></Button>
                             <Button x:Name="listeLotsButton" Content="Lots" Click="Button_Click_ListLots" ToolTip="Affiche la liste des Lots"></Button>
                             <Menu>
                                 <MenuItem Header="Menu">
@@ -24,6 +24,7 @@
                     </StackPanel>
                     <StackPanel Name="DisplayUCAccueil">
                         <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET Accueil CREES LORS DU CLICK D'UN BOUTON-->
+                        <Image Source="https://image.flaticon.com/icons/png/512/48/48853.png" Opacity="0.05" Height="300" Width="300" Margin="0,60,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
@@ -133,7 +134,7 @@
                                         </DataGrid.Columns>
                                     </DataGrid>
                                 </Grid>
-                                    <TextBlock Text="Liste des Vendeurs :" FontSize="24" TextAlignment="Center" Margin="0,20"/>
+                                    <TextBlock Text="Liste des Utilisateurs :" FontSize="24" TextAlignment="Center" Margin="0,20"/>
                                 <Grid Margin="10">
                                     
                                     <DataGrid Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 

@@ -25,7 +25,7 @@
             </DataGrid>
             <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
             <Button x:Name="addLotButton" Content="Ajouter un Lot" Background="Black" Foreground="White"
-                    Height="20" HorizontalAlignment="Center" Click="Button_Click_addLot" Margin="350,-200,0,0"/>
+                    Height="20" HorizontalAlignment="Center" Click="Button_Click_addLot" Margin="480,-200,0,0"/>
         </StackPanel>
     </Grid>
 </UserControl>
