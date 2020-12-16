@@ -8,23 +8,24 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <StackPanel x:Name="DisplayUC">
-        <DataGrid x:Name="listeLots" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4" Margin="0,30"
-                  Height="300" Width="230"
-                  SelectionChanged="listeLot_SelectionChanged"
-                  ScrollViewer.CanContentScroll="True" 
-                  ScrollViewer.VerticalScrollBarVisibility="Auto"
-                  ScrollViewer.HorizontalScrollBarVisibility="Auto" >
+            <TextBlock Text="Liste des lots :" FontSize="24" TextAlignment="Center" Margin="0,40,0,20"/>
+            <DataGrid x:Name="listeLots" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4" Margin="0, 20, 0, 20"
+                      Height="150" MaxWidth="350"
+                      SelectionChanged="listeLot_SelectionChanged"
+                      ScrollViewer.CanContentScroll="True" 
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto" >
 
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
-                <DataGridTextColumn Header="nom" Binding="{Binding nomProperty}" />
-                <DataGridTextColumn Header="description" Binding="{Binding descriptionProperty}" />
-                <DataGridTextColumn Header="enchère" Binding="{Binding idEnchereProperty}" />
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
-        <Button x:Name="addLotButton" Content="Ajouter Lot" Background="Black" Foreground="White"
-                Height="20" HorizontalAlignment="Center" Click="Button_Click_addLot" Margin="350,-200,0,0"/>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                    <DataGridTextColumn Header="nom" Binding="{Binding nomProperty}" />
+                    <DataGridTextColumn Header="description" Binding="{Binding descriptionProperty}" />
+                    <DataGridTextColumn Header="enchère" Binding="{Binding idEnchereProperty}" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
+            <Button x:Name="addLotButton" Content="Ajouter un Lot" Background="Black" Foreground="White"
+                    Height="20" HorizontalAlignment="Center" Click="Button_Click_addLot" Margin="350,-200,0,0"/>
         </StackPanel>
     </Grid>
 </UserControl>

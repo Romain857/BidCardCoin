@@ -8,8 +8,9 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <StackPanel x:Name="DisplayUC">
-            <DataGrid x:Name="listeEncheres" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="0,50"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
-                      Height="150"
+            <TextBlock Text="Liste des enchères :" FontSize="24" TextAlignment="Center" Margin="0,40,0,20"/>
+            <DataGrid x:Name="listeEncheres" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="0,20,0, 20"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
+                      Height="150" MaxWidth="350"
                       SelectionChanged="listeEnchere_SelectionChanged"
                       ScrollViewer.CanContentScroll="True" 
                       ScrollViewer.VerticalScrollBarVisibility="Auto"
@@ -25,7 +26,7 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
-            <Button x:Name="addEnchereButton" Content="Ajouter Enchère" Background="Black" Foreground="White"
+            <Button x:Name="addEnchereButton" Content="Ajouter une Enchère" Background="Black" Foreground="White"
                     Height="20" HorizontalAlignment="Center" Click="Button_Click_addEnchere" Margin="430,-200,0,0"/>
         </StackPanel>
     </Grid>

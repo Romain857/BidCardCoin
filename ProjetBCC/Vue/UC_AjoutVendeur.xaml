@@ -5,11 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:ProjetBCC.Vue"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid  Height="390">
+             d:DesignHeight="300" Width="490">
+    <Grid Height="390">
         <ScrollViewer>
         <StackPanel Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Auto">
-                <TextBlock Text="Ajouter un Utilisateur" FontSize="36" TextAlignment="Center"/>
+                <TextBlock Text="Ajouter un utilisateur" FontSize="36" TextAlignment="Center" Margin="0,0,0,20"/>
                 
                 <TextBlock Text="Nom :"
                     TextWrapping="Wrap" Width="300"
@@ -50,12 +50,7 @@
                            TextWrapping="Wrap" Width="300"
                            TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
                 <TextBox Name="ageVendeur" Text="{Binding agePersonneProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <StackPanel HorizontalAlignment="center">
-                <Label FontWeight="Bold">Quel type de personne ?</Label>
-            <CheckBox IsChecked="True">Acheteur</CheckBox>
-            <CheckBox>Vendeur</CheckBox>
-            </StackPanel>
-        <Button x:Name="nomPersonnesButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomPersonneButton_Click" />
+            <Button x:Name="nomPersonnesButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomPersonneButton_Click" />
             <DataGrid Name="listePersonnes" Visibility="Collapsed" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="200,50"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listePersonne_SelectionChanged"
                           Height="150"
                           ScrollViewer.CanContentScroll="True" 

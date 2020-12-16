@@ -5,94 +5,109 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProjetBCC"
              mc:Ignorable="d" 
-             d:DesignHeight="500" Width="546.5">
+             d:DesignHeight="500" Width="530">
     <Grid Height="390">
         <ScrollViewer>
-        <StackPanel Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Auto">
-            <TextBlock Text="Ajouter un produit" FontSize="36" TextAlignment="Center" Margin="0,0,0,20"/>
-            <TextBlock Text="Nom :"
-                    TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="nomProduit" Text="{Binding nomProduitProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <TextBlock Text="Estimation :" 
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="estimation" Text="{Binding estimationProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <TextBlock Text="PrixVente :" 
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="prixVente" Text="{Binding prixVenteProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <TextBlock Text="Description :"
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="description" Text="{Binding descriptionProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <TextBlock Text="Artiste :"
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="artiste" Text="{Binding artisteProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <TextBlock Text="Style :"
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="style" Text="{Binding styleProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <TextBlock Text="Date de vente :"
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="dateVente" Text="{Binding dateVenteProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <TextBlock Text="idLot :"
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <ComboBox Name ="ComboBoxLot" ItemsSource="{Binding  }"
-                          DisplayMemberPath="nomProperty"
-                          SelectedValuePath="idProperty"
-                          SelectedValue="{Binding idLotProperty}" />
-            <TextBlock Text="idPhoto :" Margin="30,0,0,20"
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <ComboBox Name ="ComboBoxPhoto" ItemsSource="{Binding  }"
-                          DisplayMemberPath="photoProperty"
-                          SelectedValuePath="idProperty"
-                          SelectedValue="{Binding idPhotoProperty}" />
-            <TextBlock Text="idAcheteur :" Margin="30,0,0,20"
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <ComboBox Name ="ComboBoxAcheteur" ItemsSource="{Binding  }"
-                          DisplayMemberPath="soldeProperty"
-                          SelectedValuePath="idProperty"
-                          SelectedValue="{Binding idAcheteurProperty}" />
-            <TextBlock Text="idVendeur :" Margin="30,0,0,20"
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <ComboBox Name ="ComboBoxVendeur" ItemsSource="{Binding  }"
-                          DisplayMemberPath="idPersonneProperty"
-                          SelectedValuePath="idProperty"
-                          SelectedValue="{Binding idVendeurProperty}" />
+            <StackPanel Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <TextBlock Text="Ajouter un produit" FontSize="36" TextAlignment="Center" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="Nom :"
+                        TextWrapping="Wrap" Width="300"
+                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="nomProduit" Text="{Binding nomProduitProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="Estimation :" 
+                         TextWrapping="Wrap" Width="300"
+                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="estimation" Text="{Binding estimationProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="PrixVente :" 
+                         TextWrapping="Wrap" Width="300"
+                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="prixVente" Text="{Binding prixVenteProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="Description :"
+                         TextWrapping="Wrap" Width="300"
+                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="description" Text="{Binding descriptionProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="Artiste :"
+                         TextWrapping="Wrap" Width="300"
+                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="artiste" Text="{Binding artisteProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="Style :"
+                         TextWrapping="Wrap" Width="300"
+                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="style" Text="{Binding styleProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="Date de vente :"
+                         TextWrapping="Wrap" Width="300"
+                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="dateVente" Text="{Binding dateVenteProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="idLot :"
+                         TextWrapping="Wrap" Width="300"
+                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <ComboBox Name ="ComboBoxLot" ItemsSource="{Binding  }"
+                              DisplayMemberPath="nomProperty"
+                              SelectedValuePath="idProperty"
+                              SelectedValue="{Binding idLotProperty}" 
+                              Width="250" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="idPhoto :"
+                         TextWrapping="Wrap" Width="300"
+                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <ComboBox Name ="ComboBoxPhoto" ItemsSource="{Binding  }"
+                              DisplayMemberPath="photoProperty"
+                              SelectedValuePath="idProperty"
+                              SelectedValue="{Binding idPhotoProperty}"
+                              Width="250" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="idAcheteur :"
+                         TextWrapping="Wrap" Width="300"
+                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <ComboBox Name ="ComboBoxAcheteur" ItemsSource="{Binding  }"
+                              DisplayMemberPath="soldeProperty"
+                              SelectedValuePath="idProperty"
+                              SelectedValue="{Binding idAcheteurProperty}"
+                              Width="250" Margin="0,0,0,20"/>
+                
+                <TextBlock Text="idVendeur :"
+                         TextWrapping="Wrap" Width="300"
+                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <ComboBox Name ="ComboBoxVendeur" ItemsSource="{Binding  }"
+                              DisplayMemberPath="idPersonneProperty"
+                              SelectedValuePath="idProperty"
+                              SelectedValue="{Binding idVendeurProperty}"
+                              Width="250" Margin="0,0,0,20"/>
 
 
-            <Grid>
-                <Button x:Name="nomProduitButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="Right" Margin="0,0,20,0" Height="30" Click="nomProduitButton_Click" />
-                <DataGrid x:Name="listeProduits" Visibility="Collapsed" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="left" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeProduit_SelectionChanged"
-                                          Height="150"
-                                          ScrollViewer.CanContentScroll="True" 
-                                          ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                          ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="332,2,0,0" Width="107">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
-                        <DataGridTextColumn Header="estimation" Binding="{Binding estimationProperty}" />
-                        <DataGridTextColumn Header="prix de vente" Binding="{Binding prixVenteProperty}" />
-                        <DataGridTextColumn Header="nom" Binding="{Binding nomProduitProperty}" />
-                        <DataGridTextColumn Header="description" Binding="{Binding descriptionProperty}" />
-                        <DataGridTextColumn Header="artiste" Binding="{Binding artisteProperty}" />
-                        <DataGridTextColumn Header="style" Binding="{Binding styleProperty}" />
-                        <DataGridTextColumn Header="dateVente" Binding="{Binding dateVenteProperty}" />
-                        <DataGridTextColumn Header="idAcheteur" Binding="{Binding idAcheteurProperty}" />
-                        <DataGridTextColumn Header="idVendeur" Binding="{Binding idVendeurProperty}" />
-                        <DataGridTextColumn Header="idLot" Binding="{Binding idLotProperty}" />
-                        <DataGridTextColumn Header="idPhoto" Binding="{Binding idLotProperty}" />
-                        <DataGridTextColumn Header="categorie" />
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Grid>
-        </StackPanel>
+                <Grid>
+                    <Button x:Name="nomProduitButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="Right" Margin="0,0,20,0" Height="30" Click="nomProduitButton_Click" />
+                    <DataGrid x:Name="listeProduits" Visibility="Collapsed" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="left" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeProduit_SelectionChanged"
+                                              Height="150"
+                                              ScrollViewer.CanContentScroll="True" 
+                                              ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                              ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="332,2,0,0" Width="107">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                            <DataGridTextColumn Header="estimation" Binding="{Binding estimationProperty}" />
+                            <DataGridTextColumn Header="prix de vente" Binding="{Binding prixVenteProperty}" />
+                            <DataGridTextColumn Header="nom" Binding="{Binding nomProduitProperty}" />
+                            <DataGridTextColumn Header="description" Binding="{Binding descriptionProperty}" />
+                            <DataGridTextColumn Header="artiste" Binding="{Binding artisteProperty}" />
+                            <DataGridTextColumn Header="style" Binding="{Binding styleProperty}" />
+                            <DataGridTextColumn Header="dateVente" Binding="{Binding dateVenteProperty}" />
+                            <DataGridTextColumn Header="idAcheteur" Binding="{Binding idAcheteurProperty}" />
+                            <DataGridTextColumn Header="idVendeur" Binding="{Binding idVendeurProperty}" />
+                            <DataGridTextColumn Header="idLot" Binding="{Binding idLotProperty}" />
+                            <DataGridTextColumn Header="idPhoto" Binding="{Binding idLotProperty}" />
+                            <DataGridTextColumn Header="categorie" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </StackPanel>
         </ScrollViewer>
     </Grid>
 </UserControl>
