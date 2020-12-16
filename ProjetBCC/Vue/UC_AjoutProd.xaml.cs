@@ -55,7 +55,7 @@ namespace ProjetBCC
         {
             v = VendeurORM.listeVendeur();
             myDataObjectVendeur = new VendeurViewModel();
-            //listePersonnes.ItemsSource = pe;
+            ComboBoxVendeur.ItemsSource = v;
         }
         void loadProduits()
         {
@@ -67,18 +67,19 @@ namespace ProjetBCC
         {
             lph = PhotoORM.listePhoto();
             myDataObjectPhoto = new PhotoViewModel();
-            //listePhoto.ItemsSource = lph;
+            ComboBoxPhoto.ItemsSource = lph;
         }
         void loadLots()
         {
             lo = LotORM.listeLot();
             myDataObjectLot = new LotViewModel();
+            ComboBoxLot.ItemsSource = lo;
         }
         void loadAcheteurs()
         {
             a = AcheteurORM.listeAcheteur();
             myDataObjectAcheteur = new AcheteurViewModel();
-            //listeAcheteurs.ItemsSource = a;
+            ComboBoxAcheteur.ItemsSource = a;
         }
 
         /*void loadCategories()
@@ -106,10 +107,10 @@ namespace ProjetBCC
             style.DataContext = myDataObjectProduit;
             artiste.DataContext = myDataObjectProduit;
             dateVente.DataContext = myDataObjectProduit;
-            idLot.DataContext = myDataObjectProduit;
-            idPhoto.DataContext = myDataObjectProduit;
-            idAcheteur.DataContext = myDataObjectProduit;
-            idVendeur.DataContext = myDataObjectProduit;
+            ComboBoxAcheteur.DataContext = myDataObjectProduit;
+            ComboBoxLot.DataContext = myDataObjectProduit;
+            ComboBoxPhoto.DataContext = myDataObjectProduit;
+            ComboBoxVendeur.DataContext = myDataObjectProduit;
             //categorie.DataContext = myDataObjectProduit;
             nomProduitButton.DataContext = myDataObjectProduit;
         }
@@ -122,10 +123,10 @@ namespace ProjetBCC
             style.DataContext = myDataObjectProduit;
             artiste.DataContext = myDataObjectProduit;
             dateVente.DataContext = myDataObjectProduit;
-            idLot.DataContext = myDataObjectProduit;
-            idPhoto.DataContext = myDataObjectProduit;
-            idAcheteur.DataContext = myDataObjectProduit;
-            idVendeur.DataContext = myDataObjectProduit;
+            ComboBoxAcheteur.DataContext = myDataObjectProduit;
+            ComboBoxLot.DataContext = myDataObjectProduit;
+            ComboBoxPhoto.DataContext = myDataObjectProduit;
+            ComboBoxVendeur.DataContext = myDataObjectProduit;
             //categorie.DataContext = myDataObjectProduit;
             nomProduitButton.DataContext = myDataObjectProduit;
         }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetBCC"
         mc:Ignorable="d"
-        Title="AppliWindow" Height="500" Width="800">
+        Title="BidCardCoin" Height="500" Width="800">
     <Grid>
         <TabControl>
             <TabItem Header="Accueil">
@@ -25,7 +25,23 @@
                     <StackPanel Name="DisplayUCAccueil">
                         <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET Accueil CREES LORS DU CLICK D'UN BOUTON-->
                     </StackPanel>
+                    <!--
+                    <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" Margin="20">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding Title}" />
+                                    <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox> -->
                 </Grid>
+                
             </TabItem>
             <TabItem Header="Produits">
                 <StackPanel>
@@ -67,6 +83,8 @@
                             Width="96" HorizontalAlignment="Right" Click="Button_Click_addCategorie" Margin="0,20,0,0" />
                     <Button x:Name="assignProduit_Categorie" Content="Ajouter un produit &#x0a;dans une catégorie" Background="CornflowerBlue" Foreground="White"
                             Width="120" Height="40" HorizontalAlignment="Right" Click="Button_Click_assignProd_Cat" Margin="0,20,0,0" />
+                    <Button x:Name="addOrdreAchatButton" Content="Ajouter OrdreAchat" Background="Green" Foreground="White"
+                            Width="96" HorizontalAlignment="Right" Click="Button_Click_addOrdreAchat" Margin="0,20,0,0" />
                     
                     <Grid>
                         <StackPanel x:Name="MainProd" Margin="0,-150,0,0">
@@ -105,6 +123,7 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="Utilisateurs">
+
                 <StackPanel>
                 <Grid  Height="430">
                     <ScrollViewer>
@@ -155,6 +174,12 @@
                     </ScrollViewer>
                     <Button x:Name="addUserButton" Content="Ajouter Utilisateur" Background="Black" Foreground="White"
                             Height="20" HorizontalAlignment="Right" Click="Button_Click_addVendeur" Margin="0,0,20,250"/>
+                    <Button x:Name="addEstimationButton" Content="Ajouter Estimation" Background="Blue" Foreground="White"
+                            Height="20" HorizontalAlignment="Right" Click="Button_Click_addEstimation" Margin="0,0,20,200" />
+                    <Button x:Name="addheriteVendeurButton" Content="Affecter un Vendeur" Background="Orange" Foreground="White"
+                            Height="20" HorizontalAlignment="Right" Click="Button_Click_addheriteVendeur" Margin="0,0,20,150" />
+                        <Button x:Name="addheriteAcheteurButton" Content="Affecter un Acheteur" Background="Gray" Foreground="White"
+                            Height="20" HorizontalAlignment="Right" Click="Button_Click_addheriteAcheteur" Margin="0,0,20,100" />
                 <StackPanel x:Name="DisplayUCUtil">
                     <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET UTILISATEURS CREES LORS DU CLICK D'UN BOUTON-->
                 </StackPanel>
