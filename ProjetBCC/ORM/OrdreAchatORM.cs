@@ -35,9 +35,9 @@ namespace ProjetBCC.ORM
             OrdreAchatDAO.updateOrdreAchat(new OrdreAchatDAO(p.idProduitProperty, p.idCategorieProperty));
         }*/
 
-        public static void supprimerOrdreAchat(int id)
+        public static void supprimerOrdreAchat(int idProduitProperty, int idAcheteurProperty, int idEnchereProperty)
         {
-            OrdreAchatDAO.supprimerOrdreAchat(id);
+            OrdreAchatDAO.supprimerOrdreAchat(idProduitProperty, idAcheteurProperty, idEnchereProperty);
         }
 
         public static void insertOrdreAchat(OrdreAchatViewModel p)

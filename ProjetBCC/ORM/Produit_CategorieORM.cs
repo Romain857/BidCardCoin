@@ -35,9 +35,9 @@ namespace ProjetBCC.ORM
             Produit_CategorieDAO.updateProduit_Categorie(new Produit_CategorieDAO(p.idProduitProperty, p.idCategorieProperty));
         }*/
 
-        public static void supprimerProduit_Categorie(int id)
+        public static void supprimerProduit_Categorie(int idProduitProperty, int idCategorieProperty)
         {
-            Produit_CategorieDAO.supprimerProduit_Categorie(id);
+            Produit_CategorieDAO.supprimerProduit_Categorie(idProduitProperty, idCategorieProperty);
         }
 
         public static void insertProduit_Categorie(Produit_CategorieViewModel p)

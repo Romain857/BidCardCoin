@@ -33,6 +33,7 @@ namespace ProjetBCC.Vue
         ObservableCollection<AdminViewModel> ad;
         int compteur = 0;
         int selectedEstimationId;
+        int selectedEstimationAdminId;
         public static string onglet;
         public UC_assocEstimation()
         {
@@ -81,7 +82,7 @@ namespace ProjetBCC.Vue
                 EstimationViewModel toRemove = (EstimationViewModel)listeEstimations.SelectedItem;
                 est.Remove(toRemove);
                 listeEstimations.Items.Refresh();
-                EstimationORM.supprimerEstimation(selectedEstimationId);
+                EstimationORM.supprimerEstimation(selectedEstimationId, selectedEstimationAdminId);
             }
         }
         private void listeEstimation_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -89,6 +90,10 @@ namespace ProjetBCC.Vue
             if ((listeEstimations.SelectedIndex < est.Count) && (listeEstimations.SelectedIndex >= 0))
             {
                 selectedEstimationId = (est.ElementAt<EstimationViewModel>(listeEstimations.SelectedIndex)).idProduitProperty;
+            }
+            if ((listeEstimations.SelectedIndex < est.Count) && (listeEstimations.SelectedIndex >= 0))
+            {
+                selectedEstimationAdminId = (est.ElementAt<EstimationViewModel>(listeEstimations.SelectedIndex)).idAdminProperty;
             }
         }
         void appliquerContexte()

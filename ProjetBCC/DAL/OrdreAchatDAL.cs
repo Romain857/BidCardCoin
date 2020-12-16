@@ -63,9 +63,9 @@ namespace ProjetBCC.DAL
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();
         }
-        public static void supprimerOrdreAchat(int id)
+        public static void supprimerOrdreAchat(int idProduitProperty, int idAcheteurProperty, int idEnchereProperty)
         {
-            string query = "DELETE FROM ordreachat WHERE id = \"" + id + "\";";
+            string query = "DELETE FROM ordreachat WHERE idProduit = \"" + idProduitProperty + "\"AND idAcheteur = \"" + idAcheteurProperty + "\"AND idEnchere = \"" + idEnchereProperty + "\";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();

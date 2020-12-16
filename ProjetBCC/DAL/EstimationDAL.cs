@@ -63,9 +63,9 @@ namespace ProjetBCC.DAL
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();
         }
-        public static void supprimerEstimation(int id)
+        public static void supprimerEstimation(int idProduitProperty, int idAdminProperty)
         {
-            string query = "DELETE FROM estimation WHERE id = \"" + id + "\";";
+            string query = "DELETE FROM estimation WHERE idProduit = \"" + idProduitProperty + "\"AND idAdmin = \"" + idAdminProperty + "\";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();

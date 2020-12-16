@@ -46,11 +46,11 @@
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="107">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="estimation" Binding="{Binding montantMaxProperty}" />
-                    <DataGridTextColumn Header="dateEstimation" Binding="{Binding adresseDepotProperty}"/>
+                    <DataGridTextColumn Header="montantMax" Binding="{Binding montantMaxProperty}" />
+                    <DataGridTextColumn Header="adresseDepot" Binding="{Binding adresseDepotProperty}"/>
                     <DataGridTextColumn Header="idProduit" Binding="{Binding idProduitProperty}" />
                     <DataGridTextColumn Header="idCategorie" Binding="{Binding idAcheteurProperty}"/>
-                    <DataGridTextColumn Header="idCategorie" Binding="{Binding idEnchereProperty}"/>
+                    <DataGridTextColumn Header="idEnchere" Binding="{Binding idEnchereProperty}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />

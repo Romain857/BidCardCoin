@@ -39,9 +39,9 @@ namespace ProjetBCC.DAO
             EstimationDAL.updateEstimation(p);
         }*/
 
-        public static void supprimerEstimation(int id)
+        public static void supprimerEstimation(int idProduitProperty, int idAdminProperty)
         {
-            EstimationDAL.supprimerEstimation(id);
+            EstimationDAL.supprimerEstimation(idProduitProperty, idAdminProperty);
         }
 
         public static void insertEstimation(EstimationDAO p)

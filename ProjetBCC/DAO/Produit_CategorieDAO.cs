@@ -35,9 +35,9 @@ namespace ProjetBCC.DAO
             Produit_CategorieDAL.updateProduit_Categorie(p);
         }*/
 
-        public static void supprimerProduit_Categorie(int id)
+        public static void supprimerProduit_Categorie(int idProduitProperty, int idCategorieProperty)
         {
-            Produit_CategorieDAL.supprimerProduit_Categorie(id);
+            Produit_CategorieDAL.supprimerProduit_Categorie(idProduitProperty, idCategorieProperty);
         }
 
         public static void insertProduit_Categorie(Produit_CategorieDAO p)
