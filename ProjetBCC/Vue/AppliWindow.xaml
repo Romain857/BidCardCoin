@@ -61,9 +61,9 @@
                         </MenuItem>
                     </Menu>
                     
-                    <Button x:Name="addProductButton" Content="Ajouter un Produit" Background="Black" Foreground="White"
+                    <Button x:Name="addProductButton" Content="Ajouter un Produit" Background="Teal" Foreground="White"
                             Width="120" HorizontalAlignment="Right" Click="Button_Click_addProduct" Margin="0,20,0,0" />
-                    <Button x:Name="addCategorieButton" Content="Ajouter un Categorie" Background="Blue" Foreground="White"
+                    <Button x:Name="addCategorieButton" Content="Ajouter une Categorie" Background="Blue" Foreground="White"
                             Width="120" HorizontalAlignment="Right" Click="Button_Click_addCategorie" Margin="0,20,0,0" />
                     <Button x:Name="addOrdreAchatButton" Content="Ajouter un &#x0a;Ordre d'achat" Background="Green" Foreground="White"
                             Width="120" Height="40" HorizontalAlignment="Right" Click="Button_Click_addOrdreAchat" Margin="0,20,0,0" />
@@ -163,7 +163,7 @@
                         
                         <Button x:Name="addUserButton" Content="Ajouter un Utilisateur" Background="Black" Foreground="White"
                                 Height="20" Width="120" HorizontalAlignment="Right" Click="Button_Click_addVendeur" Margin="0,0,20,250"/>
-                        <Button x:Name="addEstimationButton" Content="Ajouter un Estimation" Background="Blue" Foreground="White"
+                        <Button x:Name="addEstimationButton" Content="Ajouter une Estimation" Background="Blue" Foreground="White"
                                 Height="20" Width="120" HorizontalAlignment="Right" Click="Button_Click_addEstimation" Margin="0,0,20,200" />
                         <Button x:Name="addheriteVendeurButton" Content="Affecter un Vendeur" Background="Orange" Foreground="White"
                                 Height="20" Width="120" HorizontalAlignment="Right" Click="Button_Click_addheriteVendeur" Margin="0,0,20,150" />

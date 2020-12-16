@@ -25,7 +25,7 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
-            <Button x:Name="addLieuButton" Content="Ajouter Lieu" Background="Black" Foreground="White"
+            <Button x:Name="addLieuButton" Content="Ajouter un Lieu" Background="Black" Foreground="White"
                 Height="20" HorizontalAlignment="Center" Click="Button_Click_addLieu" Margin="400,-200,0,0"/>
         </StackPanel>
     </Grid>
