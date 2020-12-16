@@ -16,7 +16,7 @@ namespace ProjetBCC.DAL
         public static ObservableCollection<VendeurDAO> selectVendeur()
         {
             ObservableCollection<VendeurDAO> l = new ObservableCollection<VendeurDAO>();
-            string query = "SELECT * FROM vendeur JOIN personne ON vendeur.idPersonne = personne.id;";
+            string query = "SELECT * FROM vendeur;";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataReader reader = null;
             try
@@ -51,7 +51,7 @@ namespace ProjetBCC.DAL
         }
         public static void updateVendeur(VendeurDAO p)
         {
-            string query = "UPDATE vendeur set nom=\"" + p.idPersonneDAO + "\" where id=" + p.idDAO + ";";
+            string query = "UPDATE vendeur set idPersonne=\"" + p.idPersonneDAO  + "\" where id=" + p.idDAO + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
@@ -66,7 +66,7 @@ namespace ProjetBCC.DAL
         }
         public static void supprimerVendeur(int id)
         {
-            string query = "DELETE FROM Vendeur WHERE id = \"" + id + "\";";
+            string query = "DELETE FROM vendeur WHERE id = \"" + id + "\";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();

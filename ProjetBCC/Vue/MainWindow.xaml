@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetBCC"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Connectez-vous !" Height="450" Width="800">
     <Grid>
         <StackPanel Orientation="Vertical">
                     <TextBlock Text="BidCardCoin" FontSize="36" Margin="4" TextAlignment="Center"/>

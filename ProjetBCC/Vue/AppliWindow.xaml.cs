@@ -150,6 +150,20 @@ namespace ProjetBCC.Vue
             DisplayUCUtil.Children.Add(ajoutVendeur);
             
         }
+        private void Button_Click_addheriteVendeur(object sender, RoutedEventArgs e)
+        {
+            UC_heriteVendeur heriteVendeur = new UC_heriteVendeur();
+            MainUtil.Visibility = Visibility.Collapsed;
+            returnButtonUtil.Visibility = Visibility.Visible;
+            DisplayUCUtil.Children.Add(heriteVendeur);
+        }
+        private void Button_Click_addheriteAcheteur(object sender, RoutedEventArgs e)
+        {
+            UC_heriteAcheteur heriteAcheteur = new UC_heriteAcheteur();
+            MainUtil.Visibility = Visibility.Collapsed;
+            returnButtonUtil.Visibility = Visibility.Visible;
+            DisplayUCUtil.Children.Add(heriteAcheteur);
+        }
 
         private void Button_cancel_prod(object sender, RoutedEventArgs e)
         {
@@ -184,6 +198,22 @@ namespace ProjetBCC.Vue
             UC_ListeLots listeLots = new UC_ListeLots();
             DisplayUCAccueil.Children.Clear();
             DisplayUCAccueil.Children.Add(listeLots);
+        }
+        private void Button_Click_addEstimation(object sender, RoutedEventArgs e)
+        {
+            UC_assocEstimation assocEstimation = new UC_assocEstimation();
+            MainUtil.Visibility = Visibility.Collapsed;
+            returnButtonUtil.Visibility = Visibility.Visible;
+            DisplayUCUtil.Children.Clear();
+            DisplayUCUtil.Children.Add(assocEstimation);
+        }
+        private void Button_Click_addOrdreAchat(object sender, RoutedEventArgs e)
+        {
+            UC_assocOrdreAchat assocOrdreAchat = new UC_assocOrdreAchat();
+            MainProd.Visibility = Visibility.Collapsed;
+            returnButtonProd.Visibility = Visibility.Visible;
+            DisplayUCProd.Children.Clear();
+            DisplayUCProd.Children.Add(assocOrdreAchat);
         }
         private void supprimerButton_Click2(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
