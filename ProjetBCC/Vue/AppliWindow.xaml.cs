@@ -28,8 +28,8 @@ namespace ProjetBCC.Vue
         ProduitViewModel myDataObjectProduit;
         CategorieViewModel myDataObjectCategorie;
         PersonneViewModel myDataObjectPersonne;
-        ObservableCollection<AdminViewModel> la;
         AcheteurViewModel myDataObjectAcheteur;
+        ObservableCollection<AdminViewModel> la;
         ObservableCollection<AcheteurViewModel> a;
         ObservableCollection<ProduitViewModel> lpr;
         ObservableCollection<CategorieViewModel> c;
@@ -49,7 +49,7 @@ namespace ProjetBCC.Vue
             loadCategories();
             loadPersonnes();
             loadAcheteurs();
-
+            appliquerContexte();
             /*List<TodoItem> items = new List<TodoItem>();
             items.Add(new TodoItem() { Title = "Comprendre WPF", Completion = 2 });
             items.Add(new TodoItem() { Title = "Enchere 1", Completion = 10 });
@@ -87,6 +87,8 @@ namespace ProjetBCC.Vue
             lpr = ProduitORM.listeProduits();
             myDataObjectProduit = new ProduitViewModel();
             listeProduits.ItemsSource = lpr;
+            listeStyles.ItemsSource = lpr;
+            listeArtistes.ItemsSource = lpr;
         }
         void loadCategories()
         {
@@ -94,7 +96,22 @@ namespace ProjetBCC.Vue
             myDataObjectCategorie = new CategorieViewModel();
             listeCategories.ItemsSource = c;
         }
+        private void nomProduitsButton_Click(object sender, RoutedEventArgs e)
+        {
+            myDataObjectProduit.idProperty = ProduitDAL.getMaxIdProduit() + 1;
 
+            lpr.Add(myDataObjectProduit);
+            ProduitORM.insertProduit(myDataObjectProduit);
+            compteur = lpr.Count();
+
+            listeProduits.Items.Refresh();
+            myDataObjectProduit = new ProduitViewModel();
+            nomProduitsButton.DataContext = myDataObjectProduit;
+        }
+        void appliquerContexte()
+        {
+            nomProduitsButton.DataContext = myDataObjectProduit;
+        }
         private void supprimerButton_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
 
@@ -108,7 +125,7 @@ namespace ProjetBCC.Vue
         }
         private void listeProduits_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if ((listeProduits.SelectedIndex < lp.Count) && (listeProduits.SelectedIndex >= 0))
+            if ((listeProduits.SelectedIndex < lpr.Count) && (listeProduits.SelectedIndex >= 0))
             {
                 selectedProduitId = (lpr.ElementAt<ProduitViewModel>(listeProduits.SelectedIndex)).idProperty;
             }

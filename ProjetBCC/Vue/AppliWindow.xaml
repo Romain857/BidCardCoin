@@ -88,7 +88,7 @@
                     
                     <Grid>
                         <StackPanel x:Name="MainProd" Margin="0,-150,0,0">
-                            
+                            <Button x:Name="nomProduitsButton" Content="Ajouter" Visibility="Collapsed" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomProduitsButton_Click" />
                             <DataGrid x:Name="listeProduits" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeProduits_SelectionChanged"
                                       Height="300" Width="300"
                                       ScrollViewer.CanContentScroll="True" 
