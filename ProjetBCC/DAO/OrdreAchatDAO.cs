@@ -41,9 +41,9 @@ namespace ProjetBCC.DAO
             OrdreAchatDAL.updateOrdreAchat(p);
         }*/
 
-        public static void supprimerOrdreAchat(int id)
+        public static void supprimerOrdreAchat(int idProduitProperty, int idAcheteurProperty, int idEnchereProperty)
         {
-            OrdreAchatDAL.supprimerOrdreAchat(id);
+            OrdreAchatDAL.supprimerOrdreAchat(idProduitProperty, idAcheteurProperty, idEnchereProperty);
         }
 
         public static void insertOrdreAchat(OrdreAchatDAO p)

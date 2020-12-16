@@ -14,7 +14,7 @@
                         <ToolBar>
                             <Button x:Name="listeEnchereButton" Content="Enchères" Click="Button_Click_ListEnchere" ToolTip="Affiche la liste des enchères"></Button>
                             <Button x:Name="listeLieuxButton" Content="Lieux" Click="Button_Click_ListLieux" ToolTip="Affiche la lisyte des Lieux"></Button>
-                            <Button x:Name="listeLotsButton" Content="Lots" Click="Button_Click_ListLots" ToolTip="Affiche la liste des lieux"></Button>
+                            <Button x:Name="listeLotsButton" Content="Lots" Click="Button_Click_ListLots" ToolTip="Affiche la liste des Lots"></Button>
                             <Menu>
                                 <MenuItem Header="Menu">
                                     <MenuItem Header="On sait faire des Menus"/>
@@ -73,6 +73,7 @@
                     <Grid>
                         <StackPanel x:Name="MainProd" Margin="0,-250,0,0">
                             <TextBlock Text="Liste des produits :" FontSize="24" TextAlignment="Center" Margin="0,40,0,20"/>
+                            <Button x:Name="nomProduitsButton" Content="Ajouter" Visibility="Collapsed" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomProduitsButton_Click" />
                             <DataGrid x:Name="listeProduits" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeProduits_SelectionChanged"
                                       Height="150" MaxWidth="350" Margin="0,20"
                                       ScrollViewer.CanContentScroll="True" 

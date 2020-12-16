@@ -35,9 +35,9 @@ namespace ProjetBCC.ORM
             EstimationDAO.updateEstimation(new EstimationDAO(p.idProduitProperty, p.idCategorieProperty));
         }*/
 
-        public static void supprimerEstimation(int id)
+        public static void supprimerEstimation(int idPropduitProperty, int idAdminProperty)
         {
-            EstimationDAO.supprimerEstimation(id);
+            EstimationDAO.supprimerEstimation(idPropduitProperty, idAdminProperty);
         }
 
         public static void insertEstimation(EstimationViewModel p)

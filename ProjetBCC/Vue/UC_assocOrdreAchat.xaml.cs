@@ -35,6 +35,8 @@ namespace ProjetBCC.Vue
         ObservableCollection<EnchereViewModel> ench;
         int compteur = 0;
         int selectedOrdreAchatId;
+        int selectedOrdreAchatAcheteurId;
+        int selectedOrdreAchatEnchereId;
         public static string onglet;
         public UC_assocOrdreAchat()
         {
@@ -92,7 +94,7 @@ namespace ProjetBCC.Vue
                 OrdreAchatViewModel toRemove = (OrdreAchatViewModel)listeOrdreAchats.SelectedItem;
                 oa.Remove(toRemove);
                 listeOrdreAchats.Items.Refresh();
-                OrdreAchatORM.supprimerOrdreAchat(selectedOrdreAchatId);
+                OrdreAchatORM.supprimerOrdreAchat(selectedOrdreAchatId, selectedOrdreAchatAcheteurId, selectedOrdreAchatEnchereId);
             }
         }
         private void listeOrdreAchat_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -100,6 +102,14 @@ namespace ProjetBCC.Vue
             if ((listeOrdreAchats.SelectedIndex < oa.Count) && (listeOrdreAchats.SelectedIndex >= 0))
             {
                 selectedOrdreAchatId = (oa.ElementAt<OrdreAchatViewModel>(listeOrdreAchats.SelectedIndex)).idProduitProperty;
+            }
+            if ((listeOrdreAchats.SelectedIndex < oa.Count) && (listeOrdreAchats.SelectedIndex >= 0))
+            {
+                selectedOrdreAchatAcheteurId = (oa.ElementAt<OrdreAchatViewModel>(listeOrdreAchats.SelectedIndex)).idAcheteurProperty;
+            }
+            if ((listeOrdreAchats.SelectedIndex < oa.Count) && (listeOrdreAchats.SelectedIndex >= 0))
+            {
+                selectedOrdreAchatEnchereId = (oa.ElementAt<OrdreAchatViewModel>(listeOrdreAchats.SelectedIndex)).idEnchereProperty;
             }
         }
         void appliquerContexte()

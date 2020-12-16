@@ -63,9 +63,9 @@ namespace ProjetBCC.DAL
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();
         }
-        public static void supprimerProduit_Categorie(int id)
+        public static void supprimerProduit_Categorie(int idProduitProperty, int idCategorieProperty)
         {
-            string query = "DELETE FROM produit_categorie WHERE id = \"" + id + "\";";
+            string query = "DELETE FROM produit_categorie WHERE idProduit = \"" + idProduitProperty + "\"AND idCategorie = \"" + idCategorieProperty + "\";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();

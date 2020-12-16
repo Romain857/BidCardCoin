@@ -30,6 +30,7 @@ namespace ProjetBCC.Vue
         ObservableCollection<ProduitViewModel> pro;
         int compteur = 0;
         int selectedProduit_CategorieId;
+        int selectedCategorieId;
         public static string onglet;
         public UC_assocProd_Cat()
         {
@@ -76,7 +77,7 @@ namespace ProjetBCC.Vue
                 Produit_CategorieViewModel toRemove = (Produit_CategorieViewModel)listeProduit_Categories.SelectedItem;
                 pc.Remove(toRemove);
                 listeProduit_Categories.Items.Refresh();
-                Produit_CategorieORM.supprimerProduit_Categorie(selectedProduit_CategorieId);
+                Produit_CategorieORM.supprimerProduit_Categorie(selectedProduit_CategorieId, selectedCategorieId);
             }
         }
         private void listeProduit_Categorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -84,6 +85,10 @@ namespace ProjetBCC.Vue
             if ((listeProduit_Categories.SelectedIndex < pc.Count) && (listeProduit_Categories.SelectedIndex >= 0))
             {
                 selectedProduit_CategorieId = (pc.ElementAt<Produit_CategorieViewModel>(listeProduit_Categories.SelectedIndex)).idProduitProperty;
+            }
+            if ((listeProduit_Categories.SelectedIndex < pc.Count) && (listeProduit_Categories.SelectedIndex >= 0))
+            {
+                selectedCategorieId = (pc.ElementAt<Produit_CategorieViewModel>(listeProduit_Categories.SelectedIndex)).idCategorieProperty;
             }
         }
         void appliquerContexte()
