@@ -129,7 +129,7 @@
     <Compile Include="ORM\PhotoORM.cs" />
     <Compile Include="ORM\Produit_CategorieORM.cs" />
     <Compile Include="ORM\VendeurORM.cs" />
-    <Compile Include="Vue\UC_AjoutEnchere.xaml.cs">
+    <Compile Include="Vue\Ajout\UC_AjoutEnchere.xaml.cs">
       <DependentUpon>UC_AjoutEnchere.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ctrl\EnchereViewModel.cs" />
@@ -144,51 +144,51 @@
     <Compile Include="ORM\EnchereORM.cs" />
     <Compile Include="ORM\LieuORM.cs" />
     <Compile Include="ORM\LotORM.cs" />
-    <Compile Include="Vue\UC_AjoutLieu.xaml.cs">
+    <Compile Include="Vue\Ajout\UC_AjoutLieu.xaml.cs">
       <DependentUpon>UC_AjoutLieu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vue\UC_AjoutLot.xaml.cs">
+    <Compile Include="Vue\Ajout\UC_AjoutLot.xaml.cs">
       <DependentUpon>UC_AjoutLot.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vue\UC_AjoutVendeur.xaml.cs">
+    <Compile Include="Vue\Ajout\UC_AjoutVendeur.xaml.cs">
       <DependentUpon>UC_AjoutVendeur.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vue\UC_assocEstimation.xaml.cs">
+    <Compile Include="Vue\Assoc\UC_assocEstimation.xaml.cs">
       <DependentUpon>UC_assocEstimation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vue\UC_assocOrdreAchat.xaml.cs">
+    <Compile Include="Vue\Assoc\UC_assocOrdreAchat.xaml.cs">
       <DependentUpon>UC_assocOrdreAchat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vue\UC_assocProd_Cat.xaml.cs">
+    <Compile Include="Vue\Assoc\UC_assocProd_Cat.xaml.cs">
       <DependentUpon>UC_assocProd_Cat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vue\UC_heriteAcheteur.xaml.cs">
+    <Compile Include="Vue\Herite\UC_heriteAcheteur.xaml.cs">
       <DependentUpon>UC_heriteAcheteur.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vue\UC_heriteVendeur.xaml.cs">
+    <Compile Include="Vue\Herite\UC_heriteVendeur.xaml.cs">
       <DependentUpon>UC_heriteVendeur.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vue\UC_ListeEncheres.xaml.cs">
+    <Compile Include="Vue\Liste\UC_ListeEncheres.xaml.cs">
       <DependentUpon>UC_ListeEncheres.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vue\UC_ListeLieux.xaml.cs">
+    <Compile Include="Vue\Liste\UC_ListeLieux.xaml.cs">
       <DependentUpon>UC_ListeLieux.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vue\UC_ListeLots.xaml.cs">
+    <Compile Include="Vue\Liste\UC_ListeLots.xaml.cs">
       <DependentUpon>UC_ListeLots.xaml</DependentUpon>
     </Compile>
-    <Page Include="Vue\UC_AjoutCat.xaml">
+    <Page Include="Vue\Ajout\UC_AjoutCat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vue\UC_AjoutEnchere.xaml" />
-    <Page Include="Vue\UC_AjoutLieu.xaml" />
-    <Page Include="Vue\UC_AjoutLot.xaml" />
-    <Page Include="Vue\UC_AjoutProd.xaml">
+    <Page Include="Vue\Ajout\UC_AjoutEnchere.xaml" />
+    <Page Include="Vue\Ajout\UC_AjoutLieu.xaml" />
+    <Page Include="Vue\Ajout\UC_AjoutLot.xaml" />
+    <Page Include="Vue\Ajout\UC_AjoutProd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vue\AppliWindow.xaml">
+    <Page Include="Vue\Liste\AppliWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -204,13 +204,13 @@
     <Compile Include="DAL\CategorieDAL.cs" />
     <Compile Include="DAO\CategorieDAO.cs" />
     <Compile Include="ORM\CategorieORM.cs" />
-    <Compile Include="Vue\UC_AjoutCat.xaml.cs">
+    <Compile Include="Vue\Ajout\UC_AjoutCat.xaml.cs">
       <DependentUpon>UC_AjoutCat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vue\UC_AjoutProd.xaml.cs">
+    <Compile Include="Vue\Ajout\UC_AjoutProd.xaml.cs">
       <DependentUpon>UC_AjoutProd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vue\AppliWindow.xaml.cs">
+    <Compile Include="Vue\Liste\AppliWindow.xaml.cs">
       <DependentUpon>AppliWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ctrl\AdminViewModel.cs" />
@@ -224,27 +224,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Vue\UC_AjoutVendeur.xaml" />
-    <Page Include="Vue\UC_assocEstimation.xaml">
+    <Page Include="Vue\Ajout\UC_AjoutVendeur.xaml" />
+    <Page Include="Vue\Assoc\UC_assocEstimation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vue\UC_assocOrdreAchat.xaml">
+    <Page Include="Vue\Assoc\UC_assocOrdreAchat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vue\UC_assocProd_Cat.xaml" />
-    <Page Include="Vue\UC_heriteAcheteur.xaml">
+    <Page Include="Vue\Assoc\UC_assocProd_Cat.xaml" />
+    <Page Include="Vue\Herite\UC_heriteAcheteur.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vue\UC_heriteVendeur.xaml">
+    <Page Include="Vue\Herite\UC_heriteVendeur.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vue\UC_ListeEncheres.xaml" />
-    <Page Include="Vue\UC_ListeLieux.xaml" />
-    <Page Include="Vue\UC_ListeLots.xaml" />
+    <Page Include="Vue\Liste\UC_ListeEncheres.xaml" />
+    <Page Include="Vue\Liste\UC_ListeLieux.xaml" />
+    <Page Include="Vue\Liste\UC_ListeLots.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ORM\AdminORM.cs" />
@@ -281,5 +281,6 @@
   <ItemGroup>
     <Resource Include="Images\Enchere.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
