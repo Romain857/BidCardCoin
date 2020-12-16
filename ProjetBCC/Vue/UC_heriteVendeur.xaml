@@ -16,15 +16,16 @@
             <ComboBox Name ="ComboBoxPersonne" ItemsSource="{Binding  }"
                           DisplayMemberPath="nomPersonneProperty"
                           SelectedValuePath="idProperty"
-                          SelectedValue="{Binding idPersonneProperty}" />
+                          SelectedValue="{Binding idPersonneProperty}"
+                          Width="250" Margin="0,0,0,20"/>
 
             <Button x:Name="nomheriteVendeurButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomheriteVendeurButton_Click" />
             <DataGrid x:Name="listeheriteVendeurs" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="0,0,0,20" BorderBrush="Black" Background="#FFA4A4A4"
-                          Height="150"
+                          Height="150" MaxWidth="350"
                           SelectionChanged="listeheriteVendeur_SelectionChanged"
                           ScrollViewer.CanContentScroll="True" 
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
-                          ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="107">
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
                     <DataGridTextColumn Header="idPersonne" Binding="{Binding idPersonneProperty}"/>

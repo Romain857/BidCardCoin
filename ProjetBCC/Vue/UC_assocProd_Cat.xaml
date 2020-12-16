@@ -6,36 +6,41 @@
              xmlns:local="clr-namespace:ProjetBCC.Vue"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="idProduit :"
-                       TextWrapping="Wrap" Width="300"
-                       TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <ComboBox Name ="ComboBoxProduit" ItemsSource="{Binding  }"
-                          DisplayMemberPath="nomProduitProperty"
-                          SelectedValuePath="idProperty"
-                          SelectedValue="{Binding idProduitProperty}" />
-            <TextBlock Text="idCategorie :"
-                       TextWrapping="Wrap" Width="300"
-                       TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <ComboBox Name ="ComboBoxCategorie" ItemsSource="{Binding  }"
-                          DisplayMemberPath="nomCategorieProperty"
-                          SelectedValuePath="idProperty"
-                          SelectedValue="{Binding idCategorieProperty}" />
-            
-            <Button x:Name="nomProduit_CategorieButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomProduit_CategorieButton_Click" />
-            <DataGrid x:Name="listeProduit_Categories" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="0,0,0,20" BorderBrush="Black" Background="#FFA4A4A4"
-                          Height="150"
-                          SelectionChanged="listeProduit_Categorie_SelectionChanged"
-                          ScrollViewer.CanContentScroll="True" 
-                          ScrollViewer.VerticalScrollBarVisibility="Auto"
-                          ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="107">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="idProduit" Binding="{Binding idProduitProperty}" />
-                    <DataGridTextColumn Header="idCategorie" Binding="{Binding idCategorieProperty}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
-        </StackPanel>
+    <Grid Height="390">
+        <ScrollViewer>
+            <StackPanel Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <TextBlock Text="Ajouter un produit à une catégorie" FontSize="32" TextAlignment="Center" Margin="0,0,0,20"/>
+                <TextBlock Text="idProduit :"
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <ComboBox Name ="ComboBoxProduit" ItemsSource="{Binding  }"
+                              DisplayMemberPath="nomProduitProperty"
+                              SelectedValuePath="idProperty"
+                              SelectedValue="{Binding idProduitProperty}"
+                              Width="250" Margin="0,0,0,20"/>
+                <TextBlock Text="idCategorie :"
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <ComboBox Name ="ComboBoxCategorie" ItemsSource="{Binding  }"
+                              DisplayMemberPath="nomCategorieProperty"
+                              SelectedValuePath="idProperty"
+                              SelectedValue="{Binding idCategorieProperty}"
+                              Width="250" Margin="0,0,0,20"/>
+                
+                <Button x:Name="nomProduit_CategorieButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomProduit_CategorieButton_Click" />
+                <DataGrid x:Name="listeProduit_Categories" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="0,0,0,20" BorderBrush="Black" Background="#FFA4A4A4"
+                              Height="150"
+                              SelectionChanged="listeProduit_Categorie_SelectionChanged"
+                              ScrollViewer.CanContentScroll="True" 
+                              ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="idProduit" Binding="{Binding idProduitProperty}" />
+                        <DataGridTextColumn Header="idCategorie" Binding="{Binding idCategorieProperty}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

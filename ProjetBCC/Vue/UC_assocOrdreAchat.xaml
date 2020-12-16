@@ -5,55 +5,61 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProjetBCC.Vue"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="montantMax :"
-                    TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="montantMax" Text="{Binding montantMaxProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <TextBlock Text="adresseDepot :"
-                    TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="adresseDepot" Text="{Binding adresseDepotProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <TextBlock Text="idProduit :"
-                       TextWrapping="Wrap" Width="300"
-                       TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <ComboBox Name ="ComboBoxProduit" ItemsSource="{Binding  }"
-                          DisplayMemberPath="nomProduitProperty"
-                          SelectedValuePath="idProperty"
-                          SelectedValue="{Binding idProduitProperty}" />
-            <TextBlock Text="idAcheteur :"
-                       TextWrapping="Wrap" Width="300"
-                       TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <ComboBox Name ="ComboBoxAcheteur" ItemsSource="{Binding  }"
-                          DisplayMemberPath="soldeProperty"
-                          SelectedValuePath="idProperty"
-                          SelectedValue="{Binding idAcheteurProperty}" />
-            <TextBlock Text="idEnchere :"
-                       TextWrapping="Wrap" Width="300"
-                       TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <ComboBox Name ="ComboBoxEnchere" ItemsSource="{Binding  }"
-                          DisplayMemberPath="nomEnchereProperty"
-                          SelectedValuePath="idProperty"
-                          SelectedValue="{Binding idEnchereProperty}" />
+             d:DesignHeight="450" Width="546">
+    <Grid Height="390">
+        <ScrollViewer>
+            <StackPanel Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <TextBlock Text="Ajouter un ordre d'achat" FontSize="36" TextAlignment="Center" Margin="0,0,0,20"/>
+                <TextBlock Text="Montant Max :"
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="montantMax" Text="{Binding montantMaxProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                <TextBlock Text="Adresse de Dépot :"
+                        TextWrapping="Wrap" Width="300"
+                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="adresseDepot" Text="{Binding adresseDepotProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                <TextBlock Text="idProduit :"
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <ComboBox Name ="ComboBoxProduit" ItemsSource="{Binding  }"
+                              DisplayMemberPath="nomProduitProperty"
+                              SelectedValuePath="idProperty"
+                              SelectedValue="{Binding idProduitProperty}"
+                              Width="250" Margin="0,0,0,20"/>
+                <TextBlock Text="idAcheteur :"
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <ComboBox Name ="ComboBoxAcheteur" ItemsSource="{Binding  }"
+                              DisplayMemberPath="soldeProperty"
+                              SelectedValuePath="idProperty"
+                              SelectedValue="{Binding idAcheteurProperty}"
+                              Width="250" Margin="0,0,0,20"/>
+                <TextBlock Text="idEnchere :"
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <ComboBox Name ="ComboBoxEnchere" ItemsSource="{Binding  }"
+                              DisplayMemberPath="nomEnchereProperty"
+                              SelectedValuePath="idProperty"
+                              SelectedValue="{Binding idEnchereProperty}"
+                              Width="250" Margin="0,0,0,20"/>
 
-            <Button x:Name="nomOrdreAchatButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomOrdreAchatButton_Click" />
-            <DataGrid x:Name="listeOrdreAchats" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="0,0,0,20" BorderBrush="Black" Background="#FFA4A4A4"
-                          Height="150"
-                          SelectionChanged="listeOrdreAchat_SelectionChanged"
-                          ScrollViewer.CanContentScroll="True" 
-                          ScrollViewer.VerticalScrollBarVisibility="Auto"
-                          ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="107">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="montantMax" Binding="{Binding montantMaxProperty}" />
-                    <DataGridTextColumn Header="adresseDepot" Binding="{Binding adresseDepotProperty}"/>
-                    <DataGridTextColumn Header="idProduit" Binding="{Binding idProduitProperty}" />
-                    <DataGridTextColumn Header="idCategorie" Binding="{Binding idAcheteurProperty}"/>
-                    <DataGridTextColumn Header="idEnchere" Binding="{Binding idEnchereProperty}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
-        </StackPanel>
+                <Button x:Name="nomOrdreAchatButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomOrdreAchatButton_Click" />
+                <DataGrid x:Name="listeOrdreAchats" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="0,0,0,20" BorderBrush="Black" Background="#FFA4A4A4"
+                              Height="150" MaxWidth="350"
+                              SelectionChanged="listeOrdreAchat_SelectionChanged"
+                              ScrollViewer.CanContentScroll="True" 
+                              ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="estimation" Binding="{Binding montantMaxProperty}" />
+                        <DataGridTextColumn Header="dateEstimation" Binding="{Binding adresseDepotProperty}"/>
+                        <DataGridTextColumn Header="idProduit" Binding="{Binding idProduitProperty}" />
+                        <DataGridTextColumn Header="idCategorie" Binding="{Binding idAcheteurProperty}"/>
+                        <DataGridTextColumn Header="idCategorie" Binding="{Binding idEnchereProperty}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

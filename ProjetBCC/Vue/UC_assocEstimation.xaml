@@ -5,47 +5,52 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProjetBCC.Vue"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="estimation :"
-                    TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="estimation" Text="{Binding estimationProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <TextBlock Text="Date Estimation :"
-                    TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <TextBox Name="dateEstimation" Text="{Binding dateEstimationProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <TextBlock Text="idProduit :"
-                       TextWrapping="Wrap" Width="300"
-                       TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <ComboBox Name ="ComboBoxProduit" ItemsSource="{Binding  }"
-                          DisplayMemberPath="nomProduitProperty"
-                          SelectedValuePath="idProperty"
-                          SelectedValue="{Binding idProduitProperty}" />
-            <TextBlock Text="idAdmin :"
-                       TextWrapping="Wrap" Width="300"
-                       TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-            <ComboBox Name ="ComboBoxAdmin" ItemsSource="{Binding  }"
-                          DisplayMemberPath="nomAdminProperty"
-                          SelectedValuePath="idProperty"
-                          SelectedValue="{Binding idAdminProperty}" />
+             d:DesignHeight="450" Width="490">
+    <Grid Height="390">
+        <ScrollViewer>
+            <StackPanel Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <TextBlock Text="Ajouter une estimation" FontSize="36" TextAlignment="Center" Margin="0,0,0,20"/>
+                <TextBlock Text="estimation :"
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="estimation" Text="{Binding estimationProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                <TextBlock Text="Date Estimation :"
+                        TextWrapping="Wrap" Width="300"
+                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox Name="dateEstimation" Text="{Binding dateEstimationProperty, Mode=TwoWay}" Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                <TextBlock Text="idProduit :"
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <ComboBox Name ="ComboBoxProduit" ItemsSource="{Binding  }"
+                              DisplayMemberPath="nomProduitProperty"
+                              SelectedValuePath="idProperty"
+                              SelectedValue="{Binding idProduitProperty}"
+                              Width="250" Margin="0,0,0,20"/>
+                <TextBlock Text="idAdmin :"
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <ComboBox Name ="ComboBoxAdmin" ItemsSource="{Binding  }"
+                              DisplayMemberPath="nomAdminProperty"
+                              SelectedValuePath="idProperty"
+                              SelectedValue="{Binding idAdminProperty}"
+                              Width="250" Margin="0,0,0,20"/>
 
-            <Button x:Name="nomEstimationButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomEstimationButton_Click" />
-            <DataGrid x:Name="listeEstimations" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="0,0,0,20" BorderBrush="Black" Background="#FFA4A4A4"
-                          Height="150"
-                          SelectionChanged="listeEstimation_SelectionChanged"
-                          ScrollViewer.CanContentScroll="True" 
-                          ScrollViewer.VerticalScrollBarVisibility="Auto"
-                          ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="107">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="estimation" Binding="{Binding estimationProperty}" />
-                    <DataGridTextColumn Header="dateEstimation" Binding="{Binding dateEstimationProperty}"/>
-                    <DataGridTextColumn Header="idProduit" Binding="{Binding idProduitProperty}" />
-                    <DataGridTextColumn Header="idCategorie" Binding="{Binding idAdminProperty}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
-        </StackPanel>
+                <Button x:Name="nomEstimationButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomEstimationButton_Click" />
+                <DataGrid x:Name="listeEstimations" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="0,0,0,20" BorderBrush="Black" Background="#FFA4A4A4"
+                              Height="150" MaxWidth="350"
+                              SelectionChanged="listeEstimation_SelectionChanged"
+                              ScrollViewer.CanContentScroll="True" 
+                              ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="estimation" Binding="{Binding estimationProperty}" />
+                        <DataGridTextColumn Header="dateEstimation" Binding="{Binding dateEstimationProperty}"/>
+                        <DataGridTextColumn Header="idProduit" Binding="{Binding idProduitProperty}" />
+                        <DataGridTextColumn Header="idCategorie" Binding="{Binding idAdminProperty}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click" Height="20" />
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

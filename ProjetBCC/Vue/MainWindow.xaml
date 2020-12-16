@@ -8,7 +8,9 @@
         Title="Connectez-vous !" Height="450" Width="800">
     <Grid>
         <StackPanel Orientation="Vertical">
-                    <TextBlock Text="BidCardCoin" FontSize="36" Margin="4" TextAlignment="Center"/>
+                    <TextBlock Text="BidCardCoin" FontSize="36" Margin="4" TextAlignment="Center">
+                        <Image Source="Images/marteau.png" Height="50" Width="50" Margin="20,0,0,-5"/>
+                    </TextBlock>
                     <TextBlock x:Name="errorMessage" Text="" FontSize="16" Margin="4" Foreground="Red" TextAlignment="Center"/>
                     <TextBlock Text="Email :"
                     TextWrapping="Wrap" Width="300"
