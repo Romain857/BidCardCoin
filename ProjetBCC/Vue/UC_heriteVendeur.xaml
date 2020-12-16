@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:ProjetBCC.Vue"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Height="390">
         <StackPanel Orientation="Vertical">
             <TextBlock Text="Affecter un Vendeur :" FontSize="36" TextAlignment="Center"/>
             
