@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -40,6 +41,7 @@ namespace ProjetBCC.Vue
         int compteur = 0;
         int selectedCategorieId;
         
+        
         public AppliWindow()
         {
             InitializeComponent();
@@ -50,18 +52,8 @@ namespace ProjetBCC.Vue
             loadPersonnes();
             loadAcheteurs();
 
-            /*List<TodoItem> items = new List<TodoItem>();
-            items.Add(new TodoItem() { Title = "Comprendre WPF", Completion = 2 });
-            items.Add(new TodoItem() { Title = "Enchere 1", Completion = 10 });
-            items.Add(new TodoItem() { Title = "Enchere 2", Completion = 45 });
-            items.Add(new TodoItem() { Title = "Enchere 3", Completion = 80 });
-            lbTodoList.ItemsSource = items;*/
         }
-        /*public class TodoItem
-        {
-            public string Title { get; set; }
-            public int Completion { get; set; }
-        }*/
+        
         void loadAdmins()
         {
             la = AdminORM.listeAdmins();
@@ -147,6 +139,7 @@ namespace ProjetBCC.Vue
             UC_AjoutVendeur ajoutVendeur = new UC_AjoutVendeur();
             MainUtil.Visibility = Visibility.Collapsed;
             returnButtonUtil.Visibility = Visibility.Visible;
+            DisplayUCUtil.Children.Clear();
             DisplayUCUtil.Children.Add(ajoutVendeur);
             
         }
@@ -155,6 +148,7 @@ namespace ProjetBCC.Vue
             UC_heriteVendeur heriteVendeur = new UC_heriteVendeur();
             MainUtil.Visibility = Visibility.Collapsed;
             returnButtonUtil.Visibility = Visibility.Visible;
+            DisplayUCUtil.Children.Clear();
             DisplayUCUtil.Children.Add(heriteVendeur);
         }
         private void Button_Click_addheriteAcheteur(object sender, RoutedEventArgs e)
@@ -162,6 +156,7 @@ namespace ProjetBCC.Vue
             UC_heriteAcheteur heriteAcheteur = new UC_heriteAcheteur();
             MainUtil.Visibility = Visibility.Collapsed;
             returnButtonUtil.Visibility = Visibility.Visible;
+            DisplayUCUtil.Children.Clear();
             DisplayUCUtil.Children.Add(heriteAcheteur);
         }
 

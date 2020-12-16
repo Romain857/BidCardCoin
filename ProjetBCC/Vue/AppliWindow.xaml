@@ -12,12 +12,12 @@
                 <Grid>
                     <StackPanel>
                         <ToolBar>
-                            <Button x:Name="listeEnchereButton" Content="Enchères" Click="Button_Click_ListEnchere"></Button>
-                            <Button x:Name="listeLieuxButton" Content="Lieux" Click="Button_Click_ListLieux"></Button>
-                            <Button x:Name="listeLotsButton" Content="Lots" Click="Button_Click_ListLots"></Button>
+                            <Button x:Name="listeEnchereButton" Content="Enchères" Click="Button_Click_ListEnchere" ToolTip="Affiche la liste des enchères"></Button>
+                            <Button x:Name="listeLieuxButton" Content="Lieux" Click="Button_Click_ListLieux" ToolTip="Affiche la lisyte des Lieux"></Button>
+                            <Button x:Name="listeLotsButton" Content="Lots" Click="Button_Click_ListLots" ToolTip="Affiche la liste des lieux"></Button>
                             <Menu>
                                 <MenuItem Header="Menu">
-                                    <MenuItem Header="Y'a rien ici"/>
+                                    <MenuItem Header="On sait faire des Menus"/>
                                 </MenuItem>
                             </Menu>
                         </ToolBar>
@@ -25,72 +25,56 @@
                     <StackPanel Name="DisplayUCAccueil">
                         <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET Accueil CREES LORS DU CLICK D'UN BOUTON-->
                     </StackPanel>
-                    <!--
-                    <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" Margin="20">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Margin="10">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="100" />
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="{Binding Title}" />
-                                    <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}" />
-                                </Grid>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox> -->
                 </Grid>
-                
             </TabItem>
             <TabItem Header="Produits">
                 <StackPanel>
                     <Menu Margin="0,0,0,32">
-                                <MenuItem Header="Rechercher">
-                                    <MenuItem Header="Style" >
-                                        <ListView x:Name="listeStyles">
-                                            <ListView.View>
-                                                <GridView>
-                                                    <GridViewColumn Header="Type" Width="120" DisplayMemberBinding="{Binding styleProperty}" />
-                                                </GridView>
-                                            </ListView.View>
-                                        </ListView>
-                                    </MenuItem>
-                                    <MenuItem Header="Artiste" >
-                                        <ListView x:Name="listeArtistes">
-                                            <ListView.View>
-                                                <GridView>
-                                                    <GridViewColumn Header="Type" Width="120" DisplayMemberBinding="{Binding artisteProperty}" />
-                                                </GridView>
-                                            </ListView.View>
-                                        </ListView>
-                                    </MenuItem>
-                                    <MenuItem Header="Categorie" >
-                                        <ListView x:Name="listeCategories">
-                                            <ListView.View>
-                                                <GridView>
-                                                    <GridViewColumn Header="Type" Width="120" DisplayMemberBinding="{Binding nomCategorieProperty}" />
-                                                </GridView>
-                                            </ListView.View>
-                                        </ListView>
-                                    </MenuItem>
-                                </MenuItem>
+                        <MenuItem Header="Rechercher">
+                            <MenuItem Header="Style" >
+                                <ListView x:Name="listeStyles">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Type" Width="120" DisplayMemberBinding="{Binding styleProperty}" />
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </MenuItem>
+                            <MenuItem Header="Artiste" >
+                                <ListView x:Name="listeArtistes">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Type" Width="120" DisplayMemberBinding="{Binding artisteProperty}" />
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </MenuItem>
+                            <MenuItem Header="Categorie" >
+                                <ListView x:Name="listeCategories">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Type" Width="120" DisplayMemberBinding="{Binding nomCategorieProperty}" />
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </MenuItem>
+                        </MenuItem>
                     </Menu>
                     
-                    <Button x:Name="addProductButton" Content="Ajouter Produit" Background="Black" Foreground="White"
-                            Width="96" HorizontalAlignment="Right" Click="Button_Click_addProduct" Margin="0,20,0,0" />
-                    <Button x:Name="addCategorieButton" Content="Ajouter Categorie" Background="Blue" Foreground="White"
-                            Width="96" HorizontalAlignment="Right" Click="Button_Click_addCategorie" Margin="0,20,0,0" />
+                    <Button x:Name="addProductButton" Content="Ajouter un Produit" Background="Black" Foreground="White"
+                            Width="120" HorizontalAlignment="Right" Click="Button_Click_addProduct" Margin="0,20,0,0" />
+                    <Button x:Name="addCategorieButton" Content="Ajouter un Categorie" Background="Blue" Foreground="White"
+                            Width="120" HorizontalAlignment="Right" Click="Button_Click_addCategorie" Margin="0,20,0,0" />
+                    <Button x:Name="addOrdreAchatButton" Content="Ajouter un &#x0a;Ordre d'achat" Background="Green" Foreground="White"
+                            Width="120" Height="40" HorizontalAlignment="Right" Click="Button_Click_addOrdreAchat" Margin="0,20,0,0" />
                     <Button x:Name="assignProduit_Categorie" Content="Ajouter un produit &#x0a;dans une catégorie" Background="CornflowerBlue" Foreground="White"
-                            Width="120" Height="40" HorizontalAlignment="Right" Click="Button_Click_assignProd_Cat" Margin="0,20,0,0" />
-                    <Button x:Name="addOrdreAchatButton" Content="Ajouter OrdreAchat" Background="Green" Foreground="White"
-                            Width="96" HorizontalAlignment="Right" Click="Button_Click_addOrdreAchat" Margin="0,20,0,0" />
+                            Width="120" Height="40" HorizontalAlignment="Right"  Click="Button_Click_assignProd_Cat" Margin="0,20,0,0" />
                     
                     <Grid>
-                        <StackPanel x:Name="MainProd" Margin="0,-150,0,0">
-                            
+                        <StackPanel x:Name="MainProd" Margin="0,-250,0,0">
+                            <TextBlock Text="Liste des produits :" FontSize="24" TextAlignment="Center" Margin="0,40,0,20"/>
                             <DataGrid x:Name="listeProduits" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeProduits_SelectionChanged"
-                                      Height="300" Width="300"
+                                      Height="150" MaxWidth="350" Margin="0,20"
                                       ScrollViewer.CanContentScroll="True" 
                                       ScrollViewer.VerticalScrollBarVisibility="Auto"
                                       ScrollViewer.HorizontalScrollBarVisibility="Auto">
@@ -111,80 +95,88 @@
                                     <DataGridTextColumn Header="categorie"/>
                                 </DataGrid.Columns>
                             </DataGrid>
+                            
                             <Button x:Name="supprimerButton" Content="Supprimer" MouseDoubleClick="supprimerButton_MouseDoubleClick" BorderBrush="#FF545454" Height="20" HorizontalAlignment="Center"  />
+                            
                         </StackPanel>
-                        <StackPanel x:Name="DisplayUCProd" HorizontalAlignment="Center" Margin="0,-150,0,0">
+                        <StackPanel x:Name="DisplayUCProd" HorizontalAlignment="Center" Margin="0,-210,0,0">
                             <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET PRODUITS CREES LORS DU CLICK D'UN BOUTON-->
                         </StackPanel>
                         
                         <Button x:Name="returnButtonProd" Content="Retour" Background="Red" HorizontalAlignment="Right" Foreground="White" Click="Button_cancel_prod" Height="26" Width="100" Visibility="Collapsed"/>
+                        
                     </Grid>
-
                 </StackPanel>
             </TabItem>
             <TabItem Header="Utilisateurs">
-
                 <StackPanel>
-                <Grid  Height="430">
-                    <ScrollViewer>
-                    <StackPanel x:Name="MainUtil" ScrollViewer.VerticalScrollBarVisibility="Auto">
-                        <Label Content="Table Admin :"/>
-                        <Grid Margin="10">
-                            <DataGrid Name="listeAdmins" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
-                                  Height="300"
-                                  ScrollViewer.CanContentScroll="True" 
-                                  ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                  ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <Grid  Height="430">
+                        <ScrollViewer>
+                            <StackPanel x:Name="MainUtil" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                <TextBlock Text="Liste des Admins :" FontSize="24" TextAlignment="Center" Margin="0,20"/>
+                                <Grid Margin="10">
+                                    <DataGrid Name="listeAdmins" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
+                                              Height="150" MaxWidth="350"
+                                          ScrollViewer.CanContentScroll="True" 
+                                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                                        
+                                        <DataGrid.Columns>
+                                        <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                                        <DataGridTextColumn Header="nom" Binding="{Binding nomAdminProperty}" />
+                                        <DataGridTextColumn Header="prénom" Binding="{Binding prenomAdminProperty}" />
+                                        <DataGridTextColumn Header="mdp" Binding="{Binding mdpAdminProperty}" />
+                                        <DataGridTextColumn Header="numeroTel" Binding="{Binding numerotelAdminProperty}" />
+                                        <DataGridTextColumn Header="mail" Binding="{Binding mailAdminProperty}" />
+                                        <DataGridTextColumn Header="age" Binding="{Binding ageAdminProperty}" />
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </Grid>
+                                    <TextBlock Text="Liste des Vendeurs :" FontSize="24" TextAlignment="Center" Margin="0,20"/>
+                                <Grid Margin="10">
+                                    
+                                    <DataGrid Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
+                                              Height="150" MaxWidth="350"
+                                          ScrollViewer.CanContentScroll="True" 
+                                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                          SelectionChanged="listePersonnes_SelectionChanged">
+                                        
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
+                                            <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty}" />
+                                            <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty}" />
+                                            <DataGridTextColumn Header="mdp" Binding="{Binding mdpPersonneProperty}" />
+                                            <DataGridTextColumn Header="numeroTel" Binding="{Binding numerotelPersonneProperty}" />
+                                            <DataGridTextColumn Header="mail" Binding="{Binding mailPersonneProperty}" />
+                                            <DataGridTextColumn Header="adresse" Binding="{Binding adressePersonneProperty}" />
+                                            <DataGridTextColumn Header="codePostal" Binding="{Binding codePostalProperty}" />
+                                            <DataGridTextColumn Header="age" Binding="{Binding agePersonneProperty}" />
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </Grid>
                                 
-                                <DataGrid.Columns>
-                                <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
-                                <DataGridTextColumn Header="nom" Binding="{Binding nomAdminProperty}" />
-                                <DataGridTextColumn Header="prénom" Binding="{Binding prenomAdminProperty}" />
-                                <DataGridTextColumn Header="mdp" Binding="{Binding mdpAdminProperty}" />
-                                <DataGridTextColumn Header="numeroTel" Binding="{Binding numerotelAdminProperty}" />
-                                <DataGridTextColumn Header="mail" Binding="{Binding mailAdminProperty}" />
-                                <DataGridTextColumn Header="age" Binding="{Binding ageAdminProperty}" />
-                                </DataGrid.Columns>
-                            </DataGrid>
-                        </Grid>
-                            <Label Content="Table Vendeur :"/>
-                        <Grid Margin="10">
-                            
-                            <DataGrid Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
-                                  Height="300"
-                                  ScrollViewer.CanContentScroll="True" 
-                                  ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                                  SelectionChanged="listePersonnes_SelectionChanged">
-                                <DataGrid.Columns>
-                                    <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
-                                    <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty}" />
-                                    <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty}" />
-                                    <DataGridTextColumn Header="mdp" Binding="{Binding mdpPersonneProperty}" />
-                                    <DataGridTextColumn Header="numeroTel" Binding="{Binding numerotelPersonneProperty}" />
-                                    <DataGridTextColumn Header="mail" Binding="{Binding mailPersonneProperty}" />
-                                    <DataGridTextColumn Header="adresse" Binding="{Binding adressePersonneProperty}" />
-                                    <DataGridTextColumn Header="codePostal" Binding="{Binding codePostalProperty}" />
-                                    <DataGridTextColumn Header="age" Binding="{Binding agePersonneProperty}" />
-                                </DataGrid.Columns>
-                            </DataGrid>
-                        </Grid>
-                        <Button x:Name="supprimerButton2" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click2" Height="20" />
-                    </StackPanel>
-                    </ScrollViewer>
-                    <Button x:Name="addUserButton" Content="Ajouter Utilisateur" Background="Black" Foreground="White"
-                            Height="20" HorizontalAlignment="Right" Click="Button_Click_addVendeur" Margin="0,0,20,250"/>
-                    <Button x:Name="addEstimationButton" Content="Ajouter Estimation" Background="Blue" Foreground="White"
-                            Height="20" HorizontalAlignment="Right" Click="Button_Click_addEstimation" Margin="0,0,20,200" />
-                    <Button x:Name="addheriteVendeurButton" Content="Affecter un Vendeur" Background="Orange" Foreground="White"
-                            Height="20" HorizontalAlignment="Right" Click="Button_Click_addheriteVendeur" Margin="0,0,20,150" />
+                                <Button x:Name="supprimerButton2" Content="Supprimer" BorderBrush="#FF545454" HorizontalAlignment="center" MouseDoubleClick="supprimerButton_Click2" Height="20" />
+                                
+                            </StackPanel>
+                        </ScrollViewer>
+                        
+                        <Button x:Name="addUserButton" Content="Ajouter un Utilisateur" Background="Black" Foreground="White"
+                                Height="20" Width="120" HorizontalAlignment="Right" Click="Button_Click_addVendeur" Margin="0,0,20,250"/>
+                        <Button x:Name="addEstimationButton" Content="Ajouter un Estimation" Background="Blue" Foreground="White"
+                                Height="20" Width="120" HorizontalAlignment="Right" Click="Button_Click_addEstimation" Margin="0,0,20,200" />
+                        <Button x:Name="addheriteVendeurButton" Content="Affecter un Vendeur" Background="Orange" Foreground="White"
+                                Height="20" Width="120" HorizontalAlignment="Right" Click="Button_Click_addheriteVendeur" Margin="0,0,20,150" />
                         <Button x:Name="addheriteAcheteurButton" Content="Affecter un Acheteur" Background="Gray" Foreground="White"
-                            Height="20" HorizontalAlignment="Right" Click="Button_Click_addheriteAcheteur" Margin="0,0,20,100" />
-                <StackPanel x:Name="DisplayUCUtil">
-                    <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET UTILISATEURS CREES LORS DU CLICK D'UN BOUTON-->
-                </StackPanel>
-                    <Button x:Name="returnButtonUtil" Content="Retour" Background="Red" HorizontalAlignment="Right" Foreground="White" Click="Button_cancel_util" Height="26" Width="100" Margin="0,0,20,0" Visibility="Collapsed"/>
-                </Grid>
+                                Height="20" Width="120" HorizontalAlignment="Right" Click="Button_Click_addheriteAcheteur" Margin="0,0,20,100" />
+                        
+                        <StackPanel x:Name="DisplayUCUtil">
+                            <!--ICI VIEN SE METTRE LES UC POUR L'ONGLET UTILISATEURS CREES LORS DU CLICK D'UN BOUTON-->
+                        </StackPanel>
+                        
+                        <Button x:Name="returnButtonUtil" Content="Retour" Background="Red" HorizontalAlignment="Right" Foreground="White" Click="Button_cancel_util" Height="26" Width="100" Margin="0,0,20,0" Visibility="Collapsed"/>
+                        
+                    </Grid>
                 </StackPanel>
             </TabItem>
         </TabControl>

@@ -40,6 +40,7 @@ namespace ProjetBCC
         int selectedProduitId;
         public UC_AjoutProd()
         {
+            
             InitializeComponent();
             DALConnection.OpenConnection();
             loadProduits();
