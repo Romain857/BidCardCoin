@@ -30,7 +30,7 @@
                            TextWrapping="Wrap" Width="300"
                            TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
                 <ComboBox Name ="ComboBoxAcheteur" ItemsSource="{Binding  }"
-                              DisplayMemberPath="soldeProperty"
+                              DisplayMemberPath="idProperty"
                               SelectedValuePath="idProperty"
                               SelectedValue="{Binding idAcheteurProperty}"
                               Width="250" Margin="0,0,0,20"/>
@@ -51,8 +51,8 @@
                               ScrollViewer.VerticalScrollBarVisibility="Auto"
                               ScrollViewer.HorizontalScrollBarVisibility="Auto">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="estimation" Binding="{Binding montantMaxProperty}" />
-                        <DataGridTextColumn Header="dateEstimation" Binding="{Binding adresseDepotProperty}"/>
+                        <DataGridTextColumn Header="Montant" Binding="{Binding montantMaxProperty}" />
+                        <DataGridTextColumn Header="Adresse dépot" Binding="{Binding adresseDepotProperty}"/>
                         <DataGridTextColumn Header="idProduit" Binding="{Binding idProduitProperty}" />
                         <DataGridTextColumn Header="idCategorie" Binding="{Binding idAcheteurProperty}"/>
                         <DataGridTextColumn Header="idCategorie" Binding="{Binding idEnchereProperty}"/>

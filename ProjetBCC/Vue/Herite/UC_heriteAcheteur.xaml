@@ -10,6 +10,14 @@
         <ScrollViewer>
         <StackPanel Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <TextBlock Text="Affecter un Acheteur :" FontSize="36" TextAlignment="Center"/>
+                <TextBlock Text="Personne :" 
+                           TextWrapping="Wrap" Width="300"
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <ComboBox Name ="ComboBoxPersonne" ItemsSource="{Binding  }"
+                        DisplayMemberPath="idProperty"
+                        SelectedValuePath="idProperty"
+                        SelectedValue="{Binding idPersonneProperty}"
+                        Width="250" Margin="0,0,0,20"/>
 
                 <TextBlock Text="Solde :"
                     TextWrapping="Wrap" Width="300"
@@ -31,14 +39,7 @@
                     TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
                 <TextBox Name="moyenPaiement" Text="{Binding moyenPaiementProperty, Mode=TwoWay}"  Width="250" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
-                <TextBlock Text="Personne :" 
-                     TextWrapping="Wrap" Width="300"
-                    TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
-                <ComboBox Name ="ComboBoxPersonne" ItemsSource="{Binding  }"
-                          DisplayMemberPath="nomPersonneProperty"
-                          SelectedValuePath="idProperty"
-                          SelectedValue="{Binding idPersonneProperty}"
-                          Width="250" Margin="0,0,0,20"/>
+            
 
                 <Button x:Name="nomheriteAcheteurButton" Content="Ajouter" BorderBrush="#FF545454" HorizontalAlignment="center" Margin="0,0,0,20" Height="20" Click="nomheriteAcheteurButton_Click" />
                 <DataGrid Name="listeheriteAcheteurs" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="center" Margin="0, 0,0,20"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 

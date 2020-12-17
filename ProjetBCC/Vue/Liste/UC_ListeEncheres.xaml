@@ -19,8 +19,8 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="id" Binding="{Binding idProperty}" />
                     <DataGridTextColumn Header="nom" Binding="{Binding nomEnchereProperty}" />
-                    <DataGridTextColumn Header="date" Binding="{Binding heureEnchereProperty}" />
-                    <DataGridTextColumn Header="heure" Binding="{Binding dateEnchereProperty}" />
+                    <DataGridTextColumn Header="date" Binding="{Binding dateEnchereProperty }" />
+                    <DataGridTextColumn Header="heure" Binding="{Binding heureEnchereProperty}" />
                     <DataGridTextColumn Header="idlieu" Binding="{Binding idLieuProperty}" />
                     <DataGridTextColumn Header="idAdmin" Binding="{Binding idAdminProperty}" />
                 </DataGrid.Columns>
